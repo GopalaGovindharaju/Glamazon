@@ -46,3 +46,12 @@
   border-bottom: 2px solid black; /* Adjust the thickness and color as needed */
   cursor: pointer; /* Optionally change the cursor to a pointer on hover */
 }
+
+.textbox{
+  outline: none;
+  border: 2px solid #ccc;
+}
+
+.textbox:focus{
+  border-color: brown;
+}

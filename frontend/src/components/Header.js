@@ -1,6 +1,6 @@
 import { Box, Flex, Image, Spacer, Input } from '@chakra-ui/react';
 import React from 'react';
-import logo from '../images/glamazon-logo.png'
+import logo from '../images/glamazon-logo.png';
 
 function Header() {
   return (
@@ -11,7 +11,7 @@ function Header() {
         </Box>
         <Spacer/>
         <Box p="4">
-        <Input size='lg' placeholder='Basic usage' />
+        <Input size='lg' placeholder='Basic usage' className='textbox'/>
         </Box>
         <Spacer/>
         <Box p="4" bg="green.400">
