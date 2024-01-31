@@ -7,7 +7,7 @@ function Header() {
     <div>
       <Flex px={4} border='1px'>
         <Box pt="2">
-          <Image w={180} h={20} src={logo}/>
+          <Image w={300} h={20} src={logo}/>
         </Box>
         <Spacer/>
         <Box p="4">
