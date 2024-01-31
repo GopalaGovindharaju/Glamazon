@@ -6,15 +6,15 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 function Header() {
   return (
     <div>
-      <Flex px={4} border="1px">
+      <Flex px={4} py={4}>
         <Box pt="2">
-          <Image w={180} h={10} src={logo} />
+          <Image w={300} h={20} src={logo}/>
         </Box>
         <Spacer />
         <Box
           px={3}
-          pt={2}
-          w={{ base: "150px", md: "300px", lg: "420px", xl: "700px" }}
+          pt={7}
+          w={{ base: "150px", md: "300px", lg: "420px", xl: "580px" }}
           minW="150px"
         >
           <Input
@@ -24,11 +24,16 @@ function Header() {
             border="1px solid rgba(0, 0, 66, 0.5)"
             borderRadius={5}
             placeholder="What are you looking for?"
+            _focus={{
+              outline: "none",
+              boxShadow: "none", // Remove the focus glow
+            }}
+            focusBorderColor="#663620"
           />
         </Box>
         <Spacer />
-        <Box w={{ base: "350px", md: "370px", lg: "370px", xl: "370px" }}>
-          <HStack justifyContent='center' pt={1} spacing={6}>
+        <Box pt={5} w={{ base: "350px", md: "370px", lg: "370px", xl: "370px" }}>
+          <HStack justifyContent='end' pt={1} spacing={6}>
             <Text>Sign in & Sign Up</Text>
             <HStack>
               <FavoriteIcon style={{ color: "#663620", fontSize: "18px" }} />

@@ -12,7 +12,10 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+.hoverable:hover {
+  text-decoration: underline;
+  cursor: pointer; /* Optionally change the cursor to a pointer on hover */
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -35,4 +38,11 @@
   to {
     transform: rotate(360deg);
   }
+}
+/* Second.css */
+
+/* Define the style for the hover effect */
+.hoverable1:hover {
+  border-bottom: 2px solid black; /* Adjust the thickness and color as needed */
+  cursor: pointer; /* Optionally change the cursor to a pointer on hover */
 }
