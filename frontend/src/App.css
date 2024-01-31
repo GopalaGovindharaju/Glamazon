@@ -42,7 +42,7 @@
 /* Second.css */
 
 /* Define the style for the hover effect */
-.hoverable:hover {
+.hoverable1:hover {
   border-bottom: 2px solid black; /* Adjust the thickness and color as needed */
   cursor: pointer; /* Optionally change the cursor to a pointer on hover */
 }
