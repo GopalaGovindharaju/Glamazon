@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Glamazon/static/css/main.b1e4bace.css",
+    "main.js": "/Glamazon/static/js/main.92393b44.js",
+    "static/js/787.9e9f4ffd.chunk.js": "/Glamazon/static/js/787.9e9f4ffd.chunk.js",
+    "static/media/glamazon-logo.png": "/Glamazon/static/media/glamazon-logo.0cf531822d8988f21c22.png",
+    "index.html": "/Glamazon/index.html",
+    "main.b1e4bace.css.map": "/Glamazon/static/css/main.b1e4bace.css.map",
+    "main.92393b44.js.map": "/Glamazon/static/js/main.92393b44.js.map",
+    "787.9e9f4ffd.chunk.js.map": "/Glamazon/static/js/787.9e9f4ffd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b1e4bace.css",
+    "static/js/main.92393b44.js"
+  ]
+}
