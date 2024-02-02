@@ -42,7 +42,47 @@
 /* Second.css */
 
 /* Define the style for the hover effect */
-.hoverable:hover {
+.hoverable1:hover {
   border-bottom: 2px solid black; /* Adjust the thickness and color as needed */
   cursor: pointer; /* Optionally change the cursor to a pointer on hover */
 }
+
+/* App.css */
+.image-container {
+  display: flex;
+}
+
+.image-box {
+  position: relative;
+  overflow: hidden;
+  animation: 'slideImage ' + imageDuration + 'ms infinite linear';
+
+}
+
+@keyframes slideImage {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25%, 75% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(-200%);
+  }
+}
+
+.image-box img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s ease; /* Transition property for smooth image movement */
+}
+
+.text {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.8); /* Adjust the background color and opacity */
+  padding: 8px;
+}
+/* App.css */

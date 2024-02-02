@@ -1,6 +1,7 @@
 import './App.css';
 import Header from './components/Header';
 import Second from './components/second';
+import Picture from './components/Third';
 
 
 function App(props) {
@@ -8,6 +9,7 @@ function App(props) {
     <div className="App">
       <Header/>
       <Second/>
+      <Picture/>
     </div>
   );
 }
