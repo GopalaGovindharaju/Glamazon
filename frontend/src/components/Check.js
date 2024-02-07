@@ -1,31 +1,63 @@
-import Hairstyle from './Images/Hairstyles.jpg'
-import Haircolor from './Images/Haircolors.jpg'
-import Eyebrow from './Images/Eyebrow.jpg'
-import Beard from './Images/Beard.jpg'
-import Lipcolor from './Images/Lipcolors.jpg'
-import Mustache from './Images/Moustache.jpg'
+import Beard1 from './Images/beard/30.jpg'
+import Beard2 from './Images/beard/12.jpg'
+import Beard3 from './Images/beard/31.jpg'
+import Beard4 from './Images/beard/35.png'
+import Beard5 from './Images/beard/36.jpeg'
+import Beard6 from './Images/beard/37.jpg'
+import Beard7 from './Images/beard/38.jpeg'
+import Beard8 from './Images/beard/40.jpg'
+import Beard9 from './Images/beard/41.jpg'
+import Beard10 from './Images/beard/44.jpg'
+import Beard11 from './Images/beard/45.jpg'
+import Beard12 from './Images/beard/46.jpg'
+import Beard13 from './Images/beard/47.jpg'
+import Beard14 from './Images/beard/48.jpg'
+import Beard15 from './Images/beard/53.jpg'
 
 export const Check = [
     {
-      image: Hairstyle,
-      name:"buzcut",
-      id:1,
-      gender:'male'
-
+      image: Beard1
     },
     {
-      image: Haircolor
+      image: Beard2
     },
     {
-      image: Eyebrow
+      image: Beard3
     },
     {
-      image:Beard
+      image: Beard4
     },
     {
-      image: Mustache
+      image: Beard5
     },
     {
-      image: Lipcolor
-    }
+      image: Beard6
+    },
+    {
+      image: Beard7
+    },
+    {
+      image: Beard8
+    },
+    {
+      image: Beard9
+    },
+    {
+      image: Beard10
+    },
+    {
+      image: Beard11
+    },
+    {
+      image: Beard12
+    },
+    {
+      image: Beard13
+    },
+    {
+      image: Beard14
+    },
+    {
+      image: Beard15
+    },
   ];
