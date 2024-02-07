@@ -35,10 +35,10 @@ function Header() {
         <Spacer />
         <Box pt={5} w={{ base: "350px", md: "370px", lg: "370px", xl: "370px" }}>
           <HStack justifyContent='end' pt={1} spacing={6}>
-            <Text>Sign in & Sign Up</Text>
+            <Text m={0}>Sign in & Sign Up</Text>
             <HStack>
               <FavoriteIcon style={{ color: "#663620", fontSize: "18px" }} />
-              <Text>Wishlist</Text>
+              <Text m={0}>Wishlist</Text>
             </HStack>
             <Button color='#663620' _hover={{ bg: '#663620', color:'white', transition:'0.4s' }} variant='ghost'>3D TRY ON</Button>
           </HStack>
