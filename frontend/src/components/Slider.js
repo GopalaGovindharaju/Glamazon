@@ -2,17 +2,44 @@ import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Box, Button, Image } from '@chakra-ui/react';
-import { SlideData } from './SliderImages';
-import '../CSS/Slider.css'; // Import the CSS file for styling
+import '../CSS/Slider.css';
+import Hairstyle from './Images/Hairstyles.jpg'
+import Haircolor from './Images/Haircolors.jpg'
+import Eyebrow from './Images/Eyebrow.jpg'
+import Beard from './Images/Beard.jpg'
+import Lipcolor from './Images/Lipcolors.jpg'
+import Mustache from './Images/Moustache.jpg'
 
 function Slider() {
+
+  const SlideData = [
+    {
+      image: Hairstyle
+    },
+    {
+      image: Haircolor
+    },
+    {
+      image: Eyebrow
+    },
+    {
+      image:Beard
+    },
+    {
+      image: Mustache
+    },
+    {
+      image: Lipcolor
+    }
+  ];
+
   return (
     <Box w='100%' h='515px' position="relative">
       <Carousel
         infiniteLoop
         showThumbs={false}
-        //autoPlay={true}
-        //interval={2000}
+        autoPlay={true}
+        interval={2000}
         renderArrowPrev={(onClickHandler, hasPrev, label) => (
           <button
             type="button"
@@ -39,9 +66,9 @@ function Slider() {
       >
         {SlideData.map((slide, index) => (
           <Box key={index} w='100%' h='514px' position="relative">
-            <Button position="absolute" top={400} left={582} bg='transparent' border="1px solid" >EXPLORE</Button>
-            <Image boxSize='100%' objectFit='cover' src={slide.image} />
-          </Box>
+          <Image boxSize='100%' objectFit='fill' src={slide.image} />
+          <Button position="absolute" top="80%" left="50%" transform="translate(-50%, -50%)" bg='transparent' border="1px solid">EXPLORE</Button>
+        </Box>        
         ))}
       </Carousel>
     </Box>
