@@ -2,6 +2,7 @@ import { Box, Button, ButtonGroup, Card, CardBody, CardFooter, Divider, Heading,
 import React from 'react'
 import { Hairstyle } from './Hairstyle';
 import { Beard } from './Beard';
+import { Eyebrow } from './Eyebrow';
 
 function Items({selectedStyle}) {
   
@@ -54,6 +55,35 @@ function Items({selectedStyle}) {
                 alt="Green double couch with wooden legs"
                 borderRadius="lg"
                 loading="lazy"
+              />
+              <Stack mt="6" spacing="3">
+                <Heading size="md">{item.name}</Heading>
+              </Stack>
+            </CardBody>
+            <Divider />
+            <CardFooter>
+              <ButtonGroup spacing="2">
+                <Button variant="solid" colorScheme="blue">
+                  Try now
+                </Button>
+                <Button variant="ghost" colorScheme="blue">
+                  Add to wishlist
+                </Button>
+              </ButtonGroup>
+            </CardFooter>
+          </Card>
+        ))}
+        {selectedStyle === "EYEBROW" &&
+        Eyebrow.map((item) => (
+          <Card key={item.id} maxW="270px" mt={4} display="inline-block" mr={4}>
+            <CardBody display="flex" flexDirection="column">
+              <Image
+                h="150px"
+                src={item.image}
+                alt="Green double couch with wooden legs"
+                borderRadius="lg"
+                loading="lazy"
+                objectFit='contain'
               />
               <Stack mt="6" spacing="3">
                 <Heading size="md">{item.name}</Heading>
