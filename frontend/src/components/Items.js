@@ -16,7 +16,32 @@ function Items({selectedStyle}) {
       justifyContent='center'
       flexWrap="wrap"
     >
-      {Hairstyle.map((item) => (
+      {selectedStyle === "HAIR STYLE" && Hairstyle.map((item) => (
+        <Card key={item.id} maxW="270px" mt={4} display="inline-block" mr={4}>
+          <CardBody display='flex' flexDirection='column'>
+            <Image h='150px'
+              src={item.image}
+              alt="Green double couch with wooden legs"
+              borderRadius="lg"
+            />
+            <Stack mt="6" spacing="3">
+              <Heading size="md">{item.name}</Heading>
+            </Stack>
+          </CardBody>
+          <Divider />
+          <CardFooter>
+            <ButtonGroup spacing="2">
+              <Button variant="solid" colorScheme="blue">
+                Try now
+              </Button>
+              <Button variant="ghost" colorScheme="blue">
+                Add to wishlist
+              </Button>
+            </ButtonGroup>
+          </CardFooter>
+        </Card>
+      ))}
+      {selectedStyle === "BEARD" && Hairstyle.map((item) => (
         <Card key={item.id} maxW="270px" mt={4} display="inline-block" mr={4}>
           <CardBody display='flex' flexDirection='column'>
             <Image h='150px'
