@@ -16,11 +16,8 @@ function Second({setSelectedStyle}) {
             <Box className='hoverable1' data-name="HAIR STYLE" onClick={handleStyle} p={4} pb={1} w={130} bg='white.600'>
             HAIR STYLE
             </Box>
-            <Box className='hoverable1' data-name="BEARD" onClick={handleStyle} p={4} pb={1} w={130} bg='white.600'>
-            BEARD
-            </Box>
-            <Box className='hoverable1' data-name="MOUSTACHE" onClick={handleStyle} p={4} pb={1} w={130} bg='white.600'>
-            MOUSTACHE
+            <Box className='hoverable1' data-name="BEARD" onClick={handleStyle} p={4} pb={1} w={200} bg='white.600'>
+            BEARD & MOUSTACHE
             </Box>
             <Box className='hoverable1' data-name="EYEBROW" onClick={handleStyle} p={4} pb={1} w={130} bg='white.600'>
             EYEBROW
