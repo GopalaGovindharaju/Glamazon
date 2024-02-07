@@ -1,16 +1,13 @@
 import './App.css';
-import Header from './components/Header';
-import Second from './components/second';
-import Slider from './components/Slider';
+import Home from './components/Home';
+
 
 
 
 function App(props) {
   return (
     <div className="App">
-      <Header/>
-      <Second/>
-      <Slider/>
+      <Home/>
     </div>
   );
 }
