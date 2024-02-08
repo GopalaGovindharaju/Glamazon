@@ -27,7 +27,7 @@ function Lab() {
           <HStack pt={5}>
               <FavoriteIcon style={{ color: "#663620", fontSize: "18px" }} />
               <Text m={0}>Wishlist</Text>
-              <Avatar ml={2} w={50} bg={'brown'} src='https://bit.ly/broken-link' />
+              <Avatar ml={2}  bg={'brown'} src='https://bit.ly/broken-link' />
           </HStack> 
         </Box>
       </Flex>
