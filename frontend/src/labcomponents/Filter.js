@@ -17,7 +17,6 @@ function Filter() {
 
   return (
     <Box
-      border="solid 1px"
       position="fixed"
       left={0}
       bottom={0}
