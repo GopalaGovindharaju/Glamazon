@@ -1,6 +1,10 @@
 import { Box, Button, ButtonGroup, Card, CardBody, CardFooter, Divider, Heading, Image, Stack} from '@chakra-ui/react'
 import React from 'react'
 import { Hairstyle } from './Hairstyle';
+import { Beard } from './Beard';
+import { Haircolor } from './Haircolor';
+import {Eyebrow} from'./Eyebrow';
+
 
 function Items({selectedStyle}) {
   
@@ -41,7 +45,57 @@ function Items({selectedStyle}) {
           </CardFooter>
         </Card>
       ))}
-      {selectedStyle === "BEARD" && Hairstyle.map((item) => (
+      {selectedStyle === "BEARD" && Beard.map((item) => (
+        <Card key={item.id} maxW="270px" mt={4} display="inline-block" mr={4}>
+          <CardBody display='flex' flexDirection='column'>
+            <Image h='150px'
+              src={item.image}
+              alt="Green double couch with wooden legs"
+              borderRadius="lg"
+            />
+            <Stack mt="6" spacing="3">
+              <Heading size="md">{item.name}</Heading>
+            </Stack>
+          </CardBody>
+          <Divider />
+          <CardFooter>
+            <ButtonGroup spacing="2">
+              <Button variant="solid" colorScheme="blue">
+                Try now
+              </Button>
+              <Button variant="ghost" colorScheme="blue">
+                Add to wishlist
+              </Button>
+            </ButtonGroup>
+          </CardFooter>
+        </Card>
+      ))}
+      {selectedStyle === "HAIR COLOR" && Haircolor.map((item) => (
+        <Card key={item.id} maxW="270px" mt={4} display="inline-block" mr={4}>
+          <CardBody display='flex' flexDirection='column'>
+            <Image h='150px'
+              src={item.image}
+              alt="Green double couch with wooden legs"
+              borderRadius="lg"
+            />
+            <Stack mt="6" spacing="3">
+              <Heading size="md">{item.name}</Heading>
+            </Stack>
+          </CardBody>
+          <Divider />
+          <CardFooter>
+            <ButtonGroup spacing="2">
+              <Button variant="solid" colorScheme="blue">
+                Try now
+              </Button>
+              <Button variant="ghost" colorScheme="blue">
+                Add to wishlist
+              </Button>
+            </ButtonGroup>
+          </CardFooter>
+        </Card>
+      ))}
+      {selectedStyle === "EYEBROW" && Eyebrow.map((item) => (
         <Card key={item.id} maxW="270px" mt={4} display="inline-block" mr={4}>
           <CardBody display='flex' flexDirection='column'>
             <Image h='150px'
