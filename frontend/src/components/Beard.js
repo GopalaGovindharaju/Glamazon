@@ -1,93 +1,88 @@
 import Balbo from './Images/beard/Balbo.png'
-import chervron from './Images/beard/chevron.png'
-import chin from './Images/beard/chin-strapp.png'
-import circle from './Images/beard/circle.png'
-import dali from './Images/beard/dali.png'
-import manchu from './Images/beard/fu-manchu.png'
-import full from './Images/beard/full_beard.png'
-import goatee from './Images/beard/goatee.png'
-import handlebar from './Images/beard/handlebar.png'
-import horseshoe from './Images/beard/Horseshoe.png'
-import soulpatch from './Images/beard/soulpatch.png'
-import stubble from './Images/beard/stubble.png'
-import van from './Images/beard/van-dyke.png'
-import walrus from './Images/beard/walrus.png'
-
-
+import Chevron from './Images/beard/chevron.png'
+import Chin from './Images/beard/chin-strapp.png'
+import Circle from './Images/beard/circle.png'
+import Dali from './Images/beard/dali.png'
+import Fu_Manchu from './Images/beard/fu-manchu.png'
+import Full_Beard from './Images/beard/full_beard.png'
+import Goatee from './Images/beard/goatee.png'
+import Handlebar from './Images/beard/handlebar.png'
+import Horseshoe from './Images/beard/Horseshoe.png'
+import Soulpatch from './Images/beard/soulpatch.png'
+import Stubble from './Images/beard/stubble.png'
+import Van_Dyke from './Images/beard/van-dyke.png'
+import Walrus from './Images/beard/walrus.png'
 
 
 export const Beard = [
-  {
-    image: chin,
-    name:"Chin",
-    id:1
-    
-  },
     {
-      image: Balbo,
-      name:"Balbo",
-      id:2
+        id: 1,
+        image: Balbo,
+        name: 'Balbo'
     },
     {
-      image: circle,
-      name:"Circle",
-      id:3
+        id: 2,
+        image: Chevron,
+        name: 'Chevron'
     },
     {
-      image: chervron,
-      name:"Chervron",
-      id:4
-  
+        id: 3,
+        image: Chin,
+        name: 'Chin Strapp'
     },
     {
-      image: dali,
-      name:"Dali",
-      id:5
+        id: 4,
+        image: Circle,
+        name: 'Circle'
     },
     {
-      image: manchu,
-      name:"Fu-Manchu",
-      id:6
+        id: 5,
+        image: Dali,
+        name: 'Dali'
     },
     {
-      image: full,
-      name:"Full-Beard",
-      id:7
+        id: 6,
+        image: Fu_Manchu,
+        name: 'Fu-Manchu'
     },
     {
-      image: goatee,
-      name:"Goatee",
-      id:8
+        id: 7,
+        image: Full_Beard,
+        name: 'Full Beard'
     },
     {
-      image: handlebar,
-      name:"Handlebar",
-      id:9
+        id: 8,
+        image: Goatee,
+        name: 'Goatee'
     },
     {
-      image: horseshoe,
-      name:"Horseshoe",
-      id:10
+        id: 9,
+        image: Handlebar,
+        name: 'Handlebar'
     },
     {
-      image: soulpatch,
-      name:"Soulpatch",
-      id:11
+        id: 10,
+        image: Horseshoe,
+        name: 'Horseshoe'
     },
     {
-      image: stubble,
-      name:"Stubble",
-      id:12
+        id: 11,
+        image: Soulpatch,
+        name: 'Soulpatch'
     },
     {
-      image: van,
-      name:"Van-Dyke",
-      id:13
+        id: 12,
+        image: Stubble,
+        name: 'Stubble'
     },
     {
-      image: walrus,
-      name:"Walrus",
-      id:14
+        id: 13,
+        image: Van_Dyke,
+        name: 'Van Dyke'
     },
-    
-  ];
+    {
+        id: 14,
+        image: Walrus,
+        name: 'Walrus'
+    }
+]

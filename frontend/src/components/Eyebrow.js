@@ -1,58 +1,63 @@
 import Arched from './Images/Eyebrow/arched-eyebrow.png'
-import Hard_angled from './Images/Eyebrow/Hard-angled_eyebrow.png'
+import Hard_Angled from './Images/Eyebrow/Hard-angled_eyebrow.png'
 import Ombre from './Images/Eyebrow/ombre-eyebrow.png'
-import S_shaped from './Images/Eyebrow/s-shaped_eyebrow.png'
-import Soft_angled from './Images/Eyebrow/soft-angled_eyebrow.png'
-import Stright from './Images/Eyebrow/straight_eyebrow.png'
+import S_Shaped from './Images/Eyebrow/s-shaped_eyebrow.png'
+import Soft_Angled from './Images/Eyebrow/soft-angled_eyebrow.png'
+import Straight from './Images/Eyebrow/straight_eyebrow.png'
 import Tapered from './Images/Eyebrow/tapered-eyebrow.png'
 import Thick from './Images/Eyebrow/thick-eyebrow.png'
+import Thin from './Images/Eyebrow/thin-eyebrow.png'
 
-
-
-
-export const Beard = [
-  {
-    image: Arched,
-    name:"Arched",
-    id:1
-    
-  },
+export const Eyebrow = [
     {
-      image: Hard_angled,
-      name:"Hard_angled",
-      id:2
+        id: 1,
+        name: 'Arched',
+        image: Arched
     },
     {
-      image: Ombre,
-      name:"Ombre",
-      id:3
+        id: 2,
+        name: 'Hard Angled',
+        image: Hard_Angled
     },
     {
-      image: S_shaped,
-      name:"S Shaped",
-      id:4
-  
+        id: 3,
+        name: 'Ombre',
+        image: Ombre
     },
     {
-      image: Soft_angled,
-      name:"Soft Angled",
-      id:5
+        id: 4,
+        name: 'S-Shaped',
+        image: S_Shaped
     },
     {
-      image: Stright,
-      name:"Stright",
-      id:6
+        id: 5,
+        name: 'Soft Angled',
+        image: Soft_Angled
     },
     {
-      image: Tapered,
-      name:"Tapered",
-      id:7
+        id: 6,
+        name: 'Straight',
+        image: Straight
     },
     {
-      image: Thick,
-      name:"Thick",
-      id:8
+        id: 7,
+        name: 'Tapered',
+        image: Tapered
     },
-   
-    
-  ];
+    {
+        id: 8,
+        name: 'Thick',
+        image: Thick
+    },
+    {
+        id: 9,
+        name: 'Thin',
+        image: Thin
+    },
+    //for presentation
+    {
+        id: 10,
+        name: 'S-Shaped',
+        image: S_Shaped
+    },
+]

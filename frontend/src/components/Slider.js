@@ -66,7 +66,7 @@ function Slider() {
       >
         {SlideData.map((slide, index) => (
           <Box key={index} w='100%' h='514px' position="relative">
-          <Image boxSize='100%' objectFit='fill' src={slide.image} />
+          <Image boxSize='100%' objectFit='fill' src={slide.image} loading='lazy'/>
           <Button position="absolute" top="80%" left="50%" transform="translate(-50%, -50%)" bg='transparent' border="1px solid">EXPLORE</Button>
         </Box>        
         ))}
