@@ -39,7 +39,7 @@ function Slider() {
       >
         {SlideData.map((slide, index) => (
           <Box key={index} w='100%' h='514px' position="relative">
-            <Button position="absolute" top={400} left={582} bg='transparent' border="1px solid" >EXPLORE</Button>
+            <Button position="absolute" top={400} left={730} bg='transparent' border="1px solid" >EXPLORE</Button>
             <Image boxSize='100%' objectFit='cover' src={slide.image} />
           </Box>
         ))}
