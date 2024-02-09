@@ -3,7 +3,6 @@ import React from 'react'
 import Filter from './Filter'
 import logo from '../images/glamazon-logo.png'
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import { brown } from '@mui/material/colors';
 
 function Lab() {
   return (

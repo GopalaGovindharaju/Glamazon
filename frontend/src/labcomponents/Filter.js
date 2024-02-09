@@ -1,7 +1,7 @@
-import { Box, Checkbox, Radio, RadioGroup, Stack, Text, VStack, calc} from '@chakra-ui/react'
+import { Box, Checkbox, Radio, RadioGroup, Stack, Text, VStack} from '@chakra-ui/react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMars, faVenus } from '@fortawesome/free-solid-svg-icons';
-import React from 'react'
+import { faMars, faStar, faStarAndCrescent, faStarHalf, faStarHalfAlt, faStarHalfStroke, faStarOfLife, faVenus } from '@fortawesome/free-solid-svg-icons';
+import React, { useState } from 'react'
 
 function Filter() {
 
@@ -13,7 +13,8 @@ function Filter() {
       fontSize: "14px",
     };
 
-    const [value, setValue] = React.useState('all')
+    const [value, setValue] = useState('all')
+    const [ratingValue, setRatingValue] = useState('')
 
   return (
     <Box
@@ -70,6 +71,20 @@ function Filter() {
           Elegant/Timeless Grooming
           </Checkbox>
         </VStack>
+      </Box>
+      <Box pb={7}>
+        <Box display='flex'>
+        <Text style={text_css}>RATINGS</Text>
+        </Box>
+        <RadioGroup onChange={setRatingValue} value={ratingValue}>
+      <Stack direction='column'>
+        <Radio value='1' colorScheme="yellow" fontFamily="LKFuturaStd">5+ ratings</Radio>
+        <Radio value='2' colorScheme="yellow" fontFamily="LKFuturaStd">4+ ratings</Radio>
+        <Radio value='3' colorScheme="yellow" fontFamily="LKFuturaStd">3+ ratings</Radio>
+        <Radio value='4' colorScheme="yellow" fontFamily="LKFuturaStd">2+ ratings</Radio>
+        <Radio value='5' colorScheme="yellow" fontFamily="LKFuturaStd">1+ ratings</Radio>
+      </Stack>
+    </RadioGroup>
       </Box>
     </Box>
   );
