@@ -1,6 +1,7 @@
 import { Box, Flex, Image, Spacer, Input, Text, HStack, Button} from '@chakra-ui/react';
 import React from 'react';
 import logo from '../images/glamazon-logo.png';
+
 import FavoriteIcon from '@mui/icons-material/Favorite';
 
 function Header() {

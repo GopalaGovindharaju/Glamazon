@@ -7,6 +7,8 @@
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
+    "@fortawesome/free-solid-svg-icons": "^6.5.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@mui/icons-material": "^5.15.6",
     "@mui/material": "^5.15.6",
     "@testing-library/jest-dom": "^5.17.0",
@@ -17,6 +19,7 @@
     "hero-slider": "^3.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-lazy-load-image-component": "^1.6.0",
     "react-responsive-carousel": "^3.2.23",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
