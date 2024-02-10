@@ -1,7 +1,7 @@
 import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import { Box, Button, Image } from '@chakra-ui/react';
+import { Box, Button, Image, Text } from '@chakra-ui/react';
 import '../CSS/Slider.css';
 import Hairstyle from './Images/Hairstyles.jpg'
 import Haircolor from './Images/Haircolors.jpg'
@@ -67,6 +67,7 @@ function Slider() {
         {SlideData.map((slide, index) => (
           <Box key={index} w='100%' h='514px' position="relative">
           <Image boxSize='100%' objectFit='fill' src={slide.image} loading='lazy'/>
+            <Text position='absolute' top='50%' left='30%' style={{fontSize: '2rem'}}>Life is too short to have boring Hairstyle<br/>Try various Hairstyles by Clicking EXPLORE</Text>
           <Button position="absolute" top="80%" left="50%" transform="translate(-50%, -50%)" bg='transparent' border="1px solid">EXPLORE</Button>
         </Box>        
         ))}
