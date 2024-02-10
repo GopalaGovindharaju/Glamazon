@@ -4,7 +4,7 @@ import { Hairstyle } from './Hairstyle';
 import { Beard } from './Beard';
 import { Eyebrow } from './Eyebrow';
 import { LipColor } from './Lipcolor';
-import { HairColor } from './Haircolor';
+import { HairColor } from './HairColor';
 
 function Items({selectedStyle}) {
   
