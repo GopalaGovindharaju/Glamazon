@@ -1,6 +1,6 @@
 import { Box, Checkbox, Radio, RadioGroup, Stack, Text, VStack} from '@chakra-ui/react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMars, faStar, faStarAndCrescent, faStarHalf, faStarHalfAlt, faStarHalfStroke, faStarOfLife, faVenus } from '@fortawesome/free-solid-svg-icons';
+import { faMars, faVenus } from '@fortawesome/free-solid-svg-icons';
 import React, { useState } from 'react'
 
 function Filter() {
@@ -21,11 +21,12 @@ function Filter() {
       position="fixed"
       left={0}
       bottom={0}
-      top="15%"
-      right="80%"
+      top="14%"
+      right="83%"
       py={2}
       px={4}
       bg='rgb(251, 249, 247)'
+      zIndex={9}
     >
       <Box display="flex" pb={7}>
         <Checkbox colorScheme="yellow" defaultChecked fontFamily="LKFuturaStd">
