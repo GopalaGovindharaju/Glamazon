@@ -161,6 +161,7 @@ function Items({selectedStyle}) {
               </ButtonGroup>
             </CardFooter>
           </Card>
+          
         ))}
     </Box>
   );
