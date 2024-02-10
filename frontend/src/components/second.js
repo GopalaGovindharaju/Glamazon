@@ -27,8 +27,6 @@ function Second({setSelectedStyle}) {
             </Box>
             </HStack>
         </Flex>
-
-
       </div>
   );
 }

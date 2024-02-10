@@ -1,7 +1,8 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Home from './components/Home';
-//import Lab from './labcomponents/Lab';
 import ThreeDtry from './components/ThreeDtry';
+import Lab from './labcomponents/Lab';
 
 
 
@@ -9,7 +10,12 @@ import ThreeDtry from './components/ThreeDtry';
 function App(props) {
   return (
     <div className="App">
-      <ThreeDtry/>
+      <BrowserRouter>
+      <Routes>
+        <Route path="*" element={<Home />} />
+        <Route path="/lab" element={<Lab />} />
+      </Routes>
+      </BrowserRouter>
     </div>
   );
 }

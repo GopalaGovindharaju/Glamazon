@@ -3,8 +3,16 @@ import React from 'react';
 import logo from '../images/glamazon-logo.png';
 
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import ThreeDtry from './ThreeDtry';
+import { useNavigate } from 'react-router-dom';
 
 function Header() {
+
+  const navigate = useNavigate();
+  const handle3DTryOn = () => {
+    navigate('/lab');
+  }
+
   return (
     <div>
       <Flex px={4} py={4}>
@@ -40,7 +48,7 @@ function Header() {
               <FavoriteIcon style={{ color: "#663620", fontSize: "18px" }} />
               <Text m={0}>Wishlist</Text>
             </HStack>
-            <Button color='#663620' _hover={{ bg: '#663620', color:'white', transition:'0.4s' }} variant='ghost'>3D TRY ON</Button>
+            <Button color='#663620' _hover={{ bg: '#663620', color:'white', transition:'0.4s' }} variant='ghost' onClick={handle3DTryOn}>3D TRY ON</Button>
           </HStack>
         </Box>
       </Flex>
