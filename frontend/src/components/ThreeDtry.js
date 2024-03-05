@@ -62,6 +62,7 @@ const ThreeDtry = ({setCloseSnap, setSnapedImage} ) => {
       bg="none"
       backdropFilter="auto"
       backdropBlur="2px"
+      
     >
       <Box
         position="relative"
