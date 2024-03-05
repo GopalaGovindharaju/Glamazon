@@ -51,7 +51,7 @@ const ThreeDtry = ({setCloseSnap, setSnapedImage} ) => {
       videoRef.current.srcObject.getTracks().forEach(track => track.stop());
     }
   };
-
+  
   return (
     <>
     <Box
