@@ -79,11 +79,11 @@ const ThreeDtry = ({setCloseSnap, setSnapedImage} ) => {
         />
         <Box
           position="absolute"
-          top="50%"
+          top="45%"
           left="50%"
           transform="translate(-50%, -50%)"
-          w="40%"
-          h="90%"
+          w="30%"
+          h="70%"
           bg="transparent"
           borderRadius="50%"
           border="2px dashed white"
