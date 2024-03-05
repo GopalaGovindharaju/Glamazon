@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Filter from './Filter'
 import ThreeDtry from '../components/ThreeDtry';
 import LabHeader from './LabHeader';
 import StyledItems from './StyledItems';
+import axios from 'axios';
 
 function Lab() {
   const [closeSnap, setCloseSnap] = useState(true);
