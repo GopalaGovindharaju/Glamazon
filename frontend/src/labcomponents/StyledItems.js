@@ -2,6 +2,7 @@ import { Box, Button, ButtonGroup, Card, CardBody, CardFooter, Divider, Heading,
 import axios from 'axios';
 import React, { useEffect } from 'react'
 
+
 function StyledItems({snapedImage}) {
   console.log(snapedImage)
   useEffect(() => {
@@ -50,7 +51,17 @@ function StyledItems({snapedImage}) {
       justifyContent="space-evenly"
       flexWrap="wrap"
     >
-      
+    
+      <Box className='col-6' >
+      <Image src='D:/glamazon/Glamazon/backend/output_image_1.png' alt='Dan Abramov' />
+      </Box>
+      <Box className='col-6'>
+      <Image src='D:/glamazon/Glamazon/backend/output_image_1.png' alt='Dan Abramov' />
+      </Box>
+
+
+
+   
      {/*
      {Array.from({ length: 10 }).map((_, index) => (
         <Card key={index} maxW="270px" mt={4} display="inline-block" mr={4}>
