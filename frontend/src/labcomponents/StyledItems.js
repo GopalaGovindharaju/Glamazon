@@ -3,28 +3,55 @@ import axios from 'axios';
 import React, { useEffect } from 'react'
 
 function StyledItems({snapedImage}) {
-
+  console.log(snapedImage)
   useEffect(() => {
-    axios.post('http://127.0.0.1:8000/faceshape/', { image: snapedImage })
-        .then(response => {
-            // Handle the response from the backend
-            console.log(response.data);
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
-  }, [snapedImage])
+    // Convert base64 image data to a File object
+    
+    const base64ToBlob = (base64) => {
+      const parts = base64.split(';base64,');
+      const contentType = parts[0].split(':')[1];
+      const raw = window.atob(parts[1]);
+      const blobArray = new Uint8Array(new ArrayBuffer(raw.length));
+
+      for (let i = 0; i < raw.length; i++) {
+        blobArray[i] = raw.charCodeAt(i);
+      }
+
+      return new Blob([blobArray], { type: contentType });
+    };
+
+    
+    const file = snapedImage instanceof File ? snapedImage : base64ToBlob(snapedImage);
+    
+    // Create FormData and append the file
+    const formData = new FormData();
+    formData.append('username', 'gops');
+    formData.append('original_image', file, 'original_image.jpeg');
+
+    console.log(formData);
+
+    /* axios.post('http://127.0.0.1:8000/hairstyle/getFilteredHairstyle/', formData)
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error)
+      })*/
+  }, [snapedImage]);
   return (
+    <>
     <Box
       pt="7%"
-      pl="21%"
+      pl="17%"
       display="flex"
       border="1px"
-      height="100vh"
+      height="calc(100vh - 40vh)"
       overflow="auto"
       justifyContent="space-evenly"
       flexWrap="wrap"
     >
+      
+     {/*
      {Array.from({ length: 10 }).map((_, index) => (
         <Card key={index} maxW="270px" mt={4} display="inline-block" mr={4}>
           <CardBody display="flex" flexDirection="column">
@@ -50,8 +77,21 @@ function StyledItems({snapedImage}) {
             </ButtonGroup>
           </CardFooter>
         </Card>
-      ))}
+      ))} 
+     */}
     </Box>
+    <Box
+      display="flex"
+      border="1px"
+      overflow="auto"
+      height='40vh'
+      pl='17%'
+      justifyContent="space-evenly"
+      flexWrap="wrap"
+    >
+
+    </Box>
+    </>
   );
 }
 

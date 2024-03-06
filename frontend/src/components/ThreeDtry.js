@@ -42,7 +42,7 @@ const ThreeDtry = ({setCloseSnap, setSnapedImage} ) => {
     canvas.height = videoRef.current.videoHeight;
     const ctx = canvas.getContext('2d');
     ctx.drawImage(videoRef.current, 0, 0, canvas.width, canvas.height);
-    const snapshotURL = canvas.toDataURL('image/png');
+    const snapshotURL = canvas.toDataURL('image/jpeg');
 
     // Set the snapshot in state
     setSnapedImage(snapshotURL);
@@ -51,6 +51,7 @@ const ThreeDtry = ({setCloseSnap, setSnapedImage} ) => {
       videoRef.current.srcObject.getTracks().forEach(track => track.stop());
     }
   };
+  
   
   return (
     <>
