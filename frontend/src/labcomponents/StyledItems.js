@@ -42,21 +42,20 @@ function StyledItems({snapedImage}) {
   return (
     <>
     <Box
-      pt="7%"
+      pt="6.2%"
       pl="17%"
       display="flex"
       border="1px"
       height="calc(100vh - 40vh)"
       overflow="auto"
-      justifyContent="space-evenly"
       flexWrap="wrap"
+      alignContent='stretch'
     >
-    
-      <Box className='col-6' >
-      <Image src='D:/glamazon/Glamazon/backend/output_image_1.png' alt='Dan Abramov' />
+      <Box  border='1px solid black' className='col-6' >
+      <Image pt={2} objectFit='contain' w='100%' height="calc(100vh - 55vh)" src={require('../images/girl.jpg')} alt='Dan Abramov' />
       </Box>
-      <Box className='col-6'>
-      <Image src='D:/glamazon/Glamazon/backend/output_image_1.png' alt='Dan Abramov' />
+      <Box  className='col-6' border='1px solid black'>
+      <Image pt={2} objectFit='contain' w='100%' height="calc(100vh - 55vh)" src={require('../images/girl.jpg')} alt='Dan Abramov' />
       </Box>
 
 
