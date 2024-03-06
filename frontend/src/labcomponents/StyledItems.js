@@ -3,8 +3,10 @@ import axios from 'axios';
 import React, { useEffect } from 'react'
 
 function StyledItems({snapedImage}) {
+  console.log(snapedImage)
   useEffect(() => {
     // Convert base64 image data to a File object
+    
     const base64ToBlob = (base64) => {
       const parts = base64.split(';base64,');
       const contentType = parts[0].split(':')[1];
@@ -18,7 +20,8 @@ function StyledItems({snapedImage}) {
       return new Blob([blobArray], { type: contentType });
     };
 
-    const file = base64ToBlob(snapedImage);
+    
+    const file = snapedImage instanceof File ? snapedImage : base64ToBlob(snapedImage);
     
     // Create FormData and append the file
     const formData = new FormData();
@@ -36,16 +39,19 @@ function StyledItems({snapedImage}) {
       })*/
   }, [snapedImage]);
   return (
+    <>
     <Box
       pt="7%"
-      pl="21%"
+      pl="17%"
       display="flex"
       border="1px"
-      height="100vh"
+      height="calc(100vh - 40vh)"
       overflow="auto"
       justifyContent="space-evenly"
       flexWrap="wrap"
     >
+      
+     {/*
      {Array.from({ length: 10 }).map((_, index) => (
         <Card key={index} maxW="270px" mt={4} display="inline-block" mr={4}>
           <CardBody display="flex" flexDirection="column">
@@ -71,8 +77,21 @@ function StyledItems({snapedImage}) {
             </ButtonGroup>
           </CardFooter>
         </Card>
-      ))}
+      ))} 
+     */}
     </Box>
+    <Box
+      display="flex"
+      border="1px"
+      overflow="auto"
+      height='40vh'
+      pl='17%'
+      justifyContent="space-evenly"
+      flexWrap="wrap"
+    >
+
+    </Box>
+    </>
   );
 }
 
