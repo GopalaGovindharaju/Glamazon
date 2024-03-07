@@ -1,6 +1,7 @@
 import { Box, Button, ButtonGroup, Card, CardBody, CardFooter, Divider, Heading, Image, Stack } from '@chakra-ui/react'
 import axios from 'axios';
 import React, { useEffect } from 'react'
+import { Hairstyle } from '../components/Hairstyle';
 
 
 function StyledItems({snapedImage}) {
@@ -99,21 +100,22 @@ function StyledItems({snapedImage}) {
       flexDirection='row'
       pl='17%'
     >
-{Array.from({ length: 10 }).map((_, index) => (
+{Hairstyle.map((item, index) => (
         <Card key={index} h='auto' minW="270px" my={2} mr={4}>
           <CardBody display="flex" pb={0} flexDirection="column">
             <Image
               h="100%"
-              src={snapedImage}
+              src={item.image}
               borderRadius="lg"
               loading="lazy"
             />
             <Stack mt="2" spacing="3">
-              <Heading size="md">sample</Heading>
+              <Heading size="md">{item.name}</Heading>
             </Stack>
           </CardBody>
         </Card>
-      ))} 
+))
+}
     </Box>
     </>
   );
