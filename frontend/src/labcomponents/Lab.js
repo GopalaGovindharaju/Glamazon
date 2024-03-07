@@ -10,6 +10,7 @@ function Lab() {
   const [snapedImage, setSnapedImage] = useState(null);
   const [userchoice, setUserChoice] = useState(false);
   const [closeChooseFile, setCloseChooseFile] = useState(true);
+
   console.log(snapedImage);
 
   return (
@@ -24,14 +25,14 @@ function Lab() {
               setSnapedImage={setSnapedImage}
             />
           ) : (
-            <StyledItems snapedImage={snapedImage} />
+            <StyledItems snapedImage={snapedImage}/>
           )}
         </>
       ) : (
         closeChooseFile ? (
           <Selection setSnapedImage={setSnapedImage} setUserChoice={setUserChoice} setCloseChooseFile={setCloseChooseFile}/>
         ) : (
-          <StyledItems snapedImage={snapedImage} />
+          <StyledItems snapedImage={snapedImage}/>
         )
       )}
     </div>
