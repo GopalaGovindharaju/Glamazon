@@ -50,7 +50,7 @@ def getFilteredHairstyle(request):
                         time.sleep(5)
                     elif task_status == 0:
                         # The task is queued
-                        print("The task is queued. Waiting for 5 seconds before querying again.")
+                        print("The task is queued. Waiting for 5 seconds before querying agains.")
                         time.sleep(5)
                     else:
                         # Task failed
@@ -90,7 +90,7 @@ def getFilteredHairstyle(request):
         if Original_Image:
             image_data = Original_Image.read()
             url = "https://www.ailabapi.com/api/portrait/effects/hairstyle-editor-pro"
-            api_key = 'Msk9p5dS6NIPAwbBm1voukh0z3REENFLZnQcHSjyv0uDictWxdxTirV24fWlgOhP'
+            api_key = 'iezW2uNgHB9AOqS3nTSseClXFD5ybLKUbQtE8fBpRzjtWqMw7XfIlKdVx9RPJpai'
             headers = {'ailabapi-api-key': api_key}
 
             files = {'image': (Original_Image.name, image_data, Original_Image.content_type)}
@@ -98,8 +98,8 @@ def getFilteredHairstyle(request):
 
             payload = {
                 'task_type': 'async',
-                'hair_style': 'BuzzCut',
-                'color': 'black',
+                'hair_style': 'UnderCut',
+                'color': 'brown',
             }
 
             response = requests.post(url, headers=headers, data=payload, files=files)

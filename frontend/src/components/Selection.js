@@ -1,16 +1,41 @@
-import React,{useState} from 'react';
 import { Box, Input, Button, Flex } from '@chakra-ui/react';
-import ThreeDtry from './ThreeDtry';
-import Lab from '../labcomponents/Lab';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCloudArrowUp } from '@fortawesome/free-solid-svg-icons';
 
 function Selection({setUserChoice, setSnapedImage, setCloseChooseFile}) {
   const handleFileChange = (event) => {
     const selectedFile = event.target.files[0];
-    console.log(selectedFile)
-    setSnapedImage(selectedFile);
-    setCloseChooseFile(false);
+  
+    if (selectedFile) {
+      const reader = new FileReader();
+  
+      reader.onload = (e) => {
+        const base64Data = e.target.result;
+  
+        // Create an Image object
+        const img = new Image();
+        img.src = base64Data;
+  
+        // Wait for the image to load
+        img.onload = () => {
+          // Create a canvas and draw the image on it
+          const canvas = document.createElement('canvas');
+          const ctx = canvas.getContext('2d');
+          canvas.width = img.width;
+          canvas.height = img.height;
+          ctx.drawImage(img, 0, 0);
+  
+          // Convert canvas content to a data URL (JPEG format)
+          const jpegDataURL = canvas.toDataURL('image/jpeg');
+  
+          // Set the converted JPEG data URL in the state
+          setSnapedImage(jpegDataURL);
+          setCloseChooseFile(false);
+        };
+      };
+  
+      reader.readAsDataURL(selectedFile);
+    }
   };
 
   const handlingchoice=()=>{
