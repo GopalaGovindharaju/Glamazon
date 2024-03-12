@@ -30,8 +30,6 @@ import FishtailBraid from './Images/Hairstyle/FishtailBraid.png'
 import LongCurly from './Images/Hairstyle/LongCurly.png'
 import LongStraight from './Images/Hairstyle/LongStraight.png'
 import LongWavy from './Images/Hairstyle/LongWavy.png'
-import Pixie from './Images/Hairstyle/Pixie.png'
-import Ponytail from './Images/Hairstyle/Ponytail.png'
 import ShortCurlyPixie from './Images/Hairstyle/ShortCurlyPixie.png'
 import ShortNeatBob from './Images/Hairstyle/ShortNeatBob.png'
 import ShortPixieWithShavedSides from './Images/Hairstyle/ShortPixieWithShavedSides.png'
@@ -48,77 +46,71 @@ import Loose from './Images/Hairstyle/Loose.png'
 import LongTwintails from './Images/Hairstyle/LongTwintails.png'
 import LongHimeCut from './Images/Hairstyle/LongHimeCut.png'
 
-
-
-
-
-
-
 export const Hairstyle = [
   {
     image: Afro,
     name:"Afro hair",
-    id:Afro,
+    id:"Afro",
     gender:'male'
   },
     {
       image: BuzzCut,
       name:"Buzz Cut hair",
-      id:BuzzCut,
+      id:"BuzzCut",
       gender:'male'
     },
     {
       image: BluntBowlCut,
       name:"Blunt Bowl Cut",
-      id:BluntBowlCut,
+      id:"BluntBowlCut",
       gender:'male'
     },
     {
       image: CombOver,
       name:"Comb-over hair",
-      id:CombOver,
+      id:"CombOver",
       gender:'male'
     },
     {
       image: CurlyShage,
       name:"Curly Shag hair",
-      id:CurlyShage,
+      id:"CurlyShage",
       gender:'male'
     },
     {
       image: CornrowBraids,
       name:"Cornrow Braids hair",
-      id:CornrowBraids,
+      id:"CornrowBraids",
       gender:'male'
     },
     {
       image: FauxHawk,
       name:"Faux Hawk hair",
-      id:FauxHawk,
+      id:"FauxHawk",
       gender:'male'
     },
     {
       image: HighTightFade,
       name:"High and Tight Fade hair",
-      id:HighTightFade,
+      id:"HighTightFade",
       gender:'male'
     },
     {
       image: LowFade,
       name:"Low Fade hair",
-      id:LowFade,
+      id:"LowFade",
       gender:'male'
     },
     {
       image: LongHairTiedUp,
       name:"Long Hair Tied Up Hair ",
-      id:LongHairTiedUp	,
+      id:"LongHairTiedUp"	,
       gender:'male'
     },
     {
       image: LongWavyCurtainBangs,
       name:"Long Wavy Curtain Bangs Hair",
-      id:LongWavyCurtainBangs,
+      id:"LongWavyCurtainBangs",
       gender:'male'
     },
    
@@ -289,18 +281,6 @@ export const Hairstyle = [
       image: LongHimeCut,
       name:"LongHimeCut",
       id:41,
-      gender:'female'
-    },
-    {
-      image: Pixie,
-      name:"Pixie",
-      id:42,
-      gender:'female'
-    },
-    {
-      image: Ponytail,
-      name:"Ponytail",
-      id:43,
       gender:'female'
     },
     {
