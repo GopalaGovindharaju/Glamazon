@@ -96,12 +96,7 @@ export const Hairstyle = [
       id:'CornrowBraids',
       gender:'male'
     },
-    {
-      image: SlickedBack,
-      name:"SlickedBack",
-      id:'SlickedBack ',
-      gender:'male'
-    },
+    
     {
       image: FauxHawk,
       name:"Faux Hawk hair",
@@ -158,7 +153,12 @@ export const Hairstyle = [
       id:'Pompadour',
       gender:'male'
     },
-   
+    {
+      image: SlickBack,
+      name:"SlickBack",
+      id:'SlickBack',
+      gender:'male'
+    },
     {
       image: Spiky,
       name:"Spiky",
@@ -192,12 +192,7 @@ export const Hairstyle = [
       id:'UnderCut',
       gender:'male'
     },
-    {
-      image: SlickBack,
-      name:"SlickBack",
-      id:'SlickBack',
-      gender:'male'
-    },
+  
     {
       image: SidePartCombOverHairstyleWithHighFade,
       name:"SidePartCombOverHairstyleWithHighFade",
@@ -340,7 +335,12 @@ export const Hairstyle = [
       id:'ShoulderLengthHair',
       gender:'female'
     },
-    
+    {
+      image: SlickedBack,
+      name:"SlickedBack",
+      id:'SlickedBack ',
+      gender:'female'
+    },
 
     {
       image: Spiked,
@@ -354,7 +354,13 @@ export const Hairstyle = [
       id:'StackedCurlsInShortBob',
       gender:'female'
     },
-    
+    {
+      image: SidePartCombOverHairstyleWithHighFade,
+      name:"SidePartCombOverHairstyleWithHighFade",
+      id:'SidePartCombOverHairstyleWithHighFade',
+      gender:'female'
+    },
+  
     {
       image: TwinBraids,
       name:"TwinBraids",
