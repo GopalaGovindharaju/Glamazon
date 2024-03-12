@@ -18,6 +18,12 @@ import Spiky from './Images/Hairstyle/Spiky.png'
 import TexturedFringe from './Images/Hairstyle/TexturedFringe.png'
 import UndercutLongHair from './Images/Hairstyle/UndercutLongHair.png'
 import WavyShag from './Images/Hairstyle/WavyShag.png'
+import SlickedBack from './Images/Hairstyle/SlickedBack.png'
+import UnderCut from './Images/Hairstyle/UnderCut.png'
+import SlickBack from './Images/Hairstyle/SlickBack.png'
+import SidePartCombOverHairstyleWithHighFade from './Images/Hairstyle/SidePartCombOverHairstyleWithHighFade.png'
+
+
 
 import Bobcut from './Images/Hairstyle/Bobcut.png'
 import bowlCut from './Images/Hairstyle/bowlCut.png'
@@ -35,7 +41,6 @@ import ShortNeatBob from './Images/Hairstyle/ShortNeatBob.png'
 import ShortPixieWithShavedSides from './Images/Hairstyle/ShortPixieWithShavedSides.png'
 import ShortTwintails from './Images/Hairstyle/ShortTwintails.png'
 import ShoulderLengthHair from './Images/Hairstyle/ShoulderLengthHair.png'
-
 import Spiked from './Images/Hairstyle/Spiked.png'
 import StackedCurlsInShortBob from './Images/Hairstyle/StackedCurlsInShortBob.png'
 import TwinBraids from './Images/Hairstyle/TwinBraids.png'
@@ -50,49 +55,50 @@ export const Hairstyle = [
   {
     image: Afro,
     name:"Afro hair",
-    id:"Afro",
+    id:'Afro',
     gender:'male'
   },
     {
       image: BuzzCut,
       name:"Buzz Cut hair",
-      id:"BuzzCut",
+      id:'BuzzCut',
       gender:'male'
     },
     {
       image: BluntBowlCut,
       name:"Blunt Bowl Cut",
-      id:"BluntBowlCut",
+      id:'BluntBowlCut',
       gender:'male'
     },
     {
       image: CombOver,
       name:"Comb-over hair",
-      id:"CombOver",
+      id:'CombOver',
       gender:'male'
     },
     {
       image: CurlyShage,
       name:"Curly Shag hair",
-      id:"CurlyShage",
+      id:'CurlyShage',
       gender:'male'
     },
     {
       image: CornrowBraids,
       name:"Cornrow Braids hair",
-      id:"CornrowBraids",
+      id:'CornrowBraids',
       gender:'male'
     },
+    
     {
       image: FauxHawk,
       name:"Faux Hawk hair",
-      id:"FauxHawk",
+      id:'FauxHawk',
       gender:'male'
     },
     {
       image: HighTightFade,
       name:"High and Tight Fade hair",
-      id:"HighTightFade",
+      id:'HighTightFade',
       gender:'male'
     },
     {
@@ -104,92 +110,88 @@ export const Hairstyle = [
     {
       image: LongHairTiedUp,
       name:"Long Hair Tied Up Hair ",
-      id:"LongHairTiedUp"	,
+      id:'LongHairTiedUp'	,
       gender:'male'
     },
     {
       image: LongWavyCurtainBangs,
       name:"Long Wavy Curtain Bangs Hair",
-      id:"LongWavyCurtainBangs",
+      id:'LongWavyCurtainBangs',
       gender:'male'
     },
    
     {
       image: ManBun,
-      name:"ManBun",
-      id:12,
+      name:"Man Bun hair",
+      id:'ManBun',
       gender:'male'
     },
    
     {
       image: MessyTousled,
       name:"MessyTousled",
-      id:14,
+      id:'MessyTousled',
       gender:'male'
     },
     {
       image: Middleparted,
       name:"Middleparted",
-      id:15,
+      id:'Middle-parted',
       gender:'male'
     },
     {
       image: Pompadour,
       name:"Pompadour",
-      id:16,
+      id:'Pompadour',
       gender:'male'
     },
-   
+    {
+      image: SlickBack,
+      name:"SlickBack",
+      id:'SlickBack',
+      gender:'male'
+    },
     {
       image: Spiky,
       name:"Spiky",
-      id:18,
+      id:'Spiky',
       gender:'male'
     },
     {
       image: TexturedFringe,
       name:"TexturedFringe",
-      id:19,
+      id:'TexturedFringe',
       gender:'male'
     },
    
-    {
-      image: TexturedFringe,
-      name:"TexturedFringe",
-      id:21,
-      gender:'male'
-    },
+   
     {
       image: UndercutLongHair,
       name:"UndercutLongHair",
-      id:22,
+      id:'UndercutLongHair',
       gender:'male'
     },
     {
       image: WavyShag,
       name:"WavyShag",
-      id:23,
+      id:'WavyShag',
       gender:'male'
     },
    
     {
-      image: UndercutLongHair,
-      name:"UndercutLongHair",
-      id:25,
+      image: UnderCut,
+      name:"UnderCut",
+      id:'UnderCut',
       gender:'male'
     },
+  
     {
-      image: UndercutLongHair,
-      name:"UndercutLongHair",
-      id:26,
+      image: SidePartCombOverHairstyleWithHighFade,
+      name:"SidePartCombOverHairstyleWithHighFade",
+      id:'SidePartCombOverHairstyleWithHighFade',
       gender:'male'
     },
-    {
-      image: UndercutLongHair,
-      name:"UndercutLongHair",
-      id:27,
-      gender:'male'
-    },
+  
 
 
     
@@ -201,156 +203,167 @@ export const Hairstyle = [
     {
       image: Bobcut,
       name:"Bobcut",
-      id:28,
+      id:'BobCut',
       gender:'female'
     },
     {
       image: bowlCut,
       name:"bowlCut",
-      id:29,
+      id:'bowlCut',
       gender:'female'
     },
     
     {
       image: Chignon,
       name:"Chignon",
-      id:30,
+      id:'Chignon',
       gender:'female'
     },
     {
       image: Cornrows,
       name:"Cornrows",
-      id:31,
+      id:'Cornrows',
       gender:'female'
     },
     {
       image: CurlyBob,
       name:"CurlyBob",
-      id:32,
+      id:'CurlyBob',
       gender:'female'
     },
     {
       image: DoubleBun,
       name:"DoubleBun",
-      id:33,
+      id:'DoubleBun',
       gender:'female'
     },
     {
       image: Dreadlocks,
       name:"Dreadlocks",
-      id:34,
+      id:'Dreadlocks',
       gender:'female'
     },
     {
       image: FishtailBraid,
       name:"FishtailBraid",
-      id:35,
+      id:'FishtailBraid',
       gender:'female'
     },
     {
       image: LongCurly,
       name:"LongCurly",
-      id:36,
+      id:'LongCurly',
       gender:'female'
     },
     {
       image: LongStraight,
       name:"LongStraight",
-      id:37,
+      id:'LongStraight',
       gender:'female'
     },
     {
       image: LongWavy,
       name:"LongWavy",
-      id:38,
+      id:'LongWavy',
       gender:'female'
     },
     {
       image: LongTwintails,
       name:"LongTwintails",
-      id:39,
+      id:'LongTwintails',
       gender:'female'
     },
     {
       image: Loose,
       name:"Loose",
-      id:40,
+      id:'LooseCurlyAfro	',
       gender:'female'
     },
     {
       image: LongHimeCut,
       name:"LongHimeCut",
-      id:41,
+      id:'LongHimeCut',
       gender:'female'
     },
     {
       image: ShortCurlyPixie,
       name:"ShortCurlyPixie",
-      id:44,
+      id:'ShortCurlyPixie',
       gender:'female'
     },
     {
       image: ShortNeatBob,
       name:"ShortNeatBob",
-      id:45,
+      id:'ShortNeatBob',
       gender:'female'
     },
     {
       image: ShortPixieWithShavedSides,
       name:"ShortPixieWithShavedSides",
-      id:46,
+      id:'ShortPixieWithShavedSides',
       gender:'female'
     },
     {
       image: ShortTwintails,
       name:"ShortTwintails",
-      id:47,
+      id:'ShortTwintails',
       gender:'female'
     },
     {
       image: ShoulderLengthHair,
       name:"ShoulderLengthHair",
-      id:48,
+      id:'ShoulderLengthHair',
       gender:'female'
     },
-    
+    {
+      image: SlickedBack,
+      name:"SlickedBack",
+      id:'SlickedBack ',
+      gender:'female'
+    },
 
     {
       image: Spiked,
       name:"Spiked",
-      id:51,
+      id:'Spiked',
       gender:'female'
     },
     {
       image: StackedCurlsInShortBob,
       name:"StackedCurlsInShortBob",
-      id:52,
+      id:'StackedCurlsInShortBob',
       gender:'female'
     },
-    
+    {
+      image: SidePartCombOverHairstyleWithHighFade,
+      name:"SidePartCombOverHairstyleWithHighFade",
+      id:'SidePartCombOverHairstyleWithHighFade',
+      gender:'female'
+    },
+  
     {
       image: TwinBraids,
       name:"TwinBraids",
-      id:53,
+      id:'TwinBraids',
       gender:'female'
     },
     {
       image: Updo,
       name:"Updo",
-      id:54,
+      id:'Updo',
       gender:'female'
     },
     {
       image: WavyFrenchBobVibesfrom,
       name:"WavyFrenchBobVibesfrom",
-      id:55,
+      id:'WavyFrenchBobVibesfrom',
       gender:'female'
     },
 
     {
       image: BoxBraids,
       name:"BoxBraids",
-      id:56,
+      id:'BoxBraids',
       gender:'female'
     },
   ];
