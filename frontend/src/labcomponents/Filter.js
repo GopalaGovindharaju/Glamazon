@@ -1,4 +1,4 @@
-import { Box, Checkbox, IconButton, Radio, RadioGroup, Stack, Text, VStack} from '@chakra-ui/react'
+import { Box, Checkbox, Radio, RadioGroup, Stack, Text, VStack} from '@chakra-ui/react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMars, faVenus } from '@fortawesome/free-solid-svg-icons';
 import React, { useState } from 'react'
@@ -23,7 +23,7 @@ function Filter() {
       bottom={0}
       top="14%"
       right="83%"
-      py={2}
+      py={4}
       px={4}
       bg='rgb(251, 249, 247)'
       zIndex={9}
@@ -76,8 +76,7 @@ function Filter() {
       <Box pb={7}>
         <Box display='flex'>
         <Text style={text_css}>HAIRCOLORS</Text>
-        </Box>
-       
+      </Box>  
       <Stack display='flex' flexWrap='wrap' direction='row'>
         {HairColor.map((hairstyle) => (
           <Box

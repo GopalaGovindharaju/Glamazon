@@ -1,7 +1,8 @@
 import { Avatar, Box, Flex, HStack, Image, Spacer, Text } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import logo from '../images/glamazon-logo.png'
+import logo from '../images/glamazon-logo.png';
+import { Link } from 'react-router-dom';
 
 function LabHeader() {
 
@@ -21,10 +22,10 @@ function LabHeader() {
         <Box display='flex'
          textAlign='center' justifyContent='center'>
           <HStack spacing={16} justifyContent='center'>
-            <Box className={`hoverable1 ${activeTab === 'hairstyle' ? 'active' : ''}`} onClick={() =>handleItemClick('hairstyle')}>HAIRSTYLE</Box>
-            <Box className={`hoverable1 ${activeTab === 'beard-moustache' ? 'active' : ''}`} onClick={() =>handleItemClick('beard-moustache')}>BEARD & MOUSTACHE</Box>
-            <Box className={`hoverable1 ${activeTab === 'eyebrow' ? 'active' : ''}`} onClick={() =>handleItemClick('eyebrow')}>EYEBROW</Box>
-            <Box className={`hoverable1 ${activeTab === 'lipcolor' ? 'active' : ''}`} onClick={() =>handleItemClick('lipcolor')}>LIPCOLOR</Box>
+            <Box className={`hoverable1 ${activeTab === 'hairstyle' ? 'active' : ''}`} onClick={() =>handleItemClick('hairstyle')}><Link to='Hairstyle' id='navbar-option'>HAIRSTYLE</Link></Box>
+            <Box className={`hoverable1 ${activeTab === 'beard-moustache' ? 'active' : ''}`} onClick={() =>handleItemClick('beard-moustache')}><Link to='BeardMoustache' id='navbar-option'>BEARD & MOUSTACHE</Link></Box>
+            <Box className={`hoverable1 ${activeTab === 'eyebrow' ? 'active' : ''}`} onClick={() =>handleItemClick('eyebrow')}><Link to='Eyebrow' id='navbar-option'>EYEBROW</Link></Box>
+            <Box className={`hoverable1 ${activeTab === 'lipcolor' ? 'active' : ''}`} onClick={() =>handleItemClick('lipcolor')}><Link to='Lipcolor' id='navbar-option'>LIPCOLOR</Link></Box>
           </HStack>
         </Box><Spacer/>
       

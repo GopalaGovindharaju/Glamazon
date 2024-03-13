@@ -1,6 +1,5 @@
 import React,{useState} from 'react'
 import ThreeDtry from '../components/ThreeDtry';
-import LabHeader from './LabHeader';
 import StyledItems from './StyledItems';
 
 function Demo() {
