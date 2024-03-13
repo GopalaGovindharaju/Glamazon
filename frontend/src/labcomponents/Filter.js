@@ -2,6 +2,7 @@ import { Box, Checkbox, Radio, RadioGroup, Stack, Text, VStack} from '@chakra-ui
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMars, faVenus } from '@fortawesome/free-solid-svg-icons';
 import React, { useState } from 'react'
+import { HairColor } from '../components/HairColor';
 
 function Filter() {
 
@@ -14,7 +15,6 @@ function Filter() {
     };
 
     const [value, setValue] = useState('all')
-    const [ratingValue, setRatingValue] = useState('')
 
   return (
     <Box
@@ -23,7 +23,7 @@ function Filter() {
       bottom={0}
       top="14%"
       right="83%"
-      py={2}
+      py={4}
       px={4}
       bg='rgb(251, 249, 247)'
       zIndex={9}
@@ -75,17 +75,23 @@ function Filter() {
       </Box>
       <Box pb={7}>
         <Box display='flex'>
-        <Text style={text_css}>RATINGS</Text>
-        </Box>
-        <RadioGroup onChange={setRatingValue} value={ratingValue}>
-      <Stack direction='column'>
-        <Radio value='1' colorScheme="yellow" fontFamily="LKFuturaStd">5+ ratings</Radio>
-        <Radio value='2' colorScheme="yellow" fontFamily="LKFuturaStd">4+ ratings</Radio>
-        <Radio value='3' colorScheme="yellow" fontFamily="LKFuturaStd">3+ ratings</Radio>
-        <Radio value='4' colorScheme="yellow" fontFamily="LKFuturaStd">2+ ratings</Radio>
-        <Radio value='5' colorScheme="yellow" fontFamily="LKFuturaStd">1+ ratings</Radio>
+        <Text style={text_css}>HAIRCOLORS</Text>
+      </Box>  
+      <Stack display='flex' flexWrap='wrap' direction='row'>
+        {HairColor.map((hairstyle) => (
+          <Box
+            width='20px'
+            height='20px' 
+            key={hairstyle.id}
+            variant='solid'
+            backgroundColor={hairstyle.color}
+            borderColor='black'
+            border='1px'
+          ></Box>
+        ))}
       </Stack>
-    </RadioGroup>
+      
+
       </Box>
     </Box>
   );

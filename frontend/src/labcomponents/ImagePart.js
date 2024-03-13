@@ -5,11 +5,11 @@ function ImagePart({snapedImage,filteredImage}) {
   return (
     <div>
       <Box
-      pt="6.2%"
+      pt="8.2%"
       pl="17%"
       display="flex"
       border="1px"
-      height="calc(100vh - 40vh)"
+      height="calc(100vh - 37vh)"
       overflow="auto"
       flexWrap="wrap"
       alignContent='stretch'

@@ -36,8 +36,6 @@ import FishtailBraid from './Images/Hairstyle/FishtailBraid.png'
 import LongCurly from './Images/Hairstyle/LongCurly.png'
 import LongStraight from './Images/Hairstyle/LongStraight.png'
 import LongWavy from './Images/Hairstyle/LongWavy.png'
-import Pixie from './Images/Hairstyle/Pixie.png'
-import Ponytail from './Images/Hairstyle/Ponytail.png'
 import ShortCurlyPixie from './Images/Hairstyle/ShortCurlyPixie.png'
 import ShortNeatBob from './Images/Hairstyle/ShortNeatBob.png'
 import ShortPixieWithShavedSides from './Images/Hairstyle/ShortPixieWithShavedSides.png'
@@ -52,12 +50,6 @@ import BoxBraids from './Images/Hairstyle/BoxBraids.png'
 import Loose from './Images/Hairstyle/Loose.png'
 import LongTwintails from './Images/Hairstyle/LongTwintails.png'
 import LongHimeCut from './Images/Hairstyle/LongHimeCut.png'
-
-
-
-
-
-
 
 export const Hairstyle = [
   {
@@ -112,7 +104,7 @@ export const Hairstyle = [
     {
       image: LowFade,
       name:"Low Fade hair",
-      id:LowFade,
+      id:"LowFade",
       gender:'male'
     },
     {
@@ -291,18 +283,6 @@ export const Hairstyle = [
       image: LongHimeCut,
       name:"LongHimeCut",
       id:'LongHimeCut',
-      gender:'female'
-    },
-    {
-      image: Pixie,
-      name:"Pixie",
-      id:'PixieCut',
-      gender:'female'
-    },
-    {
-      image: Ponytail,
-      name:"Ponytail",
-      id:'Ponytail',
       gender:'female'
     },
     {

@@ -10,9 +10,6 @@ function Second({setSelectedStyle}) {
       <div>
         <Flex px={4} mb={2} bg='rgb(251, 249, 247)'>
         <HStack w='70%' justifyContent='space-between' pb={2}>
-            <Box className='hoverable1' data-name="HAIR COLOR" onClick={handleStyle} p={4} pb={1} w={130} bg='white.600'>
-            HAIR COLOR
-            </Box>
             <Box className='hoverable1' data-name="HAIR STYLE" onClick={handleStyle} p={4} pb={1} w={130} bg='white.600'>
             HAIR STYLE
             </Box>

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import Filter from './Filter';
 import ThreeDtry from '../components/ThreeDtry';
 import LabHeader from './LabHeader';
 import StyledItems from './StyledItems';
 import Selection from '../components/Selection';
+import { Outlet } from 'react-router-dom';
 
 function Lab() {
   const [closeSnap, setCloseSnap] = useState(true);
@@ -16,7 +16,7 @@ function Lab() {
   return (
     <div>
       <LabHeader />
-      <Filter />
+      <Outlet />
       {userchoice ? (
         <>
           {closeSnap ? (

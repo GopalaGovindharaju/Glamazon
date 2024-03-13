@@ -4,7 +4,6 @@ import h8 from '../images/h8.png';
 import h6 from '../images/h6.png';
 import h3 from '../images/h3.jpg';
 import h9 from '../images/h10.jpg';
-import hh7 from '../images/hh7.jpg';
 import '../Third.css';
 
 const images = [h8, h6, h3, h3, h9]; // Add more images as needed

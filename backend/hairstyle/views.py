@@ -100,10 +100,10 @@ def getFilteredHairstyle(request):
                 'task_type': 'async',
                 'hair_style': 'UnderCut',
                 'color': 'brown',
-                
+                'auto': 1
             }
 
-            response = requests.post(url, headers=headers, data=payload, files=files)
+            response = requests.request("POST", url, headers=headers, data=payload, files=files)
             print(response)
 
             if response.status_code == 200:
