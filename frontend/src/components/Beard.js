@@ -14,6 +14,7 @@ import Van_Dyke from './Images/beard/van-dyke.png'
 import Walrus from './Images/beard/walrus.png'
 
 
+
 export const Beard = [
     {
         id: 1,
