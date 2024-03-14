@@ -6,6 +6,7 @@ import Selection from '../components/Selection';
 import { Outlet } from 'react-router-dom';
 
 function Lab() {
+  const [selectedGroom, setSelectedGroom] = useState('hairstyle');
   const [closeSnap, setCloseSnap] = useState(true);
   const [snapedImage, setSnapedImage] = useState(null);
   const [userchoice, setUserChoice] = useState(false);
@@ -15,7 +16,7 @@ function Lab() {
 
   return (
     <div>
-      <LabHeader />
+      <LabHeader setSelectedGroom={setSelectedGroom} />
       <Outlet />
       {userchoice ? (
         <>
@@ -32,7 +33,7 @@ function Lab() {
         closeChooseFile ? (
           <Selection setSnapedImage={setSnapedImage} setUserChoice={setUserChoice} setCloseChooseFile={setCloseChooseFile}/>
         ) : (
-          <StyledItems snapedImage={snapedImage}/>
+          <StyledItems snapedImage={snapedImage} selectedGroom={selectedGroom} />
         )
       )}
     </div>

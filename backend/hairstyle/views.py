@@ -90,7 +90,7 @@ def getFilteredHairstyle(request):
         if Original_Image:
             image_data = Original_Image.read()
             url = "https://www.ailabapi.com/api/portrait/effects/hairstyle-editor-pro"
-            api_key = 'iezW2uNgHB9AOqS3nTSseClXFD5ybLKUbQtE8fBpRzjtWqMw7XfIlKdVx9RPJpai'
+            api_key = 'LgtC4g71J3uoGk9HpYEhpfSQjz9cBIVVUqW0LkEDyBiFF52GOI2xNtTQrARlTMza'
             headers = {'ailabapi-api-key': api_key}
 
             files = {'image': (Original_Image.name, image_data, Original_Image.content_type)}

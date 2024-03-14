@@ -2,7 +2,12 @@ import { Box, Card, CardBody, Heading, Image, Stack } from '@chakra-ui/react'
 import React from 'react'
 import { Hairstyle } from '../components/Hairstyle'
 
-function StylesPart({snapedImage}) {
+function StylesPart({setHairstyleRender}) {
+
+  const handleClickHairstyle = () => {
+    setHairstyleRender(true)
+  }
+
   return (
     <Box
     display="flex"
@@ -17,6 +22,7 @@ function StylesPart({snapedImage}) {
       <Card key={index} h='auto' minW="270px" my={2} mr={4}>
         <CardBody display="flex" pb={0} flexDirection="column">
           <Image
+            onClick={handleClickHairstyle}
             h="100%"
             src={item.image}
             borderRadius="lg"

@@ -4,7 +4,7 @@ import StylesPart from './StylesPart';
 import ImagePart from './ImagePart';
 
 
-function StyledItems({snapedImage}) {
+function StyledItems({snapedImage,selectedGroom}) {
   const [filteredImage, setFilteredImage] = useState(null);
   useEffect(() => {
     // Convert base64 image data to a File object
@@ -32,7 +32,8 @@ function StyledItems({snapedImage}) {
 
     console.log(formData);
 
-    axios.post('http://127.0.0.1:8000/hairstyle/getFilteredHairstyle/', formData)
+    if (selectedGroom === 'hairstyle'){
+      axios.post('http://127.0.0.1:8000/hairstyle/getFilteredHairstyle/', formData)
       .then((response) => {
         console.log(response.data);
         setFilteredImage(response.data.filteredImage);
@@ -40,11 +41,24 @@ function StyledItems({snapedImage}) {
       .catch((error) => {
         console.log(error)
       })
+    }
+    if(selectedGroom === 'lipcolor'){
+      axios.post('http://127.0.0.1:8000/lipcolor/getFilteredLipcolor/', formData)
+      .then((response) => {
+        console.log(response.data);
+        setFilteredImage(response.data.filteredImage);
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+    }
   }, [snapedImage]);
+    
+
   return (
     <>
       <ImagePart snapedImage={snapedImage}  filteredImage={filteredImage}/>
-      <StylesPart snapedImage={snapedImage} />
+      {selectedGroom === 'hairstyle' && <StylesPart snapedImage={snapedImage} />}
     </>
   );
 }
