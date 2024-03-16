@@ -15,7 +15,7 @@ function FilterLipcolor() {
       bg='rgb(251, 249, 247)'
       zIndex={9}
     >
-      LIPCOLOR
+      Pick a lipcolor
     </Box>
   )
 }
