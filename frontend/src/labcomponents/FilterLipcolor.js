@@ -1,4 +1,4 @@
-import { Box, Flex, Text } from '@chakra-ui/react';
+import { Box, Flex, Stack, Text } from '@chakra-ui/react';
 import React, { useState } from 'react';
 
 function FilterLipcolor() {
@@ -6,44 +6,66 @@ function FilterLipcolor() {
   const [displayedColor, setDisplayedColor] = useState(`rgba(${selectedColor.r}, ${selectedColor.g}, ${selectedColor.b}, ${selectedColor.a})`);
 
   const handleColorChange = (event) => {
-    // Update the selected color when the input value changes
     const hexColor = event.target.value;
     const rgbaColor = hexToRgba(hexColor);
     setSelectedColor(rgbaColor);
-    setDisplayedColor(`rgba(${rgbaColor.r}, ${rgbaColor.g}, ${rgbaColor.b}, ${rgbaColor.a})`); // Set displayedColor to RGBA format
+    setDisplayedColor(`rgba(${rgbaColor.r}, ${rgbaColor.g}, ${rgbaColor.b}, ${rgbaColor.a})`); 
+  };
+
+  const text_css = {
+    fontFamily: "LKFuturaStd-Medium",
+    fontWeight:'bold',
+    letterSpacing: "1.3px",
+    color: "rgb(51, 51, 51)",
+    fontSize: "14px",
   };
 
   const handleColorClick = (color) => {
-    // Set the displayed color when a user clicks on a color box
     setDisplayedColor(color);
   };
 
-  // Convert hex color to RGBA
   const hexToRgba = (hex) => {
-    // Remove the hash sign if present
     hex = hex.replace(/^#/, '');
 
-    // Parse the hex values into separate RGB values
     const bigint = parseInt(hex, 16);
     const r = (bigint >> 16) & 255;
     const g = (bigint >> 8) & 255;
     const b = bigint & 255;
 
-    // Calculate alpha (opacity) based on the user's choice (e.g., hardcoded to 1 for this example)
     const a = 1;
 
     return { r, g, b, a };
   };
 
-  // Calculate color variations starting from light to original
-  const colorVariations = Array.from({ length: 20 }).map((_, index) => {
-    const factor = 1 - index / 20; // 20 is the maximum index
+  const lightVariations = Array.from({ length: 10 }).map((_, index) => {
+    // Adjust the factor to control the lightness
+    const factor = 1 - index / 20; // Change this factor to control lightness
     const variationR = Math.round(selectedColor.r * factor);
     const variationG = Math.round(selectedColor.g * factor);
     const variationB = Math.round(selectedColor.b * factor);
-
-    return `rgba(${variationR}, ${variationG}, ${variationB}, ${selectedColor.a})`;
+  
+    // Decrease alpha as the color gets lighter
+    const alpha = 1 - index / 20; // Change this factor to control alpha
+  
+    return `rgba(${variationR}, ${variationG}, ${variationB}, ${alpha})`;
   });
+  
+  const darkVariations = Array.from({ length: 10 }).map((_, index) => {
+    // Adjust the factor to control the darkness
+    const factor = 1 + index / 20; // Change this factor to control darkness
+    const variationR = Math.round(selectedColor.r / factor);
+    const variationG = Math.round(selectedColor.g / factor);
+    const variationB = Math.round(selectedColor.b / factor);
+  
+    // Increase alpha as the color gets darker
+    const alpha = 1 + index / 20; // Change this factor to control alpha
+  
+    return `rgba(${variationR}, ${variationG}, ${variationB}, ${alpha})`;
+  });
+  
+  
+  const colorVariations = [...lightVariations.reverse(), ...darkVariations];
+  
 
   return (
     <Box
@@ -51,28 +73,26 @@ function FilterLipcolor() {
       left={0}
       bottom={0}
       top="14%"
-      right="80%"
+      right="83%"
       py={4}
       px={4}
       bg="rgb(251, 249, 247)"
       zIndex={9}
     >
       <Flex flexDirection="column" alignItems="center">
-        <label htmlFor="colorPicker">Pick Your LipStick Color:</label>
+      <Text style={text_css} alignSelf='start'>PICK LIP COLOR</Text>
         <input
           type="color"
           id="colorPicker"
           name="colorPicker"
-          marginTop='50%'
           value={`#${selectedColor.r.toString(16).padStart(2, '0')}${selectedColor.g.toString(16).padStart(2, '0')}${selectedColor.b.toString(16).padStart(2, '0')}`}
           onChange={handleColorChange}
+          style={{ width: '200px' }} 
         />
 
-        <Text mt={6} mb={2} fontWeight="bold">
-          Color Variations:
-        </Text>
+<Text style={text_css} alignSelf='start' pt={7} mb={0}>COLOR VARIATIONS</Text>
 
-        <Flex flexWrap='wrap' direction='row' paddingTop='10px'>
+        <Flex flexWrap='wrap' direction='row' justifyContent='space-evenly'>
           {colorVariations.map((color, index) => (
             <Box
               key={index}
@@ -89,22 +109,21 @@ function FilterLipcolor() {
           ))}
         </Flex>
 
-        <Text mt={4}>
-          <b>Selected Color:</b>
+        <Text style={text_css} mt={7} alignSelf='start'>COLOR DIFFERENCE</Text>
+          <Stack direction='row' spacing={0}>
           <Box
             display="inline-block"
-            ml={2}
-            w="20px" // Adjust the width as needed
-            h="20px" // Adjust the height as needed
-            bg={displayedColor}
-            border="1px solid #ccc"
-            borderRadius="4px"
+            w="100px" // Adjust the width as needed
+            h="100px" // Adjust the height as needed
+            bg={`rgba(${selectedColor.r}, ${selectedColor.g}, ${selectedColor.b}, ${selectedColor.a})`}
           />
-          <span style={{ color: displayedColor, marginLeft: '8px', color: "black" }}>{displayedColor}</span>
-        </Text>
-
-       
-        
+          <Box
+            display="inline-block"
+            w="100px" // Adjust the width as needed
+            h="100px" // Adjust the height as needed
+            bg={displayedColor}
+          />
+          </Stack>
       </Flex>
     </Box>
   );

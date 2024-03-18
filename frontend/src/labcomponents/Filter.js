@@ -99,7 +99,7 @@ function Filter({setRecommended, recommended, setSelectedGender, selectedGender,
             backgroundColor={hairstyle.color}
             borderColor='black'
             border='1px'
-            onClick={() => handleHairColorChange(hairstyle.id)}
+            onClick={() => handleHairColorChange(hairstyle.color)}
           ></Box>
         ))}
       </Stack>

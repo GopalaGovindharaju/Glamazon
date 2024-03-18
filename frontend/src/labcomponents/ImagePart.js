@@ -24,9 +24,6 @@ function ImagePart({selectedHaircolor,selectedHairStyle,setShownImage,shownImage
         flexWrap="wrap"
         alignContent="stretch"
       >
-        {/*<Box  className='col-6' border='1px solid black' borderRadius="9" mb={2} backgroundColor='rgb()'>
-      <Image pt={2} objectFit='contain' w='100%' height="calc(100vh - 55vh)" src={snapedImage} alt='Dan Abramov' />
-  </Box>*/}
         <Box
           className="col-6"
           border="1px solid black"
@@ -49,7 +46,7 @@ function ImagePart({selectedHaircolor,selectedHairStyle,setShownImage,shownImage
               thickness="4px"
               speed="0.65s"
               emptyColor="gray.200"
-              color="blue.500"
+              color="yellow.600"
               size="xl"
             />
           ) : shownImage ? (

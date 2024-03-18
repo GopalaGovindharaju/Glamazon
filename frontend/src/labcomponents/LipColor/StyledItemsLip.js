@@ -1,20 +1,19 @@
 import { Box, Image } from '@chakra-ui/react'
-import React from 'react'
+import React, { useState } from 'react'
 import FilterLipcolor from '../FilterLipcolor'
 import { useSnapImage } from '../../context/SnapImageContext';
+import ImagePart from '../ImagePart';
+import LipImagePart from './LipImagePart';
 
 function StyledItemsLip() {
   const { snapedImage } = useSnapImage();
+  const [loading, setLoading] = useState(false);
+  const [shownImage, setShownImage] = useState(false);
   return (
     <>
     <FilterLipcolor/>
-    <Image
-            h="100%"
-            src={snapedImage}
-            borderRadius="lg"
-            loading="lazy"
-            w='100%'
-          /></>
+    <LipImagePart loading={loading} setShownImage={setShownImage} shownImage={shownImage}/>
+    </>
   )
 }
 

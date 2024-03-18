@@ -112,7 +112,7 @@ function StyledItems() {
   return (
     <>
       <Filter handleHairColor={handleHairColor} recommended={recommended} setSelectedHairColor={setSelectedHairColor} catogory = {catogory} setCatogory = {setCatogory} setRecommended={setRecommended} selectedGender = {selectedGender} setSelectedGender={setSelectedGender}/>
-      <ImagePart loading={loading} setLoading={setLoading} setShownImage={setShownImage} shownImage={shownImage} selectedHairStyle={selectedHairStyle} selectedHaircolor={selectedHaircolor} catogory={catogory}/>
+      <ImagePart loading={loading} setShownImage={setShownImage} shownImage={shownImage} selectedHairStyle={selectedHairStyle} selectedHaircolor={selectedHaircolor} catogory={catogory}/>
       <StylesPart setSelectedHairStyle={setSelectedHairStyle} handleHairStyle={handleHairStyle} recommended={recommended} setRecommended={setRecommended} selectedGender={selectedGender} catogory={catogory}/>
     </>
   );
