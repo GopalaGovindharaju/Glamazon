@@ -40,7 +40,7 @@ def getFilteredLipcolor(request):
             print(Original_Image.name, Original_Image.content_type)
 
             payload = {
-                        "lip_color_infos": '[{"rgba":{"r":255,"g":99,"b":71,"a":100}}]'
+                        "lip_color_infos": '[{"rgba":{"r":204,"g":0,"b":0,"a":100}}]'
                       }
 
             response = requests.request("POST", url, headers=headers, data=payload, files=files)
@@ -56,7 +56,10 @@ def getFilteredLipcolor(request):
                     image = Image.open(BytesIO(decoded_image))
                     image.show()
                     output_image_url = store_image(decoded_image, f'{UserName}_output_image.png', UserName, Original_Image)
-                    return Response({"output_image_url": output_image_url})
+                    response_data = {
+                            'filteredImage' : output_image_url,
+                        }
+                    return Response(response_data, status=status.HTTP_200_OK)
                     
                 else:
                     print(f"Error code {error_code}: {data.get('error_msg', 'Unknown error')}")

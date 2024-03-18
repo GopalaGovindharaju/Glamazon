@@ -98,8 +98,8 @@ def getFilteredHairstyle(request):
 
             payload = {
                 'task_type': 'async',
-                'hair_style': 'UnderCut',
-                'color': 'brown',
+                'hair_style': 'StackedCurlsInShortBob',
+                'color': 'platinumBlonde',
                 'auto': 1
             }
 
