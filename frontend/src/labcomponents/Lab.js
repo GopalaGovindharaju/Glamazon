@@ -5,6 +5,7 @@ import Selection from '../components/Selection';
 import { Outlet } from 'react-router-dom';
 
 function Lab() {
+  const [selectedGroom, setSelectedGroom] = useState('hairstyle');
   const [closeSnap, setCloseSnap] = useState(true);
   const [userchoice, setUserChoice] = useState(false);
   const [closeChooseFile, setCloseChooseFile] = useState(true);

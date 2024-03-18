@@ -4,12 +4,13 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import logo from '../images/glamazon-logo.png';
 import { Link } from 'react-router-dom';
 
-function LabHeader() {
+function LabHeader({setSelectedGroom}) {
 
-  const [activeTab, setActiveTab] = useState(null);
+  const [activeTab, setActiveTab] = useState('hairstyle');
 
   const handleItemClick = (id) => {
     setActiveTab(id);
+    setSelectedGroom(id);
   };
 
   return (
