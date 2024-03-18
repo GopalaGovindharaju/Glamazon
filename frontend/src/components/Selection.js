@@ -1,8 +1,10 @@
 import { Box, Input, Button, Flex } from '@chakra-ui/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCloudArrowUp } from '@fortawesome/free-solid-svg-icons';
+import { useSnapImage } from '../context/SnapImageContext';
 
-function Selection({setUserChoice, setSnapedImage, setCloseChooseFile}) {
+function Selection({setUserChoice, setCloseChooseFile}) {
+  const { setSnapedImage } = useSnapImage();
   const handleFileChange = (event) => {
     const selectedFile = event.target.files[0];
   

@@ -54,316 +54,340 @@ import LongHimeCut from './Images/Hairstyle/LongHimeCut.png'
 export const Hairstyle = [
   {
     image: Afro,
-    name:"Afro hair",
-    id:'Afro',
-    gender:'male'
+    name: "Afro hair",
+    id: "Afro",
+    gender: "male",
+    category: "Funky"
   },
-    {
-      image: BuzzCut,
-      name:"Buzz Cut hair",
-      id:'BuzzCut',
-      gender:'male'
-    },
-    {
-      image: BluntBowlCut,
-      name:"Blunt Bowl Cut",
-      id:'BluntBowlCut',
-      gender:'male'
-    },
-    {
-      image: CombOver,
-      name:"Comb-over hair",
-      id:'CombOver',
-      gender:'male'
-    },
-    {
-      image: CurlyShage,
-      name:"Curly Shag hair",
-      id:'CurlyShage',
-      gender:'male'
-    },
-    {
-      image: CornrowBraids,
-      name:"Cornrow Braids hair",
-      id:'CornrowBraids',
-      gender:'male'
-    },
-    
-    {
-      image: FauxHawk,
-      name:"Faux Hawk hair",
-      id:'FauxHawk',
-      gender:'male'
-    },
-    {
-      image: HighTightFade,
-      name:"High and Tight Fade hair",
-      id:'HighTightFade',
-      gender:'male'
-    },
-    {
-      image: LowFade,
-      name:"Low Fade hair",
-      id:"LowFade",
-      gender:'male'
-    },
-    {
-      image: LongHairTiedUp,
-      name:"Long Hair Tied Up Hair ",
-      id:'LongHairTiedUp'	,
-      gender:'male'
-    },
-    {
-      image: LongWavyCurtainBangs,
-      name:"Long Wavy Curtain Bangs Hair",
-      id:'LongWavyCurtainBangs',
-      gender:'male'
-    },
-   
-    {
-      image: ManBun,
-      name:"Man Bun hair",
-      id:'ManBun',
-      gender:'male'
-    },
-   
-    {
-      image: MessyTousled,
-      name:"MessyTousled",
-      id:'MessyTousled',
-      gender:'male'
-    },
-    {
-      image: Middleparted,
-      name:"Middleparted",
-      id:'Middle-parted',
-      gender:'male'
-    },
-    {
-      image: Pompadour,
-      name:"Pompadour",
-      id:'Pompadour',
-      gender:'male'
-    },
-    {
-      image: SlickBack,
-      name:"SlickBack",
-      id:'SlickBack',
-      gender:'male'
-    },
-    {
-      image: Spiky,
-      name:"Spiky",
-      id:'Spiky',
-      gender:'male'
-    },
-    {
-      image: TexturedFringe,
-      name:"TexturedFringe",
-      id:'TexturedFringe',
-      gender:'male'
-    },
-   
-   
-    {
-      image: UndercutLongHair,
-      name:"UndercutLongHair",
-      id:'UndercutLongHair',
-      gender:'male'
-    },
-    {
-      image: WavyShag,
-      name:"WavyShag",
-      id:'WavyShag',
-      gender:'male'
-    },
-   
-    {
-      image: UnderCut,
-      name:"UnderCut",
-      id:'UnderCut',
-      gender:'male'
-    },
-  
-    {
-      image: SidePartCombOverHairstyleWithHighFade,
-      name:"SidePartCombOverHairstyleWithHighFade",
-      id:'SidePartCombOverHairstyleWithHighFade',
-      gender:'male'
-    },
-  
+  {
+    image: BuzzCut,
+    name: "Buzz Cut hair",
+    id: "BuzzCut",
+    gender: "male",
+    category: "Professional"
+  },
+  {
+    image: BluntBowlCut,
+    name: "Blunt Bowl Cut",
+    id: "BluntBowlCut",
+    gender: "male",
+    category: "Casual"
+  },
+  {
+    image: CombOver,
+    name: "Comb-over hair",
+    id: "CombOver",
+    gender: "male",
+    category: "Professional"
+  },
+  {
+    image: CurlyShage,
+    name: "Curly Shag hair",
+    id: "CurlyShage",
+    gender: "male",
+    category: "Casual"
+  },
+  {
+    image: CornrowBraids,
+    name: "Cornrow Braids hair",
+    id: "CornrowBraids",
+    gender: "male",
+    category: "Funky"
+  },
+  {
+    image: FauxHawk,
+    name: "Faux Hawk hair",
+    id: "FauxHawk",
+    gender: "male",
+    category: "Funky"
+  },
+  {
+    image: HighTightFade,
+    name: "High and Tight Fade hair",
+    id: "HighTightFade",
+    gender: "male",
+    category: "Professional"
+  },
+  {
+    image: LowFade,
+    name: "Low Fade hair",
+    id: "LowFade",
+    gender: "male",
+    category: "Professional"
+  },
+  {
+    image: LongHairTiedUp,
+    name: "Long Hair Tied Up Hair",
+    id: "LongHairTiedUp",
+    gender: "male",
+    category: "Casual"
+  },
+  {
+    image: LongWavyCurtainBangs,
+    name: "Long Wavy Curtain Bangs Hair",
+    id: "LongWavyCurtainBangs",
+    gender: "male",
+    category: "Elegant"
+  },
+  {
+    image: ManBun,
+    name: "Man Bun hair",
+    id: "ManBun",
+    gender: "male",
+    category: "Casual"
+  },
+  {
+    image: MessyTousled,
+    name: "MessyTousled",
+    id: "MessyTousled",
+    gender: "male",
+    category: "Casual"
+  },
+  {
+    image: Middleparted,
+    name: "Middleparted",
+    id: "Middleparted",
+    gender: "male",
+    category: "Casual"
+  },
+  {
+    image: Pompadour,
+    name: "Pompadour",
+    id: "Pompadour",
+    gender: "male",
+    category: "Vintage"
+  },
+  {
+    image: SlickBack,
+    name: "SlickBack",
+    id: "SlickBack",
+    gender: "male",
+    category: "Professional"
+  },
+  {
+    image: Spiky,
+    name: "Spiky",
+    id: "Spiky",
+    gender: "male",
+    category: "Funky"
+  },
+  {
+    image: TexturedFringe,
+    name: "TexturedFringe",
+    id: "TexturedFringe",
+    gender: "male",
+    category: "Casual"
+  },
+  {
+    image: UndercutLongHair,
+    name: "UndercutLongHair",
+    id: "UndercutLongHair",
+    gender: "male",
+    category: "Casual"
+  },
+  {
+    image: WavyShag,
+    name: "WavyShag",
+    id: "WavyShag",
+    gender: "male",
+    category: "Casual"
+  },
+  {
+    image: UnderCut,
+    name: "UnderCut",
+    id: "UnderCut",
+    gender: "male",
+    category: "Funky"
+  },
+  {
+    image: SidePartCombOverHairstyleWithHighFade,
+    name: "SidePartCombOverHairstyleWithHighFade",
+    id: "SidePartCombOverHairstyleWithHighFade",
+    gender: "female",
+    category: "Professional"
+  },
+  {
+    image: Bobcut,
+    name: "Bobcut",
+    id: "BobCut",
+    gender: "female",
+    category: "Casual"
+  },
+  {
+    image: bowlCut,
+    name: "bowlCut",
+    id: "bowlCut",
+    gender: "female",
+    category: "Casual"
+  },
+  {
+    image: Chignon,
+    name: "Chignon",
+    id: "Chignon",
+    gender: "female",
+    category: "Elegant"
+  },
+  {
+    image: Cornrows,
+    name: "Cornrows",
+    id: "Cornrows",
+    gender: "female",
+    category: "Funky"
+  },
+  {
+    image: CurlyBob,
+    name: "CurlyBob",
+    id: "CurlyBob",
+    gender: "female",
+    category: "Casual"
+  },
+  {
+    image: DoubleBun,
+    name: "DoubleBun",
+    id: "DoubleBun",
+    gender: "female",
+    category: "Casual"
+  },
+  {
+    image: Dreadlocks,
+    name: "Dreadlocks",
+    id: "Dreadlocks",
+    gender: "female",
+    category: "Funky"
+  },
+  {
+    image: FishtailBraid,
+    name: "FishtailBraid",
+    id: "FishtailBraid",
+    gender: "female",
+    category: "Casual"
+  },
+  {
+    image: LongCurly,
+    name: "LongCurly",
+    id: "LongCurly",
+    gender: "female",
+    category: "Casual"
+  },
+  {
+    image: LongStraight,
+    name: "LongStraight",
+    id: "LongStraight",
+    gender: "female",
+    category: "Casual"
+  },
+  {
+    image: LongWavy,
+    name: "LongWavy",
+    id: "LongWavy",
+    gender: "female",
+    category: "Casual"
+  },
+  {
+    image: LongTwintails,
+    name: "LongTwintails",
+    id: "LongTwintails",
+    gender: "female",
+    category: "Casual"
+  },
+  {
+    image: Loose,
+    name: "Loose",
+    id: "LooseCurlyAfro",
+    gender: "female",
+    category: "Casual"
+  },
+  {
+    image: LongHimeCut,
+    name: "LongHimeCut",
+    id: "LongHimeCut",
+    gender: "female",
+    category: "Elegant"
+  },
+  {
+    image: ShortCurlyPixie,
+    name: "ShortCurlyPixie",
+    id: "ShortCurlyPixie",
+    gender: "female",
+    category: "Casual"
+  },
+  {
+    image: ShortNeatBob,
+    name: "ShortNeatBob",
+    id: "ShortNeatBob",
+    gender: "female",
+    category: "Professional"
+  },
+  {
+    image: ShortPixieWithShavedSides,
+    name: "ShortPixieWithShavedSides",
+    id: "ShortPixieWithShavedSides",
+    gender: "female",
+    category: "Funky"
+  },
+  {
+    image: ShortTwintails,
+    name: "ShortTwintails",
+    id: "ShortTwintails",
+    gender: "female",
+    category: "Casual"
+  },
+  {
+    image: ShoulderLengthHair,
+    name: "ShoulderLengthHair",
+    id: "ShoulderLengthHair",
+    gender: "female",
+    category: "Casual"
+  },
+  {
+    image: SlickedBack,
+    name: "SlickedBack",
+    id: "SlickedBack",
+    gender: "female",
+    category: "Professional"
+  },
+  {
+    image: Spiked,
+    name: "Spiked",
+    id: "Spiked",
+    gender: "female",
+    category: "Funky"
+  },
+  {
+    image: StackedCurlsInShortBob,
+    name: "StackedCurlsInShortBob",
+    id: "StackedCurlsInShortBob",
+    gender: "female",
+    category: "Casual"
+  },
+  {
+    image: TwinBraids,
+    name: "TwinBraids",
+    id: "TwinBraids",
+    gender: "female",
+    category: "Funky"
+  },
+  {
+    image: Updo,
+    name: "Updo",
+    id: "Updo",
+    gender: "female",
+    category: "Elegant"
+  },
+  {
+    image: WavyFrenchBobVibesfrom,
+    name: "WavyFrenchBobVibesfrom",
+    id: "WavyFrenchBobVibesfrom",
+    gender: "female",
+    category: "Vintage"
+  },
+  {
+    image: BoxBraids,
+    name: "BoxBraids",
+    id: "BoxBraids",
+    gender: "female",
+    category: "Funky"
+  },
+];
 
 
-    
-
-
-
-
-
-    {
-      image: Bobcut,
-      name:"Bobcut",
-      id:'BobCut',
-      gender:'female'
-    },
-    {
-      image: bowlCut,
-      name:"bowlCut",
-      id:'bowlCut',
-      gender:'female'
-    },
-    
-    {
-      image: Chignon,
-      name:"Chignon",
-      id:'Chignon',
-      gender:'female'
-    },
-    {
-      image: Cornrows,
-      name:"Cornrows",
-      id:'Cornrows',
-      gender:'female'
-    },
-    {
-      image: CurlyBob,
-      name:"CurlyBob",
-      id:'CurlyBob',
-      gender:'female'
-    },
-    {
-      image: DoubleBun,
-      name:"DoubleBun",
-      id:'DoubleBun',
-      gender:'female'
-    },
-    {
-      image: Dreadlocks,
-      name:"Dreadlocks",
-      id:'Dreadlocks',
-      gender:'female'
-    },
-    {
-      image: FishtailBraid,
-      name:"FishtailBraid",
-      id:'FishtailBraid',
-      gender:'female'
-    },
-    {
-      image: LongCurly,
-      name:"LongCurly",
-      id:'LongCurly',
-      gender:'female'
-    },
-    {
-      image: LongStraight,
-      name:"LongStraight",
-      id:'LongStraight',
-      gender:'female'
-    },
-    {
-      image: LongWavy,
-      name:"LongWavy",
-      id:'LongWavy',
-      gender:'female'
-    },
-    {
-      image: LongTwintails,
-      name:"LongTwintails",
-      id:'LongTwintails',
-      gender:'female'
-    },
-    {
-      image: Loose,
-      name:"Loose",
-      id:'LooseCurlyAfro	',
-      gender:'female'
-    },
-    {
-      image: LongHimeCut,
-      name:"LongHimeCut",
-      id:'LongHimeCut',
-      gender:'female'
-    },
-    {
-      image: ShortCurlyPixie,
-      name:"ShortCurlyPixie",
-      id:'ShortCurlyPixie',
-      gender:'female'
-    },
-    {
-      image: ShortNeatBob,
-      name:"ShortNeatBob",
-      id:'ShortNeatBob',
-      gender:'female'
-    },
-    {
-      image: ShortPixieWithShavedSides,
-      name:"ShortPixieWithShavedSides",
-      id:'ShortPixieWithShavedSides',
-      gender:'female'
-    },
-    {
-      image: ShortTwintails,
-      name:"ShortTwintails",
-      id:'ShortTwintails',
-      gender:'female'
-    },
-    {
-      image: ShoulderLengthHair,
-      name:"ShoulderLengthHair",
-      id:'ShoulderLengthHair',
-      gender:'female'
-    },
-    {
-      image: SlickedBack,
-      name:"SlickedBack",
-      id:'SlickedBack ',
-      gender:'female'
-    },
-
-    {
-      image: Spiked,
-      name:"Spiked",
-      id:'Spiked',
-      gender:'female'
-    },
-    {
-      image: StackedCurlsInShortBob,
-      name:"StackedCurlsInShortBob",
-      id:'StackedCurlsInShortBob',
-      gender:'female'
-    },
-    {
-      image: SidePartCombOverHairstyleWithHighFade,
-      name:"SidePartCombOverHairstyleWithHighFade",
-      id:'SidePartCombOverHairstyleWithHighFade',
-      gender:'female'
-    },
-  
-    {
-      image: TwinBraids,
-      name:"TwinBraids",
-      id:'TwinBraids',
-      gender:'female'
-    },
-    {
-      image: Updo,
-      name:"Updo",
-      id:'Updo',
-      gender:'female'
-    },
-    {
-      image: WavyFrenchBobVibesfrom,
-      name:"WavyFrenchBobVibesfrom",
-      id:'WavyFrenchBobVibesfrom',
-      gender:'female'
-    },
-
-    {
-      image: BoxBraids,
-      name:"BoxBraids",
-      id:'BoxBraids',
-      gender:'female'
-    },
-  ];

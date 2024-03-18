@@ -1,9 +1,10 @@
 import { Box } from '@chakra-ui/react';
 import React, { useEffect, useRef} from 'react';
+import { useSnapImage } from '../context/SnapImageContext';
 
-const ThreeDtry = ({setCloseSnap, setSnapedImage} ) => {
+const ThreeDtry = ({setCloseSnap} ) => {
   const videoRef = useRef(null);
-
+  const { setSnapedImage } = useSnapImage();
   
   useEffect(() => {
     const setupCamera = async () => {

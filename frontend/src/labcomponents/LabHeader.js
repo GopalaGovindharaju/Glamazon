@@ -23,10 +23,10 @@ function LabHeader({setSelectedGroom}) {
         <Box display='flex'
          textAlign='center' justifyContent='center'>
           <HStack spacing={16} justifyContent='center'>
-            <Box className={`hoverable1 ${activeTab === 'hairstyle' ? 'active' : ''}`} onClick={() =>handleItemClick('hairstyle')}><Link to='Hairstyle' id='navbar-option'>HAIRSTYLE</Link></Box>
-            <Box className={`hoverable1 ${activeTab === 'beard-moustache' ? 'active' : ''}`} onClick={() =>handleItemClick('beard-moustache')}><Link to='BeardMoustache' id='navbar-option'>BEARD & MOUSTACHE</Link></Box>
-            <Box className={`hoverable1 ${activeTab === 'eyebrow' ? 'active' : ''}`} onClick={() =>handleItemClick('eyebrow')}><Link to='Eyebrow' id='navbar-option'>EYEBROW</Link></Box>
-            <Box className={`hoverable1 ${activeTab === 'lipcolor' ? 'active' : ''}`} onClick={() =>handleItemClick('lipcolor')}><Link to='Lipcolor' id='navbar-option'>LIPCOLOR</Link></Box>
+            <Box className={`hoverable1 ${activeTab === 'hairstyle' ? 'active' : ''}`} onClick={() =>handleItemClick('hairstyle')}><Link to='Hairstyle'>HAIRSTYLE</Link></Box>
+            <Box className={`hoverable1 ${activeTab === 'beard-moustache' ? 'active' : ''}`} onClick={() =>handleItemClick('beard-moustache')}><Link to='BeardMoustache'>BEARD&MOUSTACHE</Link></Box>
+            <Box className={`hoverable1 ${activeTab === 'eyebrow' ? 'active' : ''}`} onClick={() =>handleItemClick('eyebrow')}><Link to='Eyebrow'>EYEBROW</Link></Box>
+            <Box className={`hoverable1 ${activeTab === 'lipcolor' ? 'active' : ''}`} onClick={() =>handleItemClick('lipcolor')}><Link to='Lipcolor'>LIPCOLOR</Link></Box>
           </HStack>
         </Box><Spacer/>
       

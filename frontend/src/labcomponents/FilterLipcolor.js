@@ -1,4 +1,4 @@
-/*import { Box, Flex, Text } from '@chakra-ui/react';
+import { Box, Flex, Text } from '@chakra-ui/react';
 import React, { useState } from 'react';
 
 function FilterLipcolor() {
@@ -111,4 +111,4 @@ function FilterLipcolor() {
 }
 
 export default FilterLipcolor;
-*/
+

@@ -69,7 +69,7 @@ export const HairColor = [
     },
     {
         id:'multicolored',
-        color:'	#008284',
+        color:'#008284',
     },
     {
         id:'darkBlue',

@@ -5,12 +5,15 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ChakraProvider } from '@chakra-ui/react'
 import 'bootstrap/dist/css/bootstrap.css';
+import { SnapImageProvider } from './context/SnapImageContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   //<React.StrictMode>
     <ChakraProvider>
+    <SnapImageProvider>
     <App/>
+    </SnapImageProvider>
     </ChakraProvider>
   //</React.StrictMode>
 );

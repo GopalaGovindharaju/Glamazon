@@ -4,7 +4,7 @@ import { faMars, faVenus } from '@fortawesome/free-solid-svg-icons';
 import React, { useState } from 'react'
 import { HairColor } from '../components/HairColor';
 
-function Filter() {
+function Filter({setRecommended, recommended, setSelectedGender, selectedGender, setCatogory, catogory,setSelectedHairColor, handleHairColor}) {
 
     const text_css = {
       fontFamily: "LKFuturaStd-Medium",
@@ -14,7 +14,18 @@ function Filter() {
       fontSize: "14px",
     };
 
-    const [value, setValue] = useState('all')
+    const handleRecommendation = (e) =>{
+      setRecommended(e.target.checked);
+    };
+
+    const handleCatagorySelection = (e) =>{
+      setCatogory({...catogory, [e.target.name]:e.target.checked})
+    };
+
+    const handleHairColorChange = (color) => {
+      setSelectedHairColor(color);
+      handleHairColor(color);
+    }
 
   return (
     <Box
@@ -29,7 +40,7 @@ function Filter() {
       zIndex={9}
     >
       <Box display="flex" pb={7}>
-        <Checkbox colorScheme="yellow" defaultChecked fontFamily="LKFuturaStd">
+        <Checkbox colorScheme="yellow" fontFamily="LKFuturaStd" isChecked={recommended} onChange={handleRecommendation}>
           Recommended
         </Checkbox>
       </Box>
@@ -37,7 +48,7 @@ function Filter() {
         <Box display="flex">
           <Text style={text_css}>GENDER</Text>
         </Box>
-        <RadioGroup onChange={setValue} value={value}>
+        <RadioGroup onChange={setSelectedGender} value={selectedGender}>
           <Stack direction="row" spacing={5}>
             <Radio colorScheme="yellow" value="all" fontFamily="LKFuturaStd">
               All
@@ -51,28 +62,29 @@ function Filter() {
           </Stack>
         </RadioGroup>
       </Box>
-      <Box pb={7}>
+      {recommended === false && <Box pb={7}>
         <Box display='flex'>
         <Text style={text_css}>CATAGORIES</Text>
         </Box>
         <VStack alignItems='start'>
-          <Checkbox fontFamily="LKFuturaStd" colorScheme="yellow">
+          <Checkbox fontFamily="LKFuturaStd" colorScheme="yellow" name='Professional' isChecked={catogory.Professional} onChange={handleCatagorySelection}>
           Professional Grooming
           </Checkbox>
-          <Checkbox fontFamily="LKFuturaStd" colorScheme="yellow">
+          <Checkbox fontFamily="LKFuturaStd" colorScheme="yellow" name='Casual' isChecked={catogory.Casual} onChange={handleCatagorySelection}>
           Casual/Everyday Grooming
           </Checkbox>
-          <Checkbox fontFamily="LKFuturaStd" colorScheme="yellow">
+          <Checkbox fontFamily="LKFuturaStd" colorScheme="yellow" name='Funky' isChecked={catogory.Funky} onChange={handleCatagorySelection}>
           Funky/Edgy Grooming
           </Checkbox>
-          <Checkbox fontFamily="LKFuturaStd" colorScheme="yellow">
+          <Checkbox fontFamily="LKFuturaStd" colorScheme="yellow" name='Vintage' isChecked={catogory.Vintage} onChange={handleCatagorySelection}>
           Vintage/Retro Grooming
           </Checkbox>
-          <Checkbox fontFamily="LKFuturaStd" colorScheme="yellow">
+          <Checkbox fontFamily="LKFuturaStd" colorScheme="yellow" name='Elegant' isChecked={catogory.Elegant} onChange={handleCatagorySelection}>
           Elegant/Timeless Grooming
           </Checkbox>
         </VStack>
-      </Box>
+      </Box>}
+      
       <Box pb={7}>
         <Box display='flex'>
         <Text style={text_css}>HAIRCOLORS</Text>
@@ -87,6 +99,7 @@ function Filter() {
             backgroundColor={hairstyle.color}
             borderColor='black'
             border='1px'
+            onClick={() => handleHairColorChange(hairstyle.id)}
           ></Box>
         ))}
       </Stack>

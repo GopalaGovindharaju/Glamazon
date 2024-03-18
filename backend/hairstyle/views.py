@@ -17,6 +17,8 @@ def getFilteredHairstyle(request):
 
         Original_Image = request.FILES.get('original_image',None)
         UserName = data.get('username')
+        hair_style = data.get('style')
+
 
 
         def query_task_results(api_key, task_id, UserName, OriginalImage):
@@ -98,8 +100,8 @@ def getFilteredHairstyle(request):
 
             payload = {
                 'task_type': 'async',
-                'hair_style': 'StackedCurlsInShortBob',
-                'color': 'platinumBlonde',
+                'hair_style': hair_style,
+                'color': 'brown',
                 'auto': 1
             }
 
