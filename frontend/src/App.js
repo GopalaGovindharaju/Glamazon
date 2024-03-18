@@ -7,6 +7,10 @@ import Filter from './labcomponents/Filter';
 import FilterBeard from './labcomponents/FilterBeard';
 import FilterEyebrow from './labcomponents/FilterEyebrow';
 import FilterLipcolor from './labcomponents/FilterLipcolor';
+import StyledItems from './labcomponents/StyledItems';
+import StyledItemsBeard from './labcomponents/Beard/StyledItemsBeard';
+import StyledItemsEyeBrow from './labcomponents/EyeBrow/StyledItemsEyeBrow';
+import StyledItemsLip from './labcomponents/LipColor/StyledItemsLip';
 
 
 
@@ -18,11 +22,11 @@ function App(props) {
       <Routes>
         <Route path="*" element={<Home />} />
         <Route path="/lab" element={<Lab />} >
-          <Route index element={<Filter/>} />
-          <Route path='Hairstyle' element={<Filter/>} />
-          <Route path='BeardMoustache' element={<FilterBeard/>} />
-          <Route path='Eyebrow' element={<FilterEyebrow/>} />
-          <Route path='Lipcolor' element={<FilterLipcolor/>} />
+          <Route index element={<StyledItems/>} />
+          <Route path='Hairstyle' element={<StyledItems/>} />
+          <Route path='BeardMoustache' element={<StyledItemsBeard/>} />
+          <Route path='Eyebrow' element={<StyledItemsEyeBrow/>} />
+          <Route path='Lipcolor' element={<StyledItemsLip/>} />
         </Route>       
       </Routes>
       </BrowserRouter>
