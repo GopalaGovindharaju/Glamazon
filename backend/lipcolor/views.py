@@ -65,8 +65,6 @@ def getFilteredLipcolor(request):
                 if error_code == 0:
                     resultimage = data.get('result_image', '')
                     decoded_image = base64.b64decode(resultimage)
-                    image = Image.open(BytesIO(decoded_image))
-                    image.show()
                     filteredImage = store_image(decoded_image, f'{UserName}_output_image.png', UserName, Original_Image)
                     response_data = {
                         'filteredImage' : filteredImage,

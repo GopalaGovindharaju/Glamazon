@@ -57,28 +57,36 @@ function StylesPart({handleHairStyle,recommended,setRecommended,selectedGender,c
     handleHairStyle(id);
   }
   
+  const text_css = {
+    fontFamily: "var(--chakra-fonts-body)",
+    fontWeight:'400',
+    color: "rgb(51, 51, 51)",
+    fontSize: "15px",
+  };
   
   return (
     <Box
     display="flex"
-    border="1px"
     overflow="auto"
     height='40vh'
     width='100%'
     flexDirection='row'
     pl='17%'
+    backgroundColor="#FAF2EC"
+    paddingTop="8px"
+    paddingLeft="15px"
   >
 {recommendedStyles.map((item) => (
-      <Card key={item.id}  p={0} minW="270px" maxW="270px" mr={4} onClick={() => handleHairStyleChange(item.id)}>
+      <Card key={item.id}  p={0} minW="200px" maxW="200px" mr={4} boxShadow='0 0 5px rgba(60, 60, 60, 0.5)' onClick={() => handleHairStyleChange(item.id)}>
         <CardBody display="flex" pb={0} flexDirection="column">
           <Image
-            h="180PX"
+            h="160PX"
             src={item.image}
             borderRadius="lg"
             loading="lazy"
           />
           <Stack pt="2" spacing="3">
-            <Heading mb={0} size="md">{item.name}</Heading>
+            <Heading mb={0} style={text_css}>{item.name}</Heading>
           </Stack>
         </CardBody>
       </Card>
