@@ -18,6 +18,8 @@ def getFilteredHairstyle(request):
         Original_Image = request.FILES.get('original_image',None)
         UserName = data.get('username')
         hair_style = data.get('style')
+        color = data.get('color')
+        print("color was",color)
 
 
 
@@ -92,18 +94,26 @@ def getFilteredHairstyle(request):
         if Original_Image:
             image_data = Original_Image.read()
             url = "https://www.ailabapi.com/api/portrait/effects/hairstyle-editor-pro"
-            api_key = 'LgtC4g71J3uoGk9HpYEhpfSQjz9cBIVVUqW0LkEDyBiFF52GOI2xNtTQrARlTMza'
+            api_key = '9ZRT6xTHb2l9DWSR0nAAXfGP74X1eiztFoYdjukJL32BUg4t85hbp6mmC0ykLUKj'
             headers = {'ailabapi-api-key': api_key}
 
             files = {'image': (Original_Image.name, image_data, Original_Image.content_type)}
             print(Original_Image.name, Original_Image.content_type)
 
-            payload = {
-                'task_type': 'async',
-                'hair_style': hair_style,
-                'color': 'brown',
-                'auto': 1
-            }
+            if color == 'null':
+                payload = {
+                    'task_type': 'async',
+                    'hair_style': hair_style,
+                    'auto': 1
+                }
+            else:
+                payload = {
+                    'task_type': 'async',
+                    'hair_style': hair_style,
+                    'color': color,
+                    'auto': 1
+                }
+            print("data:",payload)
 
             response = requests.request("POST", url, headers=headers, data=payload, files=files)
             print(response)

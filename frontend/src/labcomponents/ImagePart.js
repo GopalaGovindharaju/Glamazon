@@ -15,7 +15,7 @@ function ImagePart({selectedHaircolor,selectedHairStyle,setShownImage,shownImage
   return (
     <div>
       <Box
-        pt="6.5%"
+        pt="6rem"
         pl="17%"
         display="flex"
         border="1px"

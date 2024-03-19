@@ -18,6 +18,17 @@ def getFilteredLipcolor(request):
 
         Original_Image = request.FILES.get('original_image',None)
         UserName = data.get('username')
+        color = data.get('color')
+        # Parse RGBA color string into individual components
+        rgba_string = color.split('(')[1].split(')')[0]
+        rgba_values = rgba_string.split(",")
+        r = int(rgba_values[0])
+        g = int(rgba_values[1])
+        b = int(rgba_values[2])
+        a = int(rgba_values[3])
+        a = a * 100
+ 
+        print(r,g,b,a)
         def store_image(image_data, filename, UserName, OriginalImage):
             # Save the image data to the specified file
             with open(filename, 'wb') as image_file:
@@ -33,15 +44,16 @@ def getFilteredLipcolor(request):
         if Original_Image:
             image_data = Original_Image.read()
             url = "https://www.ailabapi.com/api/portrait/effects/lips-color-changer"
-            api_key = 'LgtC4g71J3uoGk9HpYEhpfSQjz9cBIVVUqW0LkEDyBiFF52GOI2xNtTQrARlTMza'
+            api_key = '9ZRT6xTHb2l9DWSR0nAAXfGP74X1eiztFoYdjukJL32BUg4t85hbp6mmC0ykLUKj'
             headers = {'ailabapi-api-key': api_key}
 
             files = {'image': (Original_Image.name, image_data, Original_Image.content_type)}
             print(Original_Image.name, Original_Image.content_type)
 
             payload = {
-                        "lip_color_infos": '[{"rgba":{"r":255,"g":99,"b":71,"a":100}}]'
+                        "lip_color_infos": json.dumps([{"rgba": {"r": r, "g": g, "b": b, "a": a}}])
                       }
+            print(payload)
 
             response = requests.request("POST", url, headers=headers, data=payload, files=files)
             
@@ -55,8 +67,11 @@ def getFilteredLipcolor(request):
                     decoded_image = base64.b64decode(resultimage)
                     image = Image.open(BytesIO(decoded_image))
                     image.show()
-                    output_image_url = store_image(decoded_image, f'{UserName}_output_image.png', UserName, Original_Image)
-                    return Response({"output_image_url": output_image_url})
+                    filteredImage = store_image(decoded_image, f'{UserName}_output_image.png', UserName, Original_Image)
+                    response_data = {
+                        'filteredImage' : filteredImage,
+                    }
+                    return Response(response_data, status=status.HTTP_200_OK)
                     
                 else:
                     print(f"Error code {error_code}: {data.get('error_msg', 'Unknown error')}")

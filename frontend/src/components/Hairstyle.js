@@ -83,7 +83,7 @@ export const Hairstyle = [
   {
     image: CurlyShage,
     name: "Curly Shag hair",
-    id: "CurlyShage",
+    id: "CurlyShag",
     gender: "male",
     category: "Casual"
   },
@@ -145,8 +145,8 @@ export const Hairstyle = [
   },
   {
     image: Middleparted,
-    name: "Middleparted",
-    id: "Middleparted",
+    name: "MiddleParted",
+    id: "MiddleParted",
     gender: "male",
     category: "Casual"
   },

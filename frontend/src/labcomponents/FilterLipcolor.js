@@ -1,7 +1,7 @@
 import { Box, Flex, Stack, Text } from '@chakra-ui/react';
 import React, { useState } from 'react';
 
-function FilterLipcolor() {
+function FilterLipcolor({handleLipColor}) {
   const [selectedColor, setSelectedColor] = useState({ r: 255, g: 0, b: 0, a: 1 });
   const [displayedColor, setDisplayedColor] = useState(`rgba(${selectedColor.r}, ${selectedColor.g}, ${selectedColor.b}, ${selectedColor.a})`);
 
@@ -21,6 +21,7 @@ function FilterLipcolor() {
   };
 
   const handleColorClick = (color) => {
+    handleLipColor(color);
     setDisplayedColor(color);
   };
 
@@ -38,33 +39,30 @@ function FilterLipcolor() {
   };
 
   const lightVariations = Array.from({ length: 10 }).map((_, index) => {
-    // Adjust the factor to control the lightness
-    const factor = 1 - index / 20; // Change this factor to control lightness
-    const variationR = Math.round(selectedColor.r * factor);
-    const variationG = Math.round(selectedColor.g * factor);
-    const variationB = Math.round(selectedColor.b * factor);
+    // Calculate green and blue values based on the index
+    const green = Math.min(selectedColor.g + index * 15, 255);
+    const blue = Math.min(selectedColor.b + index * 15, 255);
   
-    // Decrease alpha as the color gets lighter
-    const alpha = 1 - index / 20; // Change this factor to control alpha
+    // Construct the rgba color string
+    const color = `rgba(${selectedColor.r}, ${green}, ${blue}, 1)`;
   
-    return `rgba(${variationR}, ${variationG}, ${variationB}, ${alpha})`;
+    return color;
   });
   
   const darkVariations = Array.from({ length: 10 }).map((_, index) => {
-    // Adjust the factor to control the darkness
-    const factor = 1 + index / 20; // Change this factor to control darkness
-    const variationR = Math.round(selectedColor.r / factor);
-    const variationG = Math.round(selectedColor.g / factor);
-    const variationB = Math.round(selectedColor.b / factor);
+    // Decrease each RGB component proportionally
+    const scaleFactor = 1 - index * 0.05; // Adjust the factor as needed for desired darkness increment
+    const variationR = Math.max(selectedColor.r * scaleFactor, 0);
+    const variationG = Math.max(selectedColor.g * scaleFactor, 0);
+    const variationB = Math.max(selectedColor.b * scaleFactor, 0);
   
-    // Increase alpha as the color gets darker
-    const alpha = 1 + index / 20; // Change this factor to control alpha
+    // Construct the rgba color string
+    const color = `rgba(${Math.round(variationR)}, ${Math.round(variationG)}, ${Math.round(variationB)}, 1)`;
   
-    return `rgba(${variationR}, ${variationG}, ${variationB}, ${alpha})`;
-  });
-  
-  
-  const colorVariations = [...lightVariations.reverse(), ...darkVariations];
+    return color;
+});
+
+  const colorVariations = [...lightVariations.slice(1).reverse(), ...darkVariations];  
   
 
   return (
@@ -115,6 +113,7 @@ function FilterLipcolor() {
             display="inline-block"
             w="100px" // Adjust the width as needed
             h="100px" // Adjust the height as needed
+            borderRight='0.5px solid gray'
             bg={`rgba(${selectedColor.r}, ${selectedColor.g}, ${selectedColor.b}, ${selectedColor.a})`}
           />
           <Box

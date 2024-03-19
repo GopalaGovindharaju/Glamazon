@@ -8,7 +8,7 @@ import { useSnapImage } from '../context/SnapImageContext';
 
 function StyledItems() {
   const { setFilteredImage } = useSnapImage();
-  const { snapedImage, selectedHairStyle, selectedHaircolor, setSelectedHairColor, setSelectedHairStyle } = useSnapImage();
+  const { snapedImage, selectedHairStyle, selectedHaircolor, filteredImage, setSelectedHairColor, setSelectedHairStyle } = useSnapImage();
   const [recommended, setRecommended] = useState(true);
   const [selectedGender, setSelectedGender] = useState("all");
   const [shownImage, setShownImage] = useState(false);
@@ -21,8 +21,12 @@ function StyledItems() {
     'Vintage': false,
   });
 
+  useEffect(() => {
+    if(filteredImage){
+      setShownImage(true)
+    }
+  },[shownImage, filteredImage])
   const handleHairStyle = (style) => {
-    // Convert base64 image data to a File object
     setLoading(true);
     
     const base64ToBlob = (base64) => {
@@ -30,41 +34,65 @@ function StyledItems() {
       const contentType = parts[0].split(':')[1];
       const raw = window.atob(parts[1]);
       const blobArray = new Uint8Array(new ArrayBuffer(raw.length));
-
+  
       for (let i = 0; i < raw.length; i++) {
         blobArray[i] = raw.charCodeAt(i);
       }
-
+  
       return new Blob([blobArray], { type: contentType });
     };
 
-    
-    const file = base64ToBlob(snapedImage);
-    
-    // Create FormData and append the file
-    const formData = new FormData();
-    formData.append('username', 'gops');
-    formData.append('original_image', file, 'original_image.jpeg');
-    console.log(style)
-    formData.append('style', style);
-    console.log(selectedHaircolor)
-    formData.append('color',selectedHaircolor);
+    let file;
+  
+    const continueWithData = () => {
+      const formData = new FormData();
+      formData.append('username', 'gops');
+      formData.append('original_image', file, 'original_image.jpeg');
+      formData.append('style', style);
+      formData.append('color', selectedHaircolor);
+      console.log(selectedHaircolor,style)
+  
+      axios.post('http://127.0.0.1:8000/hairstyle/getFilteredHairstyle/', formData)
+        .then((response) => {
+          console.log(response.data);
+          setFilteredImage(response.data.filteredImage);
+          setShownImage(true);
+        })
+        .catch((error) => {
+          console.error('Error in POST request:', error);
+        })
+        .finally(() => {
+          setLoading(false); // Set loading to false when request completes
+        });
+    };
 
-    console.log(formData);
-
-    axios.post('http://127.0.0.1:8000/hairstyle/getFilteredHairstyle/', formData)
-      .then((response) => {
-        console.log(response.data);
-        setFilteredImage(response.data.filteredImage);
-        setShownImage(true);
-      })
-      .catch((error) => {
-        console.log(error)
-      })
-      .finally(() => {
-        setLoading(false); // Set loading to false when request completes
-      });
-  }
+    
+    if (filteredImage) {
+      // If filteredImage is available, fetch the image from URL and convert to base64
+      fetch(filteredImage)
+        .then(response => response.blob())
+        .then(blob => {
+          const reader = new FileReader();
+          reader.readAsDataURL(blob);
+          reader.onloadend = () => {
+            const base64data = reader.result;
+            file = base64ToBlob(base64data);
+            continueWithData();
+          };
+        })
+        .catch(error => {
+          console.error('Error fetching and converting image:', error);
+          setLoading(false); // Set loading to false in case of error
+        });
+    } else {
+      // If filteredImage is not available, use snapedImage directly
+      file = base64ToBlob(snapedImage);
+      continueWithData();
+    }
+  
+    
+  };
+  
   const handleHairColor = (color) => {
     // Convert base64 image data to a File object
     setLoading(true);
@@ -82,32 +110,56 @@ function StyledItems() {
       return new Blob([blobArray], { type: contentType });
     };
 
+    let file;
     
-    const file = base64ToBlob(snapedImage);
+    const continueWithData = () => {
+// Create FormData and append the file
+const formData = new FormData();
+formData.append('username', 'gops');
+formData.append('original_image', file, 'original_image.jpeg');
+console.log(selectedHairStyle)
+formData.append('style', selectedHairStyle);
+console.log(color)
+formData.append('color',color);
+
+console.log(formData);
+
+axios.post('http://127.0.0.1:8000/hairstyle/getFilteredHairstyle/', formData)
+  .then((response) => {
+    console.log(response.data);
+    setFilteredImage(response.data.filteredImage);
+    setShownImage(true)
+  })
+  .catch((error) => {
+    console.log(error)
+  })
+  .finally(() => {
+    setLoading(false); // Set loading to false when request completes
+  });
+    };
+    if (filteredImage) {
+      // If filteredImage is available, fetch the image from URL and convert to base64
+      fetch(filteredImage)
+        .then(response => response.blob())
+        .then(blob => {
+          const reader = new FileReader();
+          reader.readAsDataURL(blob);
+          reader.onloadend = () => {
+            const base64data = reader.result;
+            file = base64ToBlob(base64data);
+            continueWithData();
+          };
+        })
+        .catch(error => {
+          console.error('Error fetching and converting image:', error);
+          setLoading(false); // Set loading to false in case of error
+        });
+    } else {
+      // If filteredImage is not available, use snapedImage directly
+      file = base64ToBlob(snapedImage);
+      continueWithData();
+    }
     
-    // Create FormData and append the file
-    const formData = new FormData();
-    formData.append('username', 'gops');
-    formData.append('original_image', file, 'original_image.jpeg');
-    console.log(selectedHairStyle)
-    formData.append('style', selectedHairStyle);
-    console.log(color)
-    formData.append('color',color);
-
-    console.log(formData);
-
-    axios.post('http://127.0.0.1:8000/hairstyle/getFilteredHairstyle/', formData)
-      .then((response) => {
-        console.log(response.data);
-        setFilteredImage(response.data.filteredImage);
-        setShownImage(true)
-      })
-      .catch((error) => {
-        console.log(error)
-      })
-      .finally(() => {
-        setLoading(false); // Set loading to false when request completes
-      });
   }
   return (
     <>
