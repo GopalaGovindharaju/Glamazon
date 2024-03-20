@@ -67,14 +67,14 @@ function StylesPart({handleHairStyle,recommended,setRecommended,selectedGender,c
   return (
     <Box
     display="flex"
-    overflow="auto"
+    overflow="scroll"
     height='40vh'
     width='100%'
     flexDirection='row'
-    pl='17%'
+    pl='19.5%'
     backgroundColor="#FAF2EC"
     paddingTop="8px"
-    paddingLeft="15px"
+    pb='2%'
   >
 {recommendedStyles.map((item) => (
       <Card key={item.id}  p={0} minW="200px" maxW="200px" mr={4} boxShadow='0 0 5px rgba(60, 60, 60, 0.5)' onClick={() => handleHairStyleChange(item.id)}>

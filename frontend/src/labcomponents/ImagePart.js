@@ -81,7 +81,7 @@ function ImagePart({selectedHaircolor,selectedHairStyle,setShownImage,shownImage
                 src={snapedImage}
                 alt="Dan Abramov"
                 borderRadius='md'
-                boxSize='200px'
+                boxSize='240px'
                 boxShadow='0 0 5px rgba(60, 60, 60, 0.5)'
               />
             </Stack>
