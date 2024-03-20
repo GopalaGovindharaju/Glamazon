@@ -1,10 +1,17 @@
-import { Box, Image, Spinner, Stack, Switch, Text } from '@chakra-ui/react'
+import { Box, Image, Text } from '@chakra-ui/react'
 import React from 'react'
 import { useSnapImage } from '../../context/SnapImageContext';
 
 function LipImagePart({loading}) {
-    const { filteredImage, overAllFilteredImage } = useSnapImage();
+  const { filteredImage, overAllFilteredImage } = useSnapImage();
   const { snapedImage } = useSnapImage();
+
+  const text_css = {
+    fontFamily: "cambria",
+    fontWeight:'550',
+    color: "black",
+    fontSize: "18px",
+  };
   return (
     <div>
       <Box
@@ -12,42 +19,49 @@ function LipImagePart({loading}) {
         pl="17%"
         display="flex"
         border="1px"
-        height="calc(100vh - 40vh)"
+        height="calc(100vh)"
         overflow="auto"
         flexWrap="wrap"
         alignContent="stretch"
+        backgroundColor="#FAF2EC"
       >
         <Box
           className="col-6"
-          border="1px solid black"
           borderRadius="9"
           mb={2}
           backgroundColor="rgb()"
         >
+          <Text style={text_css}>USER IMAGE</Text>
             <Image
-              pt={2}
-              objectFit="contain"
+              objectFit="fit"
               w="100%"
               height="calc(100vh - 63vh)"
               src={snapedImage}
               alt="Dan Abramov"
+              boxSize="90%"
+              ml='5%'
+              borderRadius='md'
+              boxShadow='0 0 5px rgba(60, 60, 60, 0.5)'
             />
         </Box>
         <Box
           className="col-6"
-          border="1px solid black"
           borderRadius="9"
           mb={2}
           backgroundColor="rgb()"
         >
-          <Text>FilteredImage</Text>
+          <Text style={text_css}>FILTERED IMAGE</Text>
           <Image
-              pt={2}
-              objectFit="contain"
+              objectFit="fit"
               w="100%"
               height="calc(100vh - 63vh)"
               src={overAllFilteredImage}
               alt="Dan Abramov"
+              boxSize='90%'
+              ml='5%'
+              borderRadius='md'
+              boxShadow='0 0 5px rgba(60, 60, 60, 0.5)'
+              backgroundColor='white'
             />
           
         </Box>

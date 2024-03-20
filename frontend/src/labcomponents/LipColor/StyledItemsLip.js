@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import FilterLipcolor from '../FilterLipcolor'
 import { useSnapImage } from '../../context/SnapImageContext';
 import LipImagePart from './LipImagePart';
