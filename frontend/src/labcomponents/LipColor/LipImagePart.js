@@ -15,7 +15,7 @@ function LipImagePart({loading}) {
   return (
     <div>
       <Box
-        pt="6rem"
+        pt="6.4rem"
         pl="17%"
         display="flex"
         border="1px"
@@ -30,16 +30,15 @@ function LipImagePart({loading}) {
           borderRadius="9"
           mb={2}
           backgroundColor="rgb()"
+          pl={2}
         >
-          <Text style={text_css}>USER IMAGE</Text>
+          <Text style={text_css} >USER IMAGE</Text>
             <Image
               objectFit="fit"
               w="100%"
-              height="calc(100vh - 63vh)"
+              height="calc(100vh - 23vh)"
               src={snapedImage}
               alt="Dan Abramov"
-              boxSize="90%"
-              ml='5%'
               borderRadius='md'
               boxShadow='0 0 5px rgba(60, 60, 60, 0.5)'
             />
@@ -49,16 +48,16 @@ function LipImagePart({loading}) {
           borderRadius="9"
           mb={2}
           backgroundColor="rgb()"
+          px={2}
+
         >
           <Text style={text_css}>FILTERED IMAGE</Text>
           <Image
               objectFit="fit"
               w="100%"
-              height="calc(100vh - 63vh)"
+              height="calc(100vh - 23vh)"
               src={overAllFilteredImage}
               alt="Dan Abramov"
-              boxSize='90%'
-              ml='5%'
               borderRadius='md'
               boxShadow='0 0 5px rgba(60, 60, 60, 0.5)'
               backgroundColor='white'

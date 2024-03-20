@@ -67,25 +67,25 @@ function StylesPart({handleHairStyle,recommended,setRecommended,selectedGender,c
   return (
     <Box
     position='fixed'
-      right={0}
+      right={6}
       bottom={0}
       top="35%"
       left="65%"
       py={4}
-      px={4}
+      pl={4}
       bg='rgb(251, 249, 247)'
       zIndex={9}
       overflow="auto"
       height="calc(100vh - 35vh)"
       border='2px solid black'
       borderRadius={8}
-      m={2}
-      mr={4}
+      display='flex'
+      flexWrap='wrap'
+      justifyContent='space-evenly'
+      alignContent='flex-start'
   >
-    
-  <Grid templateColumns="repeat(2, 1fr)"gap={4}>
     {recommendedStyles.map((item) => (
-      <Card key={item.id} p={0} maxW="200px" backgroundColor='#FEF5E7 ' boxShadow='0 0 5px rgba(60, 60, 60, 0.5)' onClick={() => handleHairStyleChange(item.id)}>
+      <Card key={item.id} p={0} m={2} maxW="200px" backgroundColor='#FEF5E7 ' boxShadow='0 0 5px rgba(60, 60, 60, 0.5)' onClick={() => handleHairStyleChange(item.id)}>
         <CardBody pb={0} flexDirection="column">
           <Image
             h="160px"
@@ -99,7 +99,6 @@ function StylesPart({handleHairStyle,recommended,setRecommended,selectedGender,c
         </CardBody>
       </Card>
     ))}
-  </Grid>
   </Box>
   )
 }
