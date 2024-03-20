@@ -1,4 +1,4 @@
-import { Box, Card, CardBody, Heading, Image, Stack } from '@chakra-ui/react'
+import { Box, Card, CardBody, Grid, Heading, Image, Stack, Text } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import { Hairstyle } from '../components/Hairstyle'
 
@@ -58,29 +58,37 @@ function StylesPart({handleHairStyle,recommended,setRecommended,selectedGender,c
   }
   
   const text_css = {
-    fontFamily: "var(--chakra-fonts-body)",
-    fontWeight:'400',
+    fontFamily: "Cambria",
+    fontWeight:'550',
     color: "rgb(51, 51, 51)",
-    fontSize: "15px",
+    fontSize: "17px",
   };
   
   return (
     <Box
-    display="flex"
-    overflow="auto"
-    height='40vh'
-    width='100%'
-    flexDirection='row'
-    pl='17%'
-    backgroundColor="#FAF2EC"
-    paddingTop="8px"
-    paddingLeft="15px"
+    position='fixed'
+      right={0}
+      bottom={0}
+      top="35%"
+      left="65%"
+      py={4}
+      px={4}
+      bg='rgb(251, 249, 247)'
+      zIndex={9}
+      overflow="auto"
+      height="calc(100vh - 35vh)"
+      border='2px solid black'
+      borderRadius={8}
+      m={2}
+      mr={4}
   >
-{recommendedStyles.map((item) => (
-      <Card key={item.id}  p={0} minW="200px" maxW="200px" mr={4} boxShadow='0 0 5px rgba(60, 60, 60, 0.5)' onClick={() => handleHairStyleChange(item.id)}>
-        <CardBody display="flex" pb={0} flexDirection="column">
+    
+  <Grid templateColumns="repeat(2, 1fr)"gap={4}>
+    {recommendedStyles.map((item) => (
+      <Card key={item.id} p={0} maxW="200px" backgroundColor='#FEF5E7 ' boxShadow='0 0 5px rgba(60, 60, 60, 0.5)' onClick={() => handleHairStyleChange(item.id)}>
+        <CardBody pb={0} flexDirection="column">
           <Image
-            h="160PX"
+            h="160px"
             src={item.image}
             borderRadius="lg"
             loading="lazy"
@@ -90,7 +98,8 @@ function StylesPart({handleHairStyle,recommended,setRecommended,selectedGender,c
           </Stack>
         </CardBody>
       </Card>
-    ))} 
+    ))}
+  </Grid>
   </Box>
   )
 }

@@ -14,7 +14,7 @@ function LabHeader() {
 
   return (
     <div>
-      <Flex px={4} py={2} position='fixed' height='13vh' left={0} right={0} borderBottom='1px' borderColor='#663620' zIndex='10' bg='white'>
+      <Flex px={4} py={2} position='fixed' height='15vh' left={0} right={0} borderBottom='1px' borderColor='#663620' zIndex='10' bg='white'>
         <Box>
           <Image w={300} h={20} src={logo}/>
         </Box><Spacer/>
