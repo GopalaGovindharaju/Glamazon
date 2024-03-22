@@ -60,13 +60,11 @@ function ImagePart({selectedHaircolor,selectedHairStyle,setShownImage,shownImage
           ) : shownImage ? (
             <Stack direction="row" justify='center'>
             <Image
-            pt={2}
             objectFit="fit"
-            height="calc(100vh - 63vh)"
+            height="calc(100vh - 22vh)"
             src={filteredImage}
             alt="Dan Abramov"
             borderRadius="md"
-            boxSize='78%'
             boxShadow='0 0 5px rgba(60, 60, 60, 0.5)'
           /></Stack>
             

@@ -56,7 +56,7 @@ function LipImagePart({loading}) {
               objectFit="fit"
               w="100%"
               height="calc(100vh - 23vh)"
-              src={overAllFilteredImage}
+              src={filteredImage}
               alt="Dan Abramov"
               borderRadius='md'
               boxShadow='0 0 5px rgba(60, 60, 60, 0.5)'

@@ -9,9 +9,10 @@ export const SnapImageProvider = ({ children }) => {
   const [filteredImage, setFilteredImage] = useState(null);
   const [selectedHaircolor, setSelectedHairColor] = useState(null)
   const [selectedHairStyle, setSelectedHairStyle] = useState(null)
+  const [selectedEyebrow, setSelectedEyebrow] = useState(null)
 
   return (
-    <SnapImageContext.Provider value={{ snapedImage, setSnapedImage, filteredImage, setFilteredImage, selectedHairStyle, setSelectedHairStyle, selectedHaircolor, setSelectedHairColor }}>
+    <SnapImageContext.Provider value={{ selectedEyebrow, setSelectedEyebrow, snapedImage, setSnapedImage, filteredImage, setFilteredImage, selectedHairStyle, setSelectedHairStyle, selectedHaircolor, setSelectedHairColor }}>
       {children}
     </SnapImageContext.Provider>
   );
