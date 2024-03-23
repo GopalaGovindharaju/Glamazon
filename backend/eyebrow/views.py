@@ -35,7 +35,7 @@ def getFilteredEyebrow(request):
             return Response({'error': 'No image file provided'})
 
 def main(image, mask, prompt):
-    api_key = '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'
+    #api_key = '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'
     client = OpenAI(api_key = api_key)
 
     image_data = image.read()
