@@ -35,8 +35,6 @@ def getFilteredEyebrow(request):
             return Response({'error': 'No image file provided'})
 
 
-
-
 def fetch_and_remove_eyebrows(image_file):
     # Define the API endpoint
     url = "https://www.ailabapi.com/api/portrait/analysis/face-key-points"
