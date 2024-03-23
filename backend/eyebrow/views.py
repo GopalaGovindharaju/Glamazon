@@ -34,23 +34,7 @@ def getFilteredEyebrow(request):
         else:
             return Response({'error': 'No image file provided'})
 
-def main(image, mask, prompt):
-    #api_key = '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'
-    #client = OpenAI(api_key = api_key)
 
-    image_data = image.read()
-    _, mask_data = cv2.imencode('.png', mask)
-    mask1 = mask_data.tobytes()
-
-    response = client.images.edit(
-    image=image_data,
-    mask=mask1,
-    prompt="A girl with green hairstyle",
-    n=2,
-    size="1024x1024"
-    )
-
-    print(response)
 
 
 def fetch_and_remove_eyebrows(image_file):
