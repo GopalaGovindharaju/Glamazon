@@ -23,6 +23,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path('hairstyle/', include('hairstyle.urls')),
     path('lipcolor/', include('lipcolor.urls')),
+    path('eyebrow/', include('eyebrow.urls')),
 ]
 
 if settings.DEBUG:

@@ -21,11 +21,7 @@ function StyledItems() {
     'Vintage': false,
   });
 
-  useEffect(() => {
-    if(filteredImage){
-      setShownImage(true)
-    }
-  },[shownImage, filteredImage])
+
   const handleHairStyle = (style) => {
     setLoading(true);
     

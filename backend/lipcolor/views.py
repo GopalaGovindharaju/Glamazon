@@ -44,7 +44,7 @@ def getFilteredLipcolor(request):
         if Original_Image:
             image_data = Original_Image.read()
             url = "https://www.ailabapi.com/api/portrait/effects/lips-color-changer"
-            api_key = '9ZRT6xTHb2l9DWSR0nAAXfGP74X1eiztFoYdjukJL32BUg4t85hbp6mmC0ykLUKj'
+            api_key = 'fw6CZvUBXzuym8EwXx4TLtAKBHPOMLce1lfRSWKpQ1W0CY52qcTvFugoNRDAnteb'
             headers = {'ailabapi-api-key': api_key}
 
             files = {'image': (Original_Image.name, image_data, Original_Image.content_type)}

@@ -60,13 +60,11 @@ function ImagePart({selectedHaircolor,selectedHairStyle,setShownImage,shownImage
           ) : shownImage ? (
             <Stack direction="row" justify='center'>
             <Image
-            pt={2}
             objectFit="fit"
-            height="calc(100vh - 63vh)"
+            height="calc(100vh - 22vh)"
             src={filteredImage}
             alt="Dan Abramov"
             borderRadius="md"
-            boxSize='78%'
             boxShadow='0 0 5px rgba(60, 60, 60, 0.5)'
           /></Stack>
             
@@ -74,11 +72,10 @@ function ImagePart({selectedHaircolor,selectedHairStyle,setShownImage,shownImage
             <Stack direction="row" justify='center'>
               <Image
                 objectFit="fit"
-                height="calc(100vh - 65vh)"
+                height="calc(100vh - 22vh)"
                 src={snapedImage}
                 alt="Dan Abramov"
                 borderRadius='md'
-                boxSize='78%'
                 boxShadow='0 0 5px rgba(60, 60, 60, 0.5)'
               />
             </Stack>
@@ -89,7 +86,7 @@ function ImagePart({selectedHaircolor,selectedHairStyle,setShownImage,shownImage
           borderRadius="9"
           backgroundColor="white"
           border='2px solid black'
-          m={1}
+          mt='1.4%'
           width='40%'
           height="120px"
         >
