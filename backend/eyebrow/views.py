@@ -36,7 +36,7 @@ def getFilteredEyebrow(request):
 
 def main(image, mask, prompt):
     #api_key = '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'
-    client = OpenAI(api_key = api_key)
+    #client = OpenAI(api_key = api_key)
 
     image_data = image.read()
     _, mask_data = cv2.imencode('.png', mask)
