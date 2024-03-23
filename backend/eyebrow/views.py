@@ -1,6 +1,6 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from openai import OpenAI
+
 import cv2
 import numpy as np
 import requests
