@@ -8,3 +8,11 @@ class Eyebrow(models.Model):
  
     def __str__(self):
         return self.UserName
+
+class EyebrowTMP(models.Model):
+    UserName = models.CharField(max_length = 100, null = False)
+    OrginalImage = models.FileField(upload_to='Eyebrow/OriginalImage/', null=True, blank=True)
+    FilteredImage = models.FileField(upload_to='Eyebrow/FilteredImage/', null=True, blank=True)
+ 
+    def __str__(self):
+        return self.UserName
