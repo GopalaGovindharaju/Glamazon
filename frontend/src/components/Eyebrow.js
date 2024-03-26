@@ -46,18 +46,12 @@ export const Eyebrow = [
     },
     {
         id: 8,
-        name: 'Thick',
+        name: 'Thick(big)',
         image: Thick
     },
     {
         id: 9,
-        name: 'Thin',
+        name: 'thin(slim)',
         image: Thin
-    },
-    //for presentation
-    {
-        id: 10,
-        name: 'S-Shaped',
-        image: S_Shaped
     },
 ]

@@ -75,8 +75,10 @@ function Slider() {
               top="80%"
               left="50%"
               transform="translate(-50%, -50%)"
-              bg="transparent"
+              bg='rgba(0,0,0,0.4)'
               border="1px solid"
+              color='white'
+              backdropFilter='blur(5px)'
             >
               EXPLORE
             </Button>
@@ -85,6 +87,7 @@ function Slider() {
               top="calc(80% + 50px)" // Adding 20px to create space between button and text
               left="50%"
               transform="translate(-50%, -50%)"
+              backdropFilter='blur(5px)'
               style={{ fontSize: '1.5rem', textAlign: 'center', color: '#ffffff', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }} // Setting attractive color and text shadow
             >
               {slide.quote}

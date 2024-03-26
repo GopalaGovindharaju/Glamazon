@@ -21,7 +21,7 @@ function EyebrowStylesPart({setSelectedEyebrow, handleEyebrow}) {
       right={6}
       bottom={0}
       top="20%"
-      left="65%"
+      left="50%"
       py={4}
       pl={4}
       bg='rgb(251, 249, 247)'
@@ -36,16 +36,17 @@ function EyebrowStylesPart({setSelectedEyebrow, handleEyebrow}) {
       alignContent='flex-start'
   >
     {Eyebrow.map((item) => (
-      <Card key={item.id} p={0} m={2} maxW="200px" backgroundColor='#FEF5E7 ' boxShadow='0 0 5px rgba(60, 60, 60, 0.5)' onClick={() => handleEyebrowChange(item.name)}>
+      <Card key={item.id} p={0} m={2}  backgroundColor='#FEF5E7 ' boxShadow='0 0 5px rgba(60, 60, 60, 0.5)' onClick={() => handleEyebrowChange(item.name)}>
         <CardBody pb={0} flexDirection="column">
           <Image
             h="160px"
+            maxW='230px'
             src={item.image}
             borderRadius="lg"
             loading="lazy"
           />
           <Stack pt="2" spacing="3">
-            <Heading mb={0} style={text_css}>{item.name}</Heading>
+            <Heading style={text_css}>{item.name}</Heading>
           </Stack>
         </CardBody>
       </Card>

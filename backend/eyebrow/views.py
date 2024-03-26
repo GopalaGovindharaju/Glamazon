@@ -4,8 +4,16 @@ from rest_framework.response import Response
 import cv2
 import numpy as np
 import requests
-from django.core.files.uploadedfile import InMemoryUploadedFile
+from openai import OpenAI
 import os
+from django.conf import settings
+from django.core.files.storage import default_storage
+import uuid
+from PIL import Image
+from rest_framework import status
+from .models import Eyebrow
+from django.core.files.base import ContentFile
+
 
 @api_view(['POST'])
 def getFilteredEyebrow(request):
@@ -13,27 +21,88 @@ def getFilteredEyebrow(request):
         data = request.data
         Original_Image = request.FILES.get('original_image', None)
         UserName = data.get('username')
-        prompt = data.get('style')
+        prompt1 = data.get('style')
+        prompt = f'a human with {prompt1} eyebrows'
+        original_image_size_image = Original_Image
+        def store_image(image_url, filename, UserName, OriginalImage):
+            # Download the image from the URL
+            response = requests.get(image_url)
 
+            if response.status_code == 200:
+                # Get the binary data from the response
+                image_data = response.content
+
+                # Save the image data to the specified file
+                with open(filename, 'wb') as image_file:
+                    image_file.write(image_data)
+
+                # Get or create the HairStyle object based on UserName
+                hairstyle_info = Eyebrow(UserName = UserName, OrginalImage = OriginalImage)
+                hairstyle_info.FilteredImage.save(filename, ContentFile(image_data), save=True)
+
+                hairstyle_info.save()
+                current_site = request.build_absolute_uri('/')
+
+                return (current_site + hairstyle_info.FilteredImage.url)
+            else:
+                print(f"Failed to download image from openai.")
+        
         if Original_Image:
             # Call the function to process the image
             modified_image = fetch_and_remove_eyebrows(Original_Image)
 
             if modified_image is not None:
-                main(Original_Image, modified_image, prompt)
-                # Save the modified image to a specific path
-                #modified_image_path = 'C:/Users/WELCOME/Downloads/mask_image.png'  # Specify the desired path here
-                #cv2.imwrite(modified_image_path, modified_image)
-                #print("gr",type(modified_image))
+                original_image_path = os.path.join(settings.MEDIA_ROOT, 'original', Original_Image.name)
+                default_storage.save(original_image_path, Original_Image)
+                with default_storage.open(original_image_path, 'rb') as f:
+                    image = Image.open(f)
+                    
+                    png_image = image.convert('RGBA')
 
-                # Return the path to the modified image
-                return Response({'message': 'Image processed successfully', 'modified_image_path': modified_image_path})
+                    png_image_path = os.path.splitext(original_image_path)[0] + '.png'
+
+                    with default_storage.open(png_image_path, 'wb') as png_file:
+                        png_image.save(png_file, format='PNG')
+
+                default_storage.delete(original_image_path)
+                modified_image_folder = os.path.join(settings.MEDIA_ROOT, 'modified')
+                if not os.path.exists(modified_image_folder):
+                    os.makedirs(modified_image_folder)
+
+                modified_image_path = os.path.join(modified_image_folder, 'modified_image.png')
+                cv2.imwrite(modified_image_path, modified_image)
+                print("Original image path:", png_image_path)
+                print("Modified image path:", modified_image_path)
+                transformed_image_url = main(png_image_path,modified_image_path,prompt)
+                print(transformed_image_url)
+                filteredImage = store_image(transformed_image_url, f'{UserName}_output_image.png', UserName, Original_Image)
+                response_data = {
+                            'filteredImage' : filteredImage,
+                        }
+
+                return Response(response_data, status=status.HTTP_200_OK)
             else:
                 return Response({'error': 'Error processing image'})
 
         else:
             return Response({'error': 'No image file provided'})
 
+
+def main(image, mask, prompt):
+    
+    client = OpenAI(api_key=api_key)
+    try:
+        response = client.images.edit(
+            image=open(image, "rb"),
+            mask=open(mask, "rb"),
+            prompt=prompt,
+            n=1,
+            size="1024x1024"
+        )
+        print(response)
+        return response.data[0].url
+    except Exception as e:
+        print("Error occurred:", e)
 
 def fetch_and_remove_eyebrows(image_file):
     # Define the API endpoint
@@ -85,4 +154,5 @@ def fetch_and_remove_eyebrows(image_file):
         return image_with_transparency
 
     else:
+        print("credits issue")
         return None
