@@ -11,6 +11,7 @@ import StyledItems from './labcomponents/StyledItems';
 import StyledItemsBeard from './labcomponents/Beard/StyledItemsBeard';
 import StyledItemsEyeBrow from './labcomponents/EyeBrow/StyledItemsEyeBrow';
 import StyledItemsLip from './labcomponents/LipColor/StyledItemsLip';
+import Choice from './labcomponents/Choice/Choice';
 
 
 
@@ -27,6 +28,7 @@ function App(props) {
           <Route path='BeardMoustache' element={<StyledItemsBeard/>} />
           <Route path='Eyebrow' element={<StyledItemsEyeBrow/>} />
           <Route path='Lipcolor' element={<StyledItemsLip/>} />
+          <Route path='Choice' element ={<Choice/>}/>
         </Route>       
       </Routes>
       </BrowserRouter>
