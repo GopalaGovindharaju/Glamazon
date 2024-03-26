@@ -14,15 +14,15 @@ function Items({selectedStyle}) {
   const handleHairStyleChoose = (style) => {
     console.log(style)
     setSelectedHairStyle(style)
-    navigate('/lab')
+    navigate('/lab/Hairstyle')
   }
   const handleEyebrowChoose = (style) => {
     setSelectedEyebrow(style)
-    navigate('/lab')
+    navigate('/lab/Eyebrow')
   }
   const handleLipColorChoose = (style) => {
     setSelectedLipColor(style)
-    navigate('/lab')
+    navigate('/lab/Lipcolor')
   }
   
   return (
