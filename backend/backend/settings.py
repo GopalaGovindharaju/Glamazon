@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "hairstyle",
     "lipcolor",
     "eyebrow",
+    "makeup",
 ]
 
 MIDDLEWARE = [
