@@ -1,9 +1,11 @@
 import { Box, Card, CardBody, Grid, Heading, Image, Stack, Text } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import { Hairstyle } from '../components/Hairstyle'
+import { useSnapImage } from '../context/SnapImageContext';
 
 function StylesPart({handleHairStyle,recommended,setRecommended,selectedGender,catogory,setSelectedHairStyle}) {
-  const [recommendedStyles, setRecommendedStyles] = useState([]);
+  const { selectedHairStyle } = useSnapImage();
+  const [recommendedStyles, setRecommendedStyles] = useState([selectedHairStyle]);
   const menHairstyles = Hairstyle.filter(style => style.gender === 'male');
   const womenHairstyles = Hairstyle.filter(style => style.gender === 'female');
   const getRandomHairstyles = (hairstyles, count) => {

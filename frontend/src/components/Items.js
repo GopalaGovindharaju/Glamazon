@@ -4,8 +4,26 @@ import { Hairstyle } from './Hairstyle';
 import { Beard } from './Beard';
 import { Eyebrow } from './Eyebrow';
 import { LipColor } from './Lipcolor';
+import { useNavigate } from 'react-router-dom';
+import { useSnapImage } from '../context/SnapImageContext';
 
 function Items({selectedStyle}) {
+  const { setFilteredImage } = useSnapImage();
+  const {selectedLipColor, setSelectedLipColor,selectedEyebrow, setSelectedEyebrow, snapedImage, selectedHairStyle, selectedHaircolor, filteredImage, setSelectedHairColor, setSelectedHairStyle } = useSnapImage();
+  const navigate = useNavigate()
+  const handleHairStyleChoose = (style) => {
+    console.log(style)
+    setSelectedHairStyle(style)
+    navigate('/lab')
+  }
+  const handleEyebrowChoose = (style) => {
+    setSelectedEyebrow(style)
+    navigate('/lab')
+  }
+  const handleLipColorChoose = (style) => {
+    setSelectedLipColor(style)
+    navigate('/lab')
+  }
   
   return (
     <Box
@@ -36,7 +54,7 @@ function Items({selectedStyle}) {
             <Divider />
             <CardFooter>
               <ButtonGroup spacing="2">
-                <Button variant="solid" colorScheme="blue">
+                <Button variant="solid" colorScheme="blue" onClick={() => handleHairStyleChoose(item.id)}>
                   Try now
                 </Button>
                 <Button variant="ghost" colorScheme="blue">
@@ -76,7 +94,7 @@ function Items({selectedStyle}) {
         ))}
         {selectedStyle === "EYEBROW" &&
         Eyebrow.map((item) => (
-          <Card key={item.id} maxW="270px" mt={4} display="inline-block" mr={4}>
+          <Card key={item.id} maxW="270px" mt={4} display="inline-block" mr={4} onClick={() => handleEyebrowChoose(item.name)}>
             <CardBody display="flex" flexDirection="column">
               <Image
                 h="150px"
@@ -105,7 +123,7 @@ function Items({selectedStyle}) {
         ))}
         {selectedStyle === "LIP COLOR" &&
         LipColor.map((item) => (
-          <Card key={item.id} maxW="270px" mt={4} display="inline-block" mr={4}>
+          <Card key={item.id} maxW="270px" mt={4} display="inline-block" mr={4} onClick={() => handleLipColorChoose(item.name)}>
             <CardBody display="flex" flexDirection="column">
               <Image
                 h="150px"

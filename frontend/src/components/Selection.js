@@ -5,6 +5,8 @@ import { useSnapImage } from '../context/SnapImageContext';
 
 function Selection({setUserChoice, setCloseChooseFile}) {
   const { setSnapedImage } = useSnapImage();
+  const { setFilteredImage } = useSnapImage();
+  const { snapedImage, selectedHairStyle, selectedHaircolor, filteredImage, setSelectedHairColor, setSelectedHairStyle } = useSnapImage();
   const handleFileChange = (event) => {
     const selectedFile = event.target.files[0];
   

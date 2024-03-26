@@ -1,11 +1,13 @@
 import { Box } from '@chakra-ui/react';
-import React, { useEffect, useRef} from 'react';
+import React, { useEffect, useRef, useState} from 'react';
 import { useSnapImage } from '../context/SnapImageContext';
 
 const ThreeDtry = ({setCloseSnap} ) => {
   const videoRef = useRef(null);
   const { setSnapedImage } = useSnapImage();
-  
+  const { setFilteredImage } = useSnapImage();
+  const [mount, setMount] = useState(false);
+  const { snapedImage, selectedHairStyle, selectedHaircolor, filteredImage, setSelectedHairColor, setSelectedHairStyle } = useSnapImage();
   useEffect(() => {
     const setupCamera = async () => {
       let currentVideoRef = videoRef.current; // Create a variable to store the reference
@@ -51,7 +53,11 @@ const ThreeDtry = ({setCloseSnap} ) => {
     if (videoRef.current && videoRef.current.srcObject) {
       videoRef.current.srcObject.getTracks().forEach(track => track.stop());
     }
+    
   };
+
+
+  
   
   
   return (
@@ -71,7 +77,7 @@ const ThreeDtry = ({setCloseSnap} ) => {
         w="1000px"
         h="500px"
         borderRadius="100px"
-        left="10%"
+        left="1%"
         top="1%"
       >
         <video
@@ -85,8 +91,8 @@ const ThreeDtry = ({setCloseSnap} ) => {
           top="45%"
           left="50%"
           transform="translate(-50%, -50%)"
-          w="30%"
-          h="70%"
+          w="50%"
+          h="90%"
           bg="transparent"
           borderRadius="50%"
           border="2px dashed white"

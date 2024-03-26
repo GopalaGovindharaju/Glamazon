@@ -1,10 +1,19 @@
 import { Box, Image, Spinner, Stack, Switch, Text } from '@chakra-ui/react'
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import { useSnapImage } from '../../context/SnapImageContext';
 
 function EyebrowImagePart({setShownImage,shownImage,loading}) {
     const { filteredImage } = useSnapImage();
     const { snapedImage } = useSnapImage();
+    const [snapImageWidth, setSnapImageWidth] = useState(null); // State to store width of snapped image
+    const snapImageRef = useRef(null)
+
+    const handleSnapImageLoad = () => {
+      if (snapImageRef.current) {
+          setSnapImageWidth(snapImageRef.current.naturalWidth);
+          console.log(snapImageRef.current.naturalWidth)
+      }
+  };
     const handleImageSwitch = (e) => {
         setShownImage(e.target.checked);
         console.log(e.target.checked);
@@ -20,7 +29,6 @@ function EyebrowImagePart({setShownImage,shownImage,loading}) {
     <div>
       <Box
         pt="6rem"
-        pl="17%"
         display="flex"
         height="calc(100vh)"
         overflow="auto"
@@ -30,7 +38,7 @@ function EyebrowImagePart({setShownImage,shownImage,loading}) {
       >
         <Box
           borderRadius="9"
-          width="58%"
+          width="48%"
           backgroundColor="#FAF2EC"
         >
           <Stack direction="row" justify='center'  pt={2}>
@@ -54,8 +62,8 @@ function EyebrowImagePart({setShownImage,shownImage,loading}) {
           ) : shownImage ? (
             <Stack direction="row" justify='center'>
             <Image
-            objectFit="fit"
             height="calc(100vh - 22vh)"
+            width={snapImageWidth}
             src={filteredImage}
             alt="Dan Abramov"
             borderRadius="md"
@@ -67,6 +75,8 @@ function EyebrowImagePart({setShownImage,shownImage,loading}) {
               <Image
                 objectFit="fit"
                 height="calc(100vh - 22vh)"
+                onLoad={handleSnapImageLoad}
+                ref={snapImageRef}
                 src={snapedImage}
                 alt="Dan Abramov"
                 borderRadius='md'

@@ -80,7 +80,6 @@ function StyledItemsEyeBrow() {
   };
   return (
     <>
-    <FilterEyebrow/>
     <EyebrowImagePart loading={loading} setShownImage={setShownImage} shownImage={shownImage}/>
     <EyebrowStylesPart setSelectedEyebrow={setSelectedEyebrow} handleEyebrow={handleEyebrow}/>
     </>
