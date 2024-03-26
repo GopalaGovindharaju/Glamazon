@@ -24,6 +24,7 @@ function Second({setSelectedStyle}) {
             <Box className='hoverable1' data-name="LIP COLOR" onClick={handleStyle} p={4} pb={1} w={130} bg='white.600'>
             LIP COLOR
             </Box>
+           
             </HStack>
         </Flex>
       </div>

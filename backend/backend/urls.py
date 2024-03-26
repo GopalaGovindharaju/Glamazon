@@ -24,6 +24,7 @@ urlpatterns = [
     path('hairstyle/', include('hairstyle.urls')),
     path('lipcolor/', include('lipcolor.urls')),
     path('eyebrow/', include('eyebrow.urls')),
+    path('makeup/', include('makeup.urls')),
 ]
 
 if settings.DEBUG:
