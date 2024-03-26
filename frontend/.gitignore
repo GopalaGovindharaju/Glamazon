@@ -2,6 +2,7 @@
 
 
 # dependencies
+./backend/media
 /node_modules
 /.pnp
 .pnp.js
