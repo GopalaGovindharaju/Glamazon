@@ -5,7 +5,7 @@ import { useSnapImage } from '../context/SnapImageContext';
 
 function StylesPart({handleHairStyle,recommended,setRecommended,selectedGender,catogory,setSelectedHairStyle}) {
   const { selectedHairStyle } = useSnapImage();
-  const [recommendedStyles, setRecommendedStyles] = useState([selectedHairStyle]);
+  const [recommendedStyles, setRecommendedStyles] = useState([]);
   const menHairstyles = Hairstyle.filter(style => style.gender === 'male');
   const womenHairstyles = Hairstyle.filter(style => style.gender === 'female');
   const getRandomHairstyles = (hairstyles, count) => {

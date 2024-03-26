@@ -25,7 +25,7 @@ function LipImagePart({loading}) {
         alignContent="stretch"
         backgroundColor="#FAF2EC"
       >
-        <Box
+        <Box  
           className="col-6"
           borderRadius="9"
           mb={2}
