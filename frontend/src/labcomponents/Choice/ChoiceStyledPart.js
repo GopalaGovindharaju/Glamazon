@@ -1,6 +1,5 @@
 import { Box, Card, CardBody, Heading, Image, Stack } from '@chakra-ui/react'
-import React, { useState } from 'react'
-import { Hairstyle } from '../../components/Hairstyle';
+import React from 'react'
 import { ChoiceList } from '../../components/ChoiceList';
 
 function ChoiceStyledPart({setSelectedChoice,handleChoice}) {
@@ -22,14 +21,15 @@ function ChoiceStyledPart({setSelectedChoice,handleChoice}) {
     position='fixed'
       right={6}
       bottom={0}
-      top="18%"
-      left="65%"
+      top="45%"
+      left="78%"
+      w='20%'
       py={4}
       pl={4}
       bg='rgb(251, 249, 247)'
       zIndex={9}
       overflow="auto"
-      height="calc(100vh - 20vh)"
+      height="calc(100vh - 46vh)"
       border='2px solid black'
       borderRadius={8}
       display='flex'
