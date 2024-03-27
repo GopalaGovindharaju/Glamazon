@@ -21,14 +21,14 @@ function ChoiceStyledPart({setSelectedChoice,handleChoice}) {
     position='fixed'
       right={6}
       bottom={0}
-      top="35%"
+      top="18%"
       left="65%"
       py={4}
       pl={4}
       bg='rgb(251, 249, 247)'
       zIndex={9}
       overflow="auto"
-      height="calc(100vh - 35vh)"
+      height="calc(100vh - 20vh)"
       border='2px solid black'
       borderRadius={8}
       display='flex'
