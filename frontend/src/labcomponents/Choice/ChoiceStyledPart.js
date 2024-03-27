@@ -1,6 +1,7 @@
 import { Box, Card, CardBody, Heading, Image, Stack } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import { Hairstyle } from '../../components/Hairstyle';
+import { ChoiceList } from '../../components/ChoiceList';
 
 function ChoiceStyledPart({setSelectedChoice,handleChoice}) {
 
@@ -36,7 +37,7 @@ function ChoiceStyledPart({setSelectedChoice,handleChoice}) {
       justifyContent='space-evenly'
       alignContent='flex-start'
   >
-    {Hairstyle.map((item) => (
+    {ChoiceList.map((item) => (
       <Card key={item.id} p={0} m={2} maxW="200px" backgroundColor='#FEF5E7 ' boxShadow='0 0 5px rgba(60, 60, 60, 0.5)' onClick={() => handleChoiceChange(item)}>
         <CardBody pb={0} flexDirection="column">
           <Image
@@ -46,7 +47,7 @@ function ChoiceStyledPart({setSelectedChoice,handleChoice}) {
             loading="lazy"
           />
           <Stack pt="2" spacing="3">
-            <Heading mb={0} style={text_css}>{item.name}</Heading>
+            <Heading mb={0} style={text_css}>{item.category}</Heading>
           </Stack>
         </CardBody>
       </Card>
