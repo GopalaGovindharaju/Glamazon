@@ -2,7 +2,7 @@ import { Box, Image, Spinner, Stack, Switch, Text } from '@chakra-ui/react'
 import React from 'react'
 
 
-function Choice() {
+function Choice({selectedChoice}) {
   const text_css = {
     fontFamily: "Cambria",
     fontWeight:'550',
@@ -28,24 +28,15 @@ function Choice() {
           <Stack direction="column" mt={8} >
             <Stack direction="row" w="55%">
               <Text style={text_css} mb={0} py={4}>Hairstyle</Text>
-                <Text fontFamily="LKFuturaStd-Medium">{}</Text>
-          
-            </Stack>
-            <Stack direction="row" w="33%">
-              <Text style={text_css} mb={0} py={4}>HairColor</Text>
-              <Text fontFamily="LKFuturaStd-Medium">{}</Text>
+              <Text fontFamily="LKFuturaStd-Medium">{selectedChoice.hairstyle}</Text>
             </Stack>
             <Stack direction="row" w="33%">
               <Text style={text_css} mb={0} py={4}>Catogory</Text>
-              <Text fontFamily="LKFuturaStd-Medium">{}</Text>
+              <Text fontFamily="LKFuturaStd-Medium">{selectedChoice.category}</Text>
             </Stack>
             <Stack direction="row" w="33%">
-              <Text style={text_css} mb={0} py={4}>LipColor</Text>
-              <Text fontFamily="LKFuturaStd-Medium">{}</Text>
-            </Stack>
-            <Stack direction="row" w="33%">
-              <Text style={text_css} mb={0} py={4}>EyeBrow</Text>
-              <Text fontFamily="LKFuturaStd-Medium">{}</Text>
+              <Text style={text_css} mb={0} py={4}>Face Shape</Text>
+              <Text fontFamily="LKFuturaStd-Medium">{selectedChoice.faceShape}</Text>
             </Stack>
           </Stack>
         

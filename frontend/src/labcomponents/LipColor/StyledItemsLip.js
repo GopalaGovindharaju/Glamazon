@@ -1,13 +1,15 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import FilterLipcolor from '../FilterLipcolor'
 import { useSnapImage } from '../../context/SnapImageContext';
 import LipImagePart from './LipImagePart';
 import axios from 'axios';
 
 function StyledItemsLip() {
-  const { snapedImage, setFilteredImage, filteredImage } = useSnapImage();
+  const { setActiveTab, snapedImage, setFilteredImage, filteredImage } = useSnapImage();
   const [loading, setLoading] = useState(false);
-
+  useEffect(() => {
+    setActiveTab('lipcolor')
+  },[])
   const handleLipColor = (color) => {
     // Convert base64 image data to a File object
     setLoading(true);
