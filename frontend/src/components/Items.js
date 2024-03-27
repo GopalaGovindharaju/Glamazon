@@ -6,10 +6,11 @@ import { Eyebrow } from './Eyebrow';
 import { LipColor } from './Lipcolor';
 import { useNavigate } from 'react-router-dom';
 import { useSnapImage } from '../context/SnapImageContext';
+import { ChoiceList } from './ChoiceList';
 
 function Items({selectedStyle}) {
   const { setFilteredImage } = useSnapImage();
-  const {selectedLipColor, setSelectedLipColor,selectedEyebrow, setSelectedEyebrow, snapedImage, selectedHairStyle, selectedHaircolor, filteredImage, setSelectedHairColor, setSelectedHairStyle } = useSnapImage();
+  const {selectedLipColor, setSelectedLipColor,setSelectedChoice,selectedEyebrow, setSelectedEyebrow, snapedImage, selectedHairStyle, selectedHaircolor, filteredImage, setSelectedHairColor, setSelectedHairStyle } = useSnapImage();
   const navigate = useNavigate()
   const handleHairStyleChoose = (style) => {
     console.log(style)
@@ -23,6 +24,10 @@ function Items({selectedStyle}) {
   const handleLipColorChoose = (style) => {
     setSelectedLipColor(style)
     navigate('/lab/Lipcolor')
+  }
+  const handleChoiceChoose = (style) => {
+    setSelectedChoice(style)
+    navigate('/lab/Choice')
   }
   
   return (
@@ -135,6 +140,35 @@ function Items({selectedStyle}) {
               />
               <Stack mt="6" spacing="3">
                 <Heading size="md">{item.name}</Heading>
+              </Stack>
+            </CardBody>
+            <Divider />
+            <CardFooter>
+              <ButtonGroup spacing="2">
+                <Button variant="solid" colorScheme="blue">
+                  Try now
+                </Button>
+                <Button variant="ghost" colorScheme="blue">
+                  Add to wishlist
+                </Button>
+              </ButtonGroup>
+            </CardFooter>
+          </Card>
+        ))}
+        {selectedStyle === "PORTRAIT" &&
+        ChoiceList.map((item) => (
+          <Card key={item.id} maxW="270px" mt={4} display="inline-block" mr={4} onClick={() => handleChoiceChoose(item)}>
+            <CardBody display="flex" flexDirection="column">
+              <Image
+                h="150px"
+                src={item.image}
+                alt="Green double couch with wooden legs"
+                borderRadius="lg"
+                loading="lazy"
+                objectFit='contain'
+              />
+              <Stack mt="6" spacing="3">
+                <Heading size="md">{item.category}</Heading>
               </Stack>
             </CardBody>
             <Divider />

@@ -47,7 +47,7 @@ def getmakeup(request):
         if Original_Image:
             image_data = Original_Image.read()
             url = "https://www.ailabapi.com/api/portrait/effects/face-makeup"
-            api_key = 'Ox9HLvarADiunIz2KrpmGcInP6EQ3djYk9Jdes8Sg2l4Cu8TLsVaSbFmxNHoMzGP'
+            api_key = 'Vp7SeczYgUhDQ1jsaVMf6mLlKh0mevDgqNFzG6IWk7i58PyE3A8CXwKZYyfF02Bx'
             headers = {'ailabapi-api-key': api_key}
 
             files = {'image': (Original_Image.name, image_data, Original_Image.content_type)}

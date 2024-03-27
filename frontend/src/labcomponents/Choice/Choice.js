@@ -26,16 +26,16 @@ function Choice({selectedChoice}) {
   
           <Stack direction="column" justify="center" pt={2}><Text style={text_css}>APPLIED STYLES</Text></Stack>
           <Stack direction="column" mt={8} >
-            <Stack direction="row" w="55%">
-              <Text style={text_css} mb={0} py={4}>Hairstyle</Text>
+            <Stack direction="row">
+              <Text style={text_css} mb={0} >Hairstyle</Text>
               <Text fontFamily="LKFuturaStd-Medium">{selectedChoice.hairstyle}</Text>
             </Stack>
-            <Stack direction="row" w="33%">
-              <Text style={text_css} mb={0} py={4}>Catogory</Text>
+            <Stack direction="row">
+              <Text style={text_css} mb={0} >Catogory</Text>
               <Text fontFamily="LKFuturaStd-Medium">{selectedChoice.category}</Text>
             </Stack>
-            <Stack direction="row" w="33%">
-              <Text style={text_css} mb={0} py={4}>Face Shape</Text>
+            <Stack direction="row" >
+              <Text style={text_css} mb={0} >Face Shape</Text>
               <Text fontFamily="LKFuturaStd-Medium">{selectedChoice.faceShape}</Text>
             </Stack>
           </Stack>

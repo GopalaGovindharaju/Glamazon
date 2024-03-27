@@ -103,7 +103,7 @@ function ChoiceStyleditems() {
         formData.append('username', 'gops');
         formData.append('original_image', file, 'original_image.jpeg');
         formData.append('style', style.hairstyle);
-        formData.append('color', style.haircolor);
+        formData.append('color', null);
         console.log(style)
     
         axios.post('http://127.0.0.1:8000/hairstyle/getFilteredHairstyle/', formData)
