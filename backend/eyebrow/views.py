@@ -111,7 +111,7 @@ def fetch_and_remove_eyebrows(image_file):
     payload = {'max_face_num': 1, 'face_field': 'age,gender,landmark72'}
     image_data = image_file.read()  # Read the image data once
     files = [('image', ('file', image_data, 'application/octet-stream'))]
-    headers = {'ailabapi-api-key': 'Vp7SeczYgUhDQ1jsaVMf6mLlKh0mevDgqNFzG6IWk7i58PyE3A8CXwKZYyfF02Bx'}  # Assuming api_key is defined somewhere
+    headers = {'ailabapi-api-key': settings.APIKEY}  # Assuming api_key is defined somewhere
 
     # Make API request
     response = requests.post(url, headers=headers, data=payload, files=files)

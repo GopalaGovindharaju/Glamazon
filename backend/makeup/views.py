@@ -10,6 +10,7 @@ import base64
 from io import BytesIO
 from PIL import Image
 from .models import Makeup
+from django.conf import settings
 
 @api_view(['POST'])
 def getmakeup(request):
@@ -47,7 +48,7 @@ def getmakeup(request):
         if Original_Image:
             image_data = Original_Image.read()
             url = "https://www.ailabapi.com/api/portrait/effects/face-makeup"
-            api_key = 'Vp7SeczYgUhDQ1jsaVMf6mLlKh0mevDgqNFzG6IWk7i58PyE3A8CXwKZYyfF02Bx'
+            api_key = settings.APIKEY
             headers = {'ailabapi-api-key': api_key}
 
             files = {'image': (Original_Image.name, image_data, Original_Image.content_type)}

@@ -77,7 +77,7 @@ export const HairColor = [
     },
     {
         id:'burgundy',
-        color:'#8C001A',
+        color:'#800020',
     },
     {
         id:'darkGreen',

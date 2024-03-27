@@ -12,7 +12,7 @@ export const SnapImageProvider = ({ children }) => {
   const [selectedEyebrow, setSelectedEyebrow] = useState(null)
   const [selectedLipColor, setSelectedLipColor] = useState(null)
   const [activeTab, setActiveTab] = useState('hairstyle');
-  const [selectedChoice, setSelectedChoice] = useState(null);
+  const [selectedChoice, setSelectedChoice] = useState({});
 
   return (
     <SnapImageContext.Provider value={{selectedChoice, setSelectedChoice, activeTab, setActiveTab, selectedLipColor, setSelectedLipColor, selectedEyebrow, setSelectedEyebrow, snapedImage, setSnapedImage, filteredImage, setFilteredImage, selectedHairStyle, setSelectedHairStyle, selectedHaircolor, setSelectedHairColor }}>

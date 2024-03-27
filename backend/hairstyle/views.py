@@ -7,6 +7,7 @@ import requests
 import time
 from .models import HairStyle
 from .serializers import HairStyle_Serializer
+from django.conf import settings
 
 
 
@@ -94,7 +95,7 @@ def getFilteredHairstyle(request):
         if Original_Image:
             image_data = Original_Image.read()
             url = "https://www.ailabapi.com/api/portrait/effects/hairstyle-editor-pro"
-            api_key = 'Vp7SeczYgUhDQ1jsaVMf6mLlKh0mevDgqNFzG6IWk7i58PyE3A8CXwKZYyfF02Bx'
+            api_key = settings.APIKEY
             headers = {'ailabapi-api-key': api_key}
 
             files = {'image': (Original_Image.name, image_data, Original_Image.content_type)}
