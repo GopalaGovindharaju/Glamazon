@@ -3,10 +3,11 @@ import React, { useState } from 'react'
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import logo from '../images/glamazon-logo.png';
 import { Link, useNavigate } from 'react-router-dom';
+import { useSnapImage } from '../context/SnapImageContext';
 
 function LabHeader() {
 
-  const [activeTab, setActiveTab] = useState('hairstyle');
+  const {activeTab, setActiveTab} = useSnapImage();
 
   const handleItemClick = (id) => {
     setActiveTab(id);

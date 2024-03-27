@@ -8,7 +8,7 @@ import { useSnapImage } from '../context/SnapImageContext';
 
 function StyledItems() {
   const { setFilteredImage } = useSnapImage();
-  const { snapedImage, selectedHairStyle, selectedHaircolor, filteredImage, setSelectedHairColor, setSelectedHairStyle } = useSnapImage();
+  const { setActiveTab, snapedImage, selectedHairStyle, selectedHaircolor, filteredImage, setSelectedHairColor, setSelectedHairStyle } = useSnapImage();
   const [recommended, setRecommended] = useState(true);
   const [selectedGender, setSelectedGender] = useState("all");
   const [shownImage, setShownImage] = useState(false);
@@ -20,6 +20,10 @@ function StyledItems() {
     'Elegant': false,
     'Vintage': false,
   });
+
+  useEffect(() => {
+    setActiveTab('hairstyle')
+  },[])
 
 
   const handleHairStyle = (style) => {

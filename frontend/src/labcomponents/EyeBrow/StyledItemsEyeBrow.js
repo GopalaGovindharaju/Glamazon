@@ -10,9 +10,11 @@ function StyledItemsEyeBrow() {
   const [shownImage, setShownImage] = useState(false);
   const [loading, setLoading] = useState(false);
   const { setFilteredImage } = useSnapImage();
-  const { snapedImage, filteredImage, setSelectedEyebrow, selectedEyebrow } = useSnapImage();
+  const { setActiveTab, snapedImage, filteredImage, setSelectedEyebrow, selectedEyebrow } = useSnapImage();
 
-
+  useEffect(() => {
+    setActiveTab('eyebrow')
+  },[])
   const handleEyebrow = (style) => {
     setLoading(true);
     
