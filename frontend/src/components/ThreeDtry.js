@@ -1,13 +1,14 @@
 import { Box } from '@chakra-ui/react';
 import React, { useEffect, useRef, useState} from 'react';
 import { useSnapImage } from '../context/SnapImageContext';
+import axios from 'axios';
 
 const ThreeDtry = ({setCloseSnap} ) => {
   const videoRef = useRef(null);
   const { setSnapedImage } = useSnapImage();
   const { setFilteredImage } = useSnapImage();
   const [mount, setMount] = useState(false);
-  const { snapedImage, selectedHairStyle, selectedHaircolor, filteredImage, setSelectedHairColor, setSelectedHairStyle } = useSnapImage();
+  const {setGender, setFaceShape, snapedImage, selectedHairStyle, selectedHaircolor, filteredImage, setSelectedHairColor, setSelectedHairStyle } = useSnapImage();
   useEffect(() => {
     const setupCamera = async () => {
       let currentVideoRef = videoRef.current; // Create a variable to store the reference
@@ -49,6 +50,7 @@ const ThreeDtry = ({setCloseSnap} ) => {
 
     // Set the snapshot in state
     setSnapedImage(snapshotURL);
+    genderAndShapeClassification(snapshotURL);
     setCloseSnap(false);
     if (videoRef.current && videoRef.current.srcObject) {
       videoRef.current.srcObject.getTracks().forEach(track => track.stop());
@@ -56,6 +58,67 @@ const ThreeDtry = ({setCloseSnap} ) => {
     
   };
 
+  const genderAndShapeClassification = (image) => {
+    const base64ToBlob = (base64) => {
+      const parts = base64.split(';base64,');
+      const contentType = parts[0].split(':')[1];
+      const raw = window.atob(parts[1]);
+      const blobArray = new Uint8Array(new ArrayBuffer(raw.length));
+  
+      for (let i = 0; i < raw.length; i++) {
+        blobArray[i] = raw.charCodeAt(i);
+      }
+  
+      return new Blob([blobArray], { type: contentType });
+    };
+
+    let file;
+  
+    const continueWithData = () => {
+      const formData = new FormData();
+      formData.append('original_image', file, 'original_image.jpeg');
+  
+      axios.post('http://127.0.0.1:8000/eyebrow/getGender/', formData)
+        .then((response) => {
+          console.log(response.data.face_detail_infos[0].face_detail_attributes_info.gender.type,response.data.face_detail_infos[0].face_detail_attributes_info.shape.type)
+          var gendertype = response.data.face_detail_infos[0].face_detail_attributes_info.gender.type 
+          var shapetype = response.data.face_detail_infos[0].face_detail_attributes_info.shape.type
+          if(gendertype === 0){
+            setGender('male')
+          }
+          else{
+            setGender('female')
+          }
+          switch(shapetype){
+            case 0:
+              setFaceShape('square');
+              break;
+            case 1:
+              setFaceShape('diamond');
+              break;
+            case 2:
+              setFaceShape('oval');
+              break;
+            case 3:
+              setFaceShape('heart');
+              break;
+            case 4:
+              setFaceShape('round');
+              break;
+            default:
+              setFaceShape('');
+              break;
+          }
+        })
+        .catch((error) => {
+          console.error('Error in POST request:', error);
+        })
+    };
+
+    
+      file = base64ToBlob(image);
+      continueWithData();
+  }
 
   
   
@@ -84,7 +147,7 @@ const ThreeDtry = ({setCloseSnap} ) => {
           ref={videoRef}
           autoPlay
           playsInline
-          style={{ width: "100%", height: "100%", borderRadius: "100px" }}
+          style={{ width: "100%", height: "100%", borderRadius: "100px", transform: "scaleX(-1)" }}
         />
         <Box
           position="absolute"
