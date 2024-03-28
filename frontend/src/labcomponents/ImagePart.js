@@ -13,14 +13,16 @@ function ImagePart({selectedHaircolor,selectedHairStyle,setShownImage,shownImage
     console.log(e.target.checked);
   }
   const cancelIconStyle = {
-    width: '20px',
-    height: '20px',
-    backgroundColor: 'red',
+    width: '30px',
+    height: '30px',
+    backgroundColor: 'white',
     position: 'absolute',
-    top: '0',
+    top: '50%',
     right: '0',
-    transform: 'rotate(100deg)',
+    left:'100%',
+    transform: 'rotate(0deg)',
     cursor: 'pointer'
+    
 };
   const text_css = {
     fontFamily: "Cambria",
@@ -83,8 +85,10 @@ function ImagePart({selectedHaircolor,selectedHairStyle,setShownImage,shownImage
            position='absolute'
            pl='30%'
           >
-          <div  style={cancelIconStyle}></div>
-</Box>
+          <div  style={cancelIconStyle}>
+           <b>X</b> 
+          </div>
+          </Box>
           </Stack>
             
           ) : (
