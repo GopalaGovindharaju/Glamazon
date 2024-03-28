@@ -24,7 +24,7 @@ function App(props) {
       <Routes>
         <Route path="*" element={<Home />} />
         <Route path="/lab" element={<Lab />} >
-          <Route index element={<StyledItems/>} />
+          <Route index element={<ChoiceStyleditems/>} />
           <Route path='Hairstyle' element={<StyledItems/>} />
           <Route path='BeardMoustache' element={<StyledItemsBeard/>} />
           <Route path='Eyebrow' element={<StyledItemsEyeBrow/>} />

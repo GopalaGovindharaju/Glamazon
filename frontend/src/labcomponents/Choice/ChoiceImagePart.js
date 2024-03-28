@@ -17,30 +17,42 @@ function ChoiceImagePart({setShownImage,shownImage,loading}) {
         fontSize: "18px",
       };
   return (
-    <div>
+    <>
        <Box
         pt="6rem"
-        pl="17%"
+        pl="2%"
         display="flex"
         height="calc(100vh)"
         overflow="auto"
         flexWrap="wrap"
         alignContent="stretch"
         backgroundColor="#FAF2EC"
+        flexDirection='column'
       >
         <Box
           borderRadius="9"
-          width="58%"
+          width="38%"
           backgroundColor="#FAF2EC"
         >
           <Stack direction="row" justify='center'  pt={2}>
             <Text style={text_css}>ORIGINAL IMAGE</Text>
-            <Switch
-              pt={1}
-              colorScheme="yellow"
-              isChecked={shownImage}
-              onChange={handleImageSwitch}
-            ></Switch>
+          </Stack>
+            <Image
+            objectFit="fit"
+            height="calc(100vh - 22vh)"
+            src={snapedImage}
+            alt="Dan Abramov"
+            borderRadius="md"
+            boxShadow='0 0 5px rgba(60, 60, 60, 0.5)'
+          />
+        </Box>
+        <Box
+          borderRadius="9"
+          width="38%"
+          mr='22%'
+          backgroundColor="#FAF2EC"
+        >
+          <Stack direction="row" justify='center'  pt={2}>
             <Text style={text_css}>FILTERED IMAGE</Text>
           </Stack>
           {loading ? (
@@ -64,20 +76,13 @@ function ChoiceImagePart({setShownImage,shownImage,loading}) {
             
           ) : (
             <Stack direction="row" justify='center'>
-              <Image
-                objectFit="fit"
-                height="calc(100vh - 22vh)"
-                src={snapedImage}
-                alt="Dan Abramov"
-                borderRadius='md'
-                boxShadow='0 0 5px rgba(60, 60, 60, 0.5)'
-              />
+              <Text>Click the Styles</Text>
             </Stack>
           )}
         </Box>
         
       </Box>
-    </div>
+    </>
   )
 }
 

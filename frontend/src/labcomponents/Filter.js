@@ -1,7 +1,7 @@
 import { Box, Checkbox, Radio, RadioGroup, Stack, Text, VStack} from '@chakra-ui/react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMars, faVenus } from '@fortawesome/free-solid-svg-icons';
-import React, { useState } from 'react'
+import React from 'react'
 import { HairColor } from '../components/HairColor';
 
 function Filter({setRecommended, recommended, setSelectedGender, selectedGender, setCatogory, catogory,setSelectedHairColor, handleHairColor}) {
