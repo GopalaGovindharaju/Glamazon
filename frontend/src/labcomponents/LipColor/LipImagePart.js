@@ -1,17 +1,35 @@
 import { Box, Image, Text } from '@chakra-ui/react'
-import React from 'react'
+import React, { useState } from 'react'
 import { useSnapImage } from '../../context/SnapImageContext';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHeart as solidHeart } from '@fortawesome/free-solid-svg-icons';
+import { faHeart as regularHeart } from '@fortawesome/free-regular-svg-icons';
 
 function LipImagePart({loading}) {
   const { filteredImage, overAllFilteredImage } = useSnapImage();
   const { snapedImage } = useSnapImage();
+  const [isSolid, setIsSolid] = useState(false);
 
+  const handleClick = () => {
+    setIsSolid(!isSolid);
+  };
   const text_css = {
     fontFamily: "cambria",
     fontWeight:'550',
     color: "black",
     fontSize: "18px",
   };
+  const cancelIconStyle = {
+    width: '30px',
+    height: '30px',
+    backgroundColor: 'transparent',
+    position: 'absolute',
+    top: '50%',
+    right: '-10%',
+    transform: 'rotate(0deg)',
+    cursor: 'pointer'
+    
+};
   return (
     <div>
       <Box
@@ -68,7 +86,23 @@ function LipImagePart({loading}) {
               boxShadow='0 0 5px rgba(60, 60, 60, 0.5)'
               backgroundColor='white'
             />
+            <Box 
+           position='absolute'
           
+           pl='27%'
+           pt='5.5%'
+          >
+          <div  style={cancelIconStyle}>
+          <button onClick={handleClick}>
+        {isSolid ? (
+          <FontAwesomeIcon icon={solidHeart} style={{ color: 'red' }}/>
+        ) : (
+          <FontAwesomeIcon icon={regularHeart} />
+        )}
+      </button>
+
+          </div>
+          </Box>
         </Box>
       </Box>
     </div>

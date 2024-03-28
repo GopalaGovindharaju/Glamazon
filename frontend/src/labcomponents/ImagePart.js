@@ -1,13 +1,20 @@
 import { Box, Image, Spinner, Stack, Switch, Text } from '@chakra-ui/react'
-import React from 'react'
+import React, { useState } from 'react'
 import { useSnapImage } from '../context/SnapImageContext';
 import { Hairstyle } from '../components/Hairstyle';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHeart as solidHeart } from '@fortawesome/free-solid-svg-icons';
+import { faHeart as regularHeart } from '@fortawesome/free-regular-svg-icons';
 
 function ImagePart({selectedHaircolor,selectedHairStyle,setShownImage,shownImage,loading}) {
   const { filteredImage } = useSnapImage();
   const { snapedImage } = useSnapImage();
   const hairstyle = (Hairstyle.find(style => style.id === selectedHairStyle) || '');
+  const [isSolid, setIsSolid] = useState(false);
 
+  const handleClick = () => {
+    setIsSolid(!isSolid);
+  };
   const handleImageSwitch = (e) => {
     setShownImage(e.target.checked);
     console.log(e.target.checked);
@@ -15,11 +22,10 @@ function ImagePart({selectedHaircolor,selectedHairStyle,setShownImage,shownImage
   const cancelIconStyle = {
     width: '30px',
     height: '30px',
-    backgroundColor: 'white',
+    backgroundColor: 'transparent',
     position: 'absolute',
     top: '50%',
-    right: '0',
-    left:'100%',
+    right: '-10%',
     transform: 'rotate(0deg)',
     cursor: 'pointer'
     
@@ -86,7 +92,14 @@ function ImagePart({selectedHaircolor,selectedHairStyle,setShownImage,shownImage
            pl='30%'
           >
           <div  style={cancelIconStyle}>
-           <b>X</b> 
+           
+          <button onClick={handleClick}>
+        {isSolid ? (
+          <FontAwesomeIcon icon={solidHeart} style={{ color: 'red' }}/>
+        ) : (
+          <FontAwesomeIcon icon={regularHeart} />
+        )}
+      </button>
           </div>
           </Box>
           </Stack>

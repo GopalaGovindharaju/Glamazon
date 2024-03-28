@@ -1,6 +1,9 @@
 import { Box, Image, Spinner, Stack, Switch, Text } from '@chakra-ui/react'
-import React from 'react'
+import React, { useState } from 'react'
 import { useSnapImage } from '../../context/SnapImageContext';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHeart as solidHeart } from '@fortawesome/free-solid-svg-icons';
+import { faHeart as regularHeart } from '@fortawesome/free-regular-svg-icons';
 
 
 function ChoiceImagePart({setShownImage,shownImage,loading}) {
@@ -10,12 +13,28 @@ function ChoiceImagePart({setShownImage,shownImage,loading}) {
         setShownImage(e.target.checked);
         console.log(e.target.checked);
       }
+      const [isSolid, setIsSolid] = useState(false);
+
+      const handleClick = () => {
+        setIsSolid(!isSolid);
+      };
     const text_css = {
         fontFamily: "Cambria",
         fontWeight:'550',
         color: "rgb(51, 51, 51)",
         fontSize: "18px",
       };
+      const cancelIconStyle = {
+        width: '30px',
+        height: '30px',
+        backgroundColor: 'transparent',
+        position: 'absolute',
+        top: '50%',
+        right: '-10%',
+        transform: 'rotate(0deg)',
+        cursor: 'pointer'
+        
+    };
   return (
     <>
        <Box
@@ -72,7 +91,21 @@ function ChoiceImagePart({setShownImage,shownImage,loading}) {
             alt="Dan Abramov"
             borderRadius="md"
             boxShadow='0 0 5px rgba(60, 60, 60, 0.5)'
-          /></Stack>
+          />
+           <Box 
+           position='absolute'
+           pl='30%'
+          >
+          <div  style={cancelIconStyle}>
+          <button onClick={handleClick}>
+        {isSolid ? (
+          <FontAwesomeIcon icon={solidHeart} style={{ color: 'red' }}/>
+        ) : (
+          <FontAwesomeIcon icon={regularHeart} />
+        )}
+      </button>
+          </div>
+          </Box></Stack>
             
           ) : (
             <Stack direction="row" justify='center'>
