@@ -66,8 +66,35 @@ function Selection({setUserChoice, setCloseChooseFile}) {
   
       axios.post('http://127.0.0.1:8000/eyebrow/getGender/', formData)
         .then((response) => {
-          console.log(response.data.result.face_list[0].gender.type);
-          setGender(response.data.result.face_list[0].gender.type)
+          console.log(response.data.face_detail_infos[0].face_detail_attributes_info.gender.type,response.data.face_detail_infos[0].face_detail_attributes_info.shape.type)
+          var gendertype = response.data.face_detail_infos[0].face_detail_attributes_info.gender.type 
+          var shapetype = response.data.face_detail_infos[0].face_detail_attributes_info.shape.type
+          if(gendertype === 0){
+            setGender('male')
+          }
+          else{
+            setGender('female')
+          }
+          switch(shapetype){
+            case 0:
+              setFaceShape('square');
+              break;
+            case 1:
+              setFaceShape('diamond');
+              break;
+            case 2:
+              setFaceShape('oval');
+              break;
+            case 3:
+              setFaceShape('heart');
+              break;
+            case 4:
+              setFaceShape('round');
+              break;
+            default:
+              setFaceShape('');
+              break;
+          }
         })
         .catch((error) => {
           console.error('Error in POST request:', error);

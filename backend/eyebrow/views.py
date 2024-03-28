@@ -163,9 +163,10 @@ def getGender(request):
         data = request.data
         Original_Image = request.FILES.get('original_image', None)
         if Original_Image:
-            url = "https://www.ailabapi.com/api/portrait/analysis/face-key-points"
+            url = "https://www.ailabapi.com/api/portrait/analysis/face-analyzer"
             # Prepare payload and headers
-            payload = {'max_face_num': 1, 'face_field': 'gender'}
+            payload = {'max_face_num': 1,
+                        'face_attributes_type': 'Gender,Shape'}
             image_data = Original_Image.read()  # Read the image data once
             files = [('image', ('file', image_data, 'application/octet-stream'))]
             headers = {'ailabapi-api-key': settings.APIKEY}  # Assuming api_key is defined somewhere

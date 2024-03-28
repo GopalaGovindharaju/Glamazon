@@ -1,9 +1,14 @@
 import { Box, Card, CardBody, Heading, Image, Stack } from '@chakra-ui/react'
 import React from 'react'
 import { ChoiceList } from '../../components/ChoiceList';
+import { useSnapImage } from '../../context/SnapImageContext';
 
 function ChoiceStyledPart({setSelectedChoice,handleChoice}) {
 
+  const {gender, faceShape} = useSnapImage();
+  const filteredChoices = ChoiceList.filter(choice => {
+    return choice.gender === gender && choice.faceShape === faceShape;
+  });
     const handleChoiceChange = (item) =>{
         setSelectedChoice(item);
         handleChoice(item);
@@ -37,7 +42,7 @@ function ChoiceStyledPart({setSelectedChoice,handleChoice}) {
       justifyContent='space-evenly'
       alignContent='flex-start'
   >
-    {ChoiceList.map((item) => (
+    {filteredChoices.map((item) => (
       <Card key={item.id} p={0} m={2} maxW="200px" backgroundColor='#FEF5E7 ' boxShadow='0 0 5px rgba(60, 60, 60, 0.5)' onClick={() => handleChoiceChange(item)}>
         <CardBody pb={0} flexDirection="column">
           <Image
