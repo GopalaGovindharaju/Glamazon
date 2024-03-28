@@ -2,11 +2,12 @@ import { Box, Input, Button, Flex } from '@chakra-ui/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCloudArrowUp } from '@fortawesome/free-solid-svg-icons';
 import { useSnapImage } from '../context/SnapImageContext';
+import axios from 'axios';
 
 function Selection({setUserChoice, setCloseChooseFile}) {
   const { setSnapedImage } = useSnapImage();
   const { setFilteredImage } = useSnapImage();
-  const { snapedImage, selectedHairStyle, selectedHaircolor, filteredImage, setSelectedHairColor, setSelectedHairStyle } = useSnapImage();
+  const {setGender, setFaceShape, snapedImage, selectedHairStyle, selectedHaircolor, filteredImage, setSelectedHairColor, setSelectedHairStyle } = useSnapImage();
   const handleFileChange = (event) => {
     const selectedFile = event.target.files[0];
   
@@ -34,6 +35,7 @@ function Selection({setUserChoice, setCloseChooseFile}) {
   
           // Set the converted JPEG data URL in the state
           setSnapedImage(jpegDataURL);
+          genderAndShapeClassification(jpegDataURL);
           setCloseChooseFile(false);
         };
       };
@@ -41,6 +43,41 @@ function Selection({setUserChoice, setCloseChooseFile}) {
       reader.readAsDataURL(selectedFile);
     }
   };
+
+  const genderAndShapeClassification = (image) => {
+    const base64ToBlob = (base64) => {
+      const parts = base64.split(';base64,');
+      const contentType = parts[0].split(':')[1];
+      const raw = window.atob(parts[1]);
+      const blobArray = new Uint8Array(new ArrayBuffer(raw.length));
+  
+      for (let i = 0; i < raw.length; i++) {
+        blobArray[i] = raw.charCodeAt(i);
+      }
+  
+      return new Blob([blobArray], { type: contentType });
+    };
+
+    let file;
+  
+    const continueWithData = () => {
+      const formData = new FormData();
+      formData.append('original_image', file, 'original_image.jpeg');
+  
+      axios.post('http://127.0.0.1:8000/eyebrow/getGender/', formData)
+        .then((response) => {
+          console.log(response.data.result.face_list[0].gender.type);
+          setGender(response.data.result.face_list[0].gender.type)
+        })
+        .catch((error) => {
+          console.error('Error in POST request:', error);
+        })
+    };
+
+    
+      file = base64ToBlob(image);
+      continueWithData();
+  }
 
   const handlingchoice=()=>{
     setUserChoice(true);
