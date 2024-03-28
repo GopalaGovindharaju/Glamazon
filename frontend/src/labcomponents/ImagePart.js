@@ -12,7 +12,16 @@ function ImagePart({selectedHaircolor,selectedHairStyle,setShownImage,shownImage
     setShownImage(e.target.checked);
     console.log(e.target.checked);
   }
-
+  const cancelIconStyle = {
+    width: '20px',
+    height: '20px',
+    backgroundColor: 'red',
+    position: 'absolute',
+    top: '0',
+    right: '0',
+    transform: 'rotate(100deg)',
+    cursor: 'pointer'
+};
   const text_css = {
     fontFamily: "Cambria",
     fontWeight:'550',
@@ -59,6 +68,7 @@ function ImagePart({selectedHaircolor,selectedHairStyle,setShownImage,shownImage
             />
           ) : shownImage ? (
             <Stack direction="row" justify='center'>
+              
             <Image
             objectFit="fit"
             height="calc(100vh - 22vh)"
@@ -66,7 +76,16 @@ function ImagePart({selectedHaircolor,selectedHairStyle,setShownImage,shownImage
             alt="Dan Abramov"
             borderRadius="md"
             boxShadow='0 0 5px rgba(60, 60, 60, 0.5)'
-          /></Stack>
+            position='relative'
+            
+          />
+          <Box 
+           position='absolute'
+           pl='30%'
+          >
+          <div  style={cancelIconStyle}></div>
+</Box>
+          </Stack>
             
           ) : (
             <Stack direction="row" justify='center'>
