@@ -1,4 +1,3 @@
-
 import Afro from './Images/Hairstyle/Afro.png'
 import BuzzCut from './Images/Hairstyle/BuzzCut.png'
 import BluntBowlCut from './Images/Hairstyle/BluntBowlCut.png'
@@ -22,8 +21,6 @@ import SlickedBack from './Images/Hairstyle/SlickedBack.png'
 import UnderCut from './Images/Hairstyle/UnderCut.png'
 import SlickBack from './Images/Hairstyle/SlickBack.png'
 import SidePartCombOverHairstyleWithHighFade from './Images/Hairstyle/SidePartCombOverHairstyleWithHighFade.png'
-
-
 
 import Bobcut from './Images/Hairstyle/Bobcut.png'
 import bowlCut from './Images/Hairstyle/bowlCut.png'
