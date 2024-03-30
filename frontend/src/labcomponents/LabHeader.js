@@ -1,5 +1,5 @@
 import { Avatar, Box, Flex, HStack, Image, Spacer, Text } from '@chakra-ui/react'
-import React, { useState } from 'react'
+import React from 'react'
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import logo from '../images/glamazon-logo.png';
 import { Link, useNavigate } from 'react-router-dom';
@@ -29,7 +29,6 @@ function LabHeader() {
           <HStack spacing={16} justifyContent='center'>
             <Box className={`hoverable1 ${activeTab === 'choice' ? 'active' : ''}`} onClick={() =>handleItemClick('choice')}><Link to='CHOICE'>ETHNIC STYLES</Link></Box>
             <Box className={`hoverable1 ${activeTab === 'hairstyle' ? 'active' : ''}`} onClick={() =>handleItemClick('hairstyle')}><Link to='Hairstyle'>HAIRSTYLE</Link></Box>
-            <Box className={`hoverable1 ${activeTab === 'beard-moustache' ? 'active' : ''}`} onClick={() =>handleItemClick('beard-moustache')}><Link to='BeardMoustache'>BEARD&MOUSTACHE</Link></Box>
             <Box className={`hoverable1 ${activeTab === 'eyebrow' ? 'active' : ''}`} onClick={() =>handleItemClick('eyebrow')}><Link to='Eyebrow'>EYEBROW</Link></Box>
             <Box className={`hoverable1 ${activeTab === 'lipcolor' ? 'active' : ''}`} onClick={() =>handleItemClick('lipcolor')}><Link to='Lipcolor'>LIPCOLOR</Link></Box>
           </HStack>

@@ -1,4 +1,3 @@
-
 import Afro from './Images/Hairstyle/Afro.png'
 import BuzzCut from './Images/Hairstyle/BuzzCut.png'
 import CombOver from './Images/Hairstyle/CombOver.png'
@@ -17,7 +16,6 @@ import TexturedFringe from './Images/Hairstyle/TexturedFringe.png'
 import WavyShag from './Images/Hairstyle/WavyShag.png'
 import SlickBack from './Images/Hairstyle/SlickBack.png'
 import SidePartCombOverHairstyleWithHighFade from './Images/Hairstyle/SidePartCombOverHairstyleWithHighFade.png'
-
 
 import CurlyBob from './Images/Hairstyle/CurlyBob.png'
 import DoubleBun from './Images/Hairstyle/DoubleBun.png'
