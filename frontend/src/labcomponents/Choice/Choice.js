@@ -1,8 +1,10 @@
 import { Box, Stack, Text } from '@chakra-ui/react'
 import React from 'react'
+import { useSnapImage } from '../../context/SnapImageContext';
 
 
 function Choice({selectedChoice}) {
+  const {faceShape} = useSnapImage();
   const text_css = {
     fontFamily: "Cambria",
     fontWeight:'550',
@@ -39,7 +41,7 @@ function Choice({selectedChoice}) {
             </Stack>
             <Stack direction="row" >
               <Text style={text_css} mb={0}>Face Shape</Text>
-              <Text fontFamily="LKFuturaStd-Medium">{selectedChoice.faceShape}</Text>
+              <Text fontFamily="LKFuturaStd-Medium">{faceShape}</Text>
             </Stack>
           </Stack>
         

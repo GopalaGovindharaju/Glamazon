@@ -142,8 +142,8 @@ export const Hairstyle = [
   },
   {
     image: Middleparted,
-    name: "MiddleParted",
-    id: "MiddleParted",
+    name: "Middle-parted",
+    id: "Middle -parted",
     gender: "male",
     category: "Casual"
   },
