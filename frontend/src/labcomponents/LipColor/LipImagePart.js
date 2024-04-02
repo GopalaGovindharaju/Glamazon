@@ -1,4 +1,4 @@
-import { Box, Image, Text } from '@chakra-ui/react'
+import { Box, Image, Spinner, Text } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import { useSnapImage } from '../../context/SnapImageContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -76,7 +76,14 @@ function LipImagePart({loading}) {
 
         >
           <Text style={text_css}>FILTERED IMAGE</Text>
-          <Image
+          { loading ? <Spinner
+              thickness="4px"
+              speed="0.65s"
+              emptyColor="gray.200"
+              color="orange.700"
+              size="xl"
+            /> : <>
+            <Image
               objectFit="fit"
               w="80%"
               height="calc(100vh - 23vh)"
@@ -102,7 +109,8 @@ function LipImagePart({loading}) {
       </button>
 
           </div>
-          </Box>
+          </Box></>}
+          
         </Box>
       </Box>
     </div>
