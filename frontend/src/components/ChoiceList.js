@@ -312,13 +312,13 @@ export const ChoiceList = [
     },
     {
         id:311,
-        hairstyle: 'SlickedBack',
+        hairstyle: 'ShortNeatBob',
         faceShape: 'square',
         resource_type: 4,
         strength: 0.7,
         category: "Professional",
         gender: 'female',
-        image: SlickBack,
+        image: ShortNeatBob,
     },
     {
         id:322,

@@ -24,9 +24,13 @@ function Lab() {
               <Box
                 position="fixed"
                 zIndex={100}
-                right={10}
+                right="11%"
                 top={10}
                 className="hello"
+                color="#663620"
+                _hover={{ bg: "#663620", color: "white", transition: "0.4s" }}
+                variant="ghost"
+                onClick={() => setFilteredImage(null)}
               >
                 Clear Filter
               </Box>
